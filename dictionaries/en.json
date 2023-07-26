@@ -4,7 +4,10 @@
     "MainPageDescription": "Something description"
   },
   "MainLayout": {
-    "Header": "Header",
+    "Header": {
+      "Header": "Header",
+      "Theme": { "Light": "Light", "Dark": "Dark" }
+    },
     "Footer": "Footer"
   },
   "server-component": {

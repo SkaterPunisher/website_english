@@ -4,7 +4,13 @@
     "MainPageDescription": "Описание какое то"
   },
   "MainLayout": {
-    "Header": "Хедер",
+    "Header": {
+      "Header": "Хедер",
+      "Theme": {
+        "Light": "Светлая",
+        "Dark": "Темная"
+      }
+    },
     "Footer": "Футер"
   },
   "server-component": {

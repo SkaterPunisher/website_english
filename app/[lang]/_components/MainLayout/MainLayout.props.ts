@@ -6,7 +6,13 @@ export type MainLayoutProps = DetailedHTMLProps<
 > & {
   children: React.ReactNode;
   dictionary: {
-    Header: string;
+    Header: {
+      Header: string;
+      Theme: {
+        Light: string;
+        Dark: string;
+      };
+    };
     Footer: string;
   };
 };
