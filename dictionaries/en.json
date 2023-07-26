@@ -1,0 +1,17 @@
+{
+  "MainPage": {
+    "MainPageTitle": "English center",
+    "MainPageDescription": "Something description"
+  },
+  "MainLayout": {
+    "Header": "Header",
+    "Footer": "Footer"
+  },
+  "server-component": {
+    "welcome": "Welcome"
+  },
+  "counter": {
+    "increment": "Increment",
+    "decrement": "Decrement"
+  }
+}

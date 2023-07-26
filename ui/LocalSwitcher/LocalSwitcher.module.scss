@@ -1,0 +1,13 @@
+.wrapper {
+  display: flex;
+  padding-inline-start: 0;
+
+  .item {
+    list-style-type: none;
+    margin-right: 10px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

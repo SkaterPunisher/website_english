@@ -1,0 +1,17 @@
+{
+  "MainPage": {
+    "MainPageTitle": "Центр английского",
+    "MainPageDescription": "Описание какое то"
+  },
+  "MainLayout": {
+    "Header": "Хедер",
+    "Footer": "Футер"
+  },
+  "server-component": {
+    "welcome": "Добро пожаловать"
+  },
+  "counter": {
+    "increment": "Увеличить",
+    "decrement": "Уменьшить"
+  }
+}
