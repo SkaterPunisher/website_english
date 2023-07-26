@@ -22,7 +22,7 @@ export const useThemeDetector = () => {
     const isDarkThemeBrowser = getCurrentTheme();
 
     if (localStorageTheme === null) {
-      if (theme === undefined) {
+      if (!theme) {
         const initialTheme = isDarkThemeBrowser ? 'dark' : 'light';
         document.body.setAttribute('data-theme', initialTheme);
         setTheme(initialTheme);

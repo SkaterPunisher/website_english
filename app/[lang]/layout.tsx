@@ -1,7 +1,7 @@
-import { getDictionary } from '../../get-dictionary';
-import { Locale, i18n } from '../../i18n-config';
+import { Locale, i18n } from '@/i18n-config';
 import MainProvider from './_components/MainProvider';
 import '@/assets/global.scss';
+import { getDictionary } from '@/get-dictionary';
 
 export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({ lang: locale }));

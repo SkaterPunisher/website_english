@@ -15,9 +15,5 @@
   },
   "server-component": {
     "welcome": "Добро пожаловать"
-  },
-  "counter": {
-    "increment": "Увеличить",
-    "decrement": "Уменьшить"
   }
 }
