@@ -5,11 +5,11 @@ import Footer from './Footer/Footer';
 
 const MainLayout = ({ children, dictionary, ...props }: MainLayoutProps) => {
   return (
-    <>
+    <div {...props}>
       <Header dictionary={dictionary.Header} />
       <div>{children}</div>
       <Footer dictionary={dictionary.Footer} />
-    </>
+    </div>
   );
 };
 

@@ -1,22 +1,8 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import MainLayout from './MainLayout/MainLayout';
+import { MainProviderProps } from './MainProvider.props';
 
-const MainProvider = ({
-  children,
-  dictionary,
-}: {
-  children: ReactNode;
-  dictionary: {
-    Header: {
-      Header: string;
-      Theme: {
-        Light: string;
-        Dark: string;
-      };
-    };
-    Footer: string;
-  };
-}) => {
+const MainProvider = ({ children, dictionary }: MainProviderProps) => {
   return <MainLayout dictionary={dictionary}>{children}</MainLayout>;
 };
 

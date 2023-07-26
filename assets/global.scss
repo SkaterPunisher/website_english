@@ -20,9 +20,13 @@ body {
 }
 
 body[data-theme='dark'] {
-  --black: #ffffff;
-  --white: #101010;
+  background: var(--black);
 }
+// body[data-theme='dark'] {
+//   --black: #ffffff;
+//   --white: #101010;
+//   color: var(--white);
+// }
 
 :root {
   --black: #101010;

@@ -1,15 +1,9 @@
 import { IoMoon, IoMoonOutline } from 'react-icons/io5';
 import styles from './ThemeSwitcher.module.scss';
 import { useThemeDetector } from './useThemeDetector';
+import { ThemeSwitcherProps } from './ThemeSwitcher.props';
 
-const ThemeSwitcher = ({
-  dictionary,
-}: {
-  dictionary: {
-    Light: string;
-    Dark: string;
-  };
-}) => {
+const ThemeSwitcher = ({ dictionary }: ThemeSwitcherProps) => {
   const { theme, handleChangeTheme } = useThemeDetector();
 
   return (
