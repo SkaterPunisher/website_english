@@ -3,7 +3,7 @@
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { i18n } from '@/i18n-config';
-import styles from './LocalSwitcher.module.scss';
+import styles from './LocaleSwitcher.module.scss';
 
 export default function LocaleSwitcher() {
   const pathName = usePathname();
