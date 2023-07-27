@@ -1,7 +1,7 @@
-import { mainLayout } from '@/types/mainLayout';
+import { MainLayoutTypes } from '@/types/MainLayout';
 import { ReactNode } from 'react';
 
 export type MainProviderProps = {
   children: ReactNode;
-  dictionary: mainLayout;
+  dictionary: MainLayoutTypes;
 };

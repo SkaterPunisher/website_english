@@ -1,4 +1,4 @@
-import { mainLayout } from '@/types/mainLayout';
+import { MainLayoutTypes } from '@/types/MainLayout';
 import { DetailedHTMLProps, HTMLAttributes } from 'react';
 
 export type MainLayoutProps = DetailedHTMLProps<
@@ -6,5 +6,5 @@ export type MainLayoutProps = DetailedHTMLProps<
   HTMLDivElement
 > & {
   children: React.ReactNode;
-  dictionary: mainLayout;
+  dictionary: MainLayoutTypes;
 };

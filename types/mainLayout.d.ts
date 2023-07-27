@@ -1,4 +1,4 @@
-export interface mainLayout {
+export interface MainLayoutTypes {
   Header: {
     Header: string;
     Theme: {
@@ -9,8 +9,17 @@ export interface mainLayout {
   Footer: string;
 }
 
-export interface headerTypes extends Pick<mainLayout, 'Header'> {}
+export interface HeaderTypes {
+  Header: string;
+  Theme: {
+    Light: string;
+    Dark: string;
+  };
+}
 
-export interface themeTypes extends Pick<mainLayout, 'Theme'> {}
+export interface ThemeTypes {
+  Light: string;
+  Dark: string;
+}
 
-export interface footerTypes extends Pick<mainLayout, 'Footer'> {}
+export type FooterTypes = string;

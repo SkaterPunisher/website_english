@@ -1,5 +1,5 @@
-import { themeTypes } from '@/types/mainLayout';
+import { ThemeTypes } from '@/types/MainLayout';
 
 export type ThemeSwitcherProps = {
-  dictionary: themeTypes;
+  dictionary: ThemeTypes;
 };

@@ -1,14 +1,9 @@
 import { useEffect, useState } from 'react';
 
 export const useThemeDetector = () => {
-  const localStorageTheme = localStorage.getItem('theme') as
-    | 'light'
-    | 'dark'
-    | undefined;
+  let localStorageTheme: string | null = null;
 
-  const [theme, setTheme] = useState<'light' | 'dark' | undefined>(
-    localStorageTheme
-  );
+  const [theme, setTheme] = useState<string | null>(localStorageTheme);
   const getCurrentTheme = () =>
     window.matchMedia('(prefers-color-scheme: dark)').matches;
 
@@ -19,6 +14,8 @@ export const useThemeDetector = () => {
   };
 
   useEffect(() => {
+    localStorageTheme = localStorage.getItem('theme');
+
     const isDarkThemeBrowser = getCurrentTheme();
 
     if (localStorageTheme === null) {
