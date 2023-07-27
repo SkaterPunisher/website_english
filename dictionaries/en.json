@@ -9,8 +9,5 @@
       "Theme": { "Light": "Light", "Dark": "Dark" }
     },
     "Footer": "Footer"
-  },
-  "server-component": {
-    "welcome": "Welcome"
   }
 }

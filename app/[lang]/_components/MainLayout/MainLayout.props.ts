@@ -1,3 +1,4 @@
+import { mainLayout } from '@/types/mainLayout';
 import { DetailedHTMLProps, HTMLAttributes } from 'react';
 
 export type MainLayoutProps = DetailedHTMLProps<
@@ -5,14 +6,5 @@ export type MainLayoutProps = DetailedHTMLProps<
   HTMLDivElement
 > & {
   children: React.ReactNode;
-  dictionary: {
-    Header: {
-      Header: string;
-      Theme: {
-        Light: string;
-        Dark: string;
-      };
-    };
-    Footer: string;
-  };
+  dictionary: mainLayout;
 };
