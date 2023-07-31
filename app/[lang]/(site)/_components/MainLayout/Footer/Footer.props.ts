@@ -5,5 +5,5 @@ export type FooterProps = DetailedHTMLProps<
   HTMLAttributes<HTMLDivElement>,
   HTMLDivElement
 > & {
-  dictionary: FooterTypes;
+  dictionary: string;
 };
