@@ -1,10 +1,10 @@
 import { clientConfig } from '@/config/client-config';
 import { Locale } from '@/i18n-config';
-import { Page } from '@/types/Page';
-import { Project } from '@/types/Project';
+import { PageTypes } from '@/types/PageTypes';
+import { ProjectTypes } from '@/types/ProjectTypes';
 import { createClient, groq } from 'next-sanity';
 
-export const getProjects = async (): Promise<Project[]> =>
+export const getProjects = async (): Promise<ProjectTypes[]> =>
   createClient(clientConfig).fetch(
     groq`*[_type == "project"]{
         _id,
@@ -18,7 +18,7 @@ export const getProjects = async (): Promise<Project[]> =>
     }`
   );
 
-export const getProject = async (slug: string): Promise<Project> =>
+export const getProject = async (slug: string): Promise<ProjectTypes> =>
   createClient(clientConfig).fetch(
     groq`*[_type == "project" && slug.current == $slug][0] {
       _id,
@@ -33,7 +33,7 @@ export const getProject = async (slug: string): Promise<Project> =>
     { slug }
   );
 
-export const getPages = async (): Promise<Page[]> =>
+export const getPages = async (): Promise<PageTypes[]> =>
   createClient(clientConfig).fetch(
     groq`*[_type == "page"]{
         _id,
@@ -43,7 +43,7 @@ export const getPages = async (): Promise<Page[]> =>
     }`
   );
 
-export const getPage = async (slug: string): Promise<Page> =>
+export const getPage = async (slug: string): Promise<PageTypes> =>
   createClient(clientConfig).fetch(
     groq`*[_type == "page" && slug.current == $slug][0] {
       _id,

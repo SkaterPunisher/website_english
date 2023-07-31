@@ -1,4 +1,4 @@
-import { FooterTypes } from '@/types/MainLayout';
+import { FooterTypes } from '@/types/MainLayoutTypes';
 import { DetailedHTMLProps, HTMLAttributes } from 'react';
 
 export type FooterProps = DetailedHTMLProps<
