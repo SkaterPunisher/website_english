@@ -19,7 +19,7 @@ const MainLayout = ({ children, dictionary, ...props }: MainLayoutProps) => {
   // __________________________________________________________
 
   return (
-    <div {...props}>
+    <div className='max-w-3xl mx-auto py-10' {...props}>
       <Header dictionary={dictionary.Header} />
       <div>{children}</div>
       <Footer dictionary={dictionary.Footer} />
