@@ -9,6 +9,8 @@ import TestProject from './_components/TestProject';
 import TestVideo from './_components/TestVideo';
 import { getTests } from '@/sanity/schemas/test-schema/test-schema-utils';
 import Image from 'next/image';
+import { getArticles } from '@/sanity/schemas/blog-schema/singleArticle-schema-utils';
+import { PortableText } from '@portabletext/react';
 
 export async function generateMetadata({
   params: { lang },
@@ -31,26 +33,42 @@ export default async function IndexPage({
   // const posts = await getPosts(`${lang === 'ru' ? 'ru' : 'en'}`);
   const projects = await getProjects();
   const tests = await getTests();
-  // console.log(tests);
+  const articles = await getArticles();
+  console.log(articles);
 
   return (
-    <div>
+    <section>
       <p>Current locale: {lang}</p>
       {/* <TestPosts posts={posts} /> */}
       <TestProject projects={projects} />
       <TestAudio />
       {/* <TestVideo /> */}
-      <div>
+
+      <div className='border-y-2  border-gray-500 my-4 p-2'>
         {tests[0].questions.map((q) => (
           <>
             <Image src={tests[0].image} width={500} height={500} alt='' />
-            <div>{q.type}</div>
-            <div>{q.description}</div>
-            <div>{q.task}</div>
-            <div>{q.explanation}</div>
+            <div key={q._id}>{q.type}</div>
+            <div key={q._id}>{q.description}</div>
+            <div key={q._id}>{q.task}</div>
+            <div key={q._id}>{q.explanation}</div>
           </>
         ))}
       </div>
-    </div>
+
+      <div className='border-y-2  border-gray-500 my-4 p-2'>
+        {/* <PortableText value={articles[0].content} /> */}
+        {articles[0].content.map((p) => {
+          console.log(p.children[0].text);
+          if (p.children[0].text.includes('http')) {
+            return (
+              <Image src={p.children[0].text} width={500} height={500} alt='' />
+            );
+          } else {
+            return <PortableText value={p} />;
+          }
+        })}
+      </div>
+    </section>
   );
 }
