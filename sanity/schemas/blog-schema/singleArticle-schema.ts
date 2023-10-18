@@ -1,3 +1,5 @@
+import test from './singleArticleTypes';
+
 export const singleArticle = {
   name: 'singleArticle',
   title: 'Статьи',
@@ -34,8 +36,10 @@ export const singleArticle = {
     {
       name: 'author',
       title: 'Автор статьи',
-      type: 'string',
+      type: 'reference',
+      to: [{ type: 'teacher' }],
     },
+
     {
       name: 'original',
       title: 'Ссылка на оригинал',

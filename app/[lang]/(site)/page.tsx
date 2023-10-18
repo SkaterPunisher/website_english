@@ -11,6 +11,7 @@ import { getTests } from '@/sanity/schemas/test-schema/test-schema-utils';
 import Image from 'next/image';
 import { getArticles } from '@/sanity/schemas/blog-schema/singleArticle-schema-utils';
 import { PortableText } from '@portabletext/react';
+import { ReactNode } from 'react';
 
 export async function generateMetadata({
   params: { lang },
@@ -34,7 +35,7 @@ export default async function IndexPage({
   const projects = await getProjects();
   const tests = await getTests();
   const articles = await getArticles();
-  console.log(articles);
+  console.log(tests[0]);
 
   return (
     <section>
@@ -59,7 +60,7 @@ export default async function IndexPage({
       <div className='border-y-2  border-gray-500 my-4 p-2'>
         {/* <PortableText value={articles[0].content} /> */}
         {articles[0].content.map((p) => {
-          console.log(p.children[0].text);
+          // console.log(p.children[0].text);
           if (p.children[0].text.includes('http')) {
             return (
               <Image src={p.children[0].text} width={500} height={500} alt='' />

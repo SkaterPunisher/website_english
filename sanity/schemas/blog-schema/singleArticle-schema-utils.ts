@@ -15,9 +15,11 @@ export const getArticles = async (): Promise<Article[]> =>
       author,
       original,
       tags,
-      content
+      content,
     }`
   );
+
+// author2->,
 
 // export const getProject = async (slug: string): Promise<ProjectTypes> =>
 //   createClient(clientConfig).fetch(

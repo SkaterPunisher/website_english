@@ -11,5 +11,3 @@ export type Article = {
   tags: string[];
   content: PortableTextBlock[];
 };
-
-export default test;

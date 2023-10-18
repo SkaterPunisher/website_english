@@ -1,4 +1,5 @@
 import { PortableTextBlock } from 'sanity';
+import { TestTags } from '../testTags-schema/teacherTagsTypes';
 
 export type singleAnswer = {
   _id: string;
