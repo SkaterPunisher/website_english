@@ -1,6 +1,6 @@
-import { clientConfig } from '@/config/client-config';
-import { createClient, groq } from 'next-sanity';
-import { Teacher } from './teacherTypes';
+import { clientConfig } from '@/config/client-config'
+import { createClient, groq } from 'next-sanity'
+import { Teacher } from './teacherTypes'
 
 export const getTeachers = async (): Promise<Teacher[]> =>
   createClient(clientConfig).fetch(
@@ -13,6 +13,7 @@ export const getTeachers = async (): Promise<Teacher[]> =>
       slug,
       video,
       image,
+      imageSmall,
       price,
       certificate,
       about,
@@ -22,5 +23,5 @@ export const getTeachers = async (): Promise<Teacher[]> =>
       level,
       interests,
       teaches
-    }`
-  );
+    }`,
+  )

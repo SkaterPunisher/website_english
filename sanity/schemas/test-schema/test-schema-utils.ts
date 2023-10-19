@@ -1,6 +1,6 @@
-import { clientConfig } from '@/config/client-config';
-import { createClient, groq } from 'next-sanity';
-import { Test } from './testTypes';
+import { clientConfig } from '@/config/client-config'
+import { createClient, groq } from 'next-sanity'
+import { Test } from './testTypes'
 
 export const getTests = async (): Promise<Test[]> =>
   createClient(clientConfig).fetch(
@@ -16,5 +16,5 @@ export const getTests = async (): Promise<Test[]> =>
       description,
       url,
       questions
-    }`
-  );
+    }`,
+  )

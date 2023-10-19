@@ -14,7 +14,7 @@ export const singleAnswer = {
       type: 'string',
     },
   ],
-};
+}
 
 export const singleQuestion = {
   name: 'question',
@@ -60,7 +60,7 @@ export const singleQuestion = {
       of: [{ type: 'answer' }],
     },
   ],
-};
+}
 
 const test = {
   name: 'test',
@@ -80,11 +80,12 @@ const test = {
     },
     {
       name: 'image',
-      title: 'Главное изображение (превью)',
+      title: 'Главное изображение (836px|px 600max 0.1MB)',
       type: 'image',
       options: { hotspot: true },
       fields: [{ name: 'alt', title: 'Alt', type: 'string' }],
     },
+
     {
       name: 'description',
       title: 'Описание теста',
@@ -97,6 +98,6 @@ const test = {
       of: [{ type: 'question' }],
     },
   ],
-};
+}
 
-export default test;
+export default test

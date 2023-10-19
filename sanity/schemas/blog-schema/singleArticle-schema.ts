@@ -35,7 +35,7 @@ export const singleArticle = {
     },
     {
       name: 'imageSmall',
-      title: 'Превью (528px|364px max 0.1MB)',
+      title: 'Превью (836px|px 600max 0.1MB)',
       type: 'image',
       options: { hotspot: true },
       fields: [{ name: 'alt', title: 'Alt', type: 'string' }],

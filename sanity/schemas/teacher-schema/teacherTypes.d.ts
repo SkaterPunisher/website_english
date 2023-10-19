@@ -10,6 +10,7 @@ export type Teacher = {
   slug: string
   video: string
   image: string
+  imageSmall: string
   price: number
   certificate: string[]
   about: string

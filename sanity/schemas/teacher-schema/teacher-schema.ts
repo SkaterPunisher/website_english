@@ -31,7 +31,14 @@ export const teacher = {
     },
     {
       name: 'image',
-      title: 'Главное изображение (превью)',
+      title: 'Главное изображение (1012px|1550px max 0.3MB)',
+      type: 'image',
+      options: { hotspot: true },
+      fields: [{ name: 'alt', title: 'Alt', type: 'string' }],
+    },
+    {
+      name: 'imageSmall',
+      title: 'Превью (200px|200px max 0.1MB)',
       type: 'image',
       options: { hotspot: true },
       fields: [{ name: 'alt', title: 'Alt', type: 'string' }],
