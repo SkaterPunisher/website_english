@@ -1,18 +1,18 @@
-import { Metadata } from 'next';
-import { Locale } from '@/i18n-config';
-import { getDictionary } from '@/get-dictionary';
-import { getPosts } from '@/sanity/schemas/post-schema/post-schema-utils';
-import { getProjects } from '@/sanity/schemas/project-schema/project-schema-utils';
-import TestAudio from './_components/TestAudio';
-import TestPosts from './_components/TestPosts';
-import TestProject from './_components/TestProject';
-import TestVideo from './_components/TestVideo';
-import { getTests } from '@/sanity/schemas/test-schema/test-schema-utils';
-import Image from 'next/image';
-import { getArticles } from '@/sanity/schemas/blog-schema/singleArticle-schema-utils';
-import { PortableText } from '@portabletext/react';
-import { ReactNode } from 'react';
-import { getTeachers } from '@/sanity/schemas/teacher-schema/teacher-schema-utils';
+import { Metadata } from "next";
+import { Locale } from "@/i18n-config";
+import { getDictionary } from "@/get-dictionary";
+import { getPosts } from "@/sanity/schemas/post-schema/post-schema-utils";
+import { getProjects } from "@/sanity/schemas/project-schema/project-schema-utils";
+import TestAudio from "./_components/TestAudio";
+import TestPosts from "./_components/TestPosts";
+import TestProject from "./_components/TestProject";
+import TestVideo from "./_components/TestVideo";
+import { getTests } from "@/sanity/schemas/test-schema/test-schema-utils";
+import Image from "next/image";
+import { getArticles } from "@/sanity/schemas/blog-schema/singleArticle-schema-utils";
+import { PortableText } from "@portabletext/react";
+import { ReactNode } from "react";
+import { getTeachers } from "@/sanity/schemas/teacher-schema/teacher-schema-utils";
 
 export async function generateMetadata({
   params: { lang },
@@ -60,13 +60,13 @@ export default async function IndexPage({
         ))}
       </div> */}
 
-      <div className='border-y-2  border-gray-500 my-4 p-2'>
+      <div className="border-y-2  border-gray-500 my-4 p-2">
         {/* <PortableText value={articles[0].content} /> */}
         {articles[0].content.map((p) => {
           // console.log(p.children[0].text);
-          if (p.children[0].text.includes('http')) {
+          if (p.children[0].text.includes("http")) {
             return (
-              <Image src={p.children[0].text} width={500} height={500} alt='' />
+              <Image src={p.children[0].text} width={500} height={500} alt="" />
             );
           } else {
             return <PortableText value={p} />;

@@ -71,7 +71,7 @@ export const teacher = {
       name: 'level',
       title: 'Уровни',
       type: 'array',
-      of: [{ type: 'string' }],
+      of: [{ type: 'reference', to: [{ type: 'levelEnglish' }] }],
     },
     {
       name: 'interests',
@@ -79,12 +79,6 @@ export const teacher = {
       type: 'array',
       of: [{ type: 'string' }],
     },
-    // {
-    //   name: 'teaches',
-    //   title: 'Преподает',
-    //   type: 'array',
-    //   of: [{ type: 'string' }],
-    // },
     {
       name: 'teaches',
       title: 'Преподает',
@@ -92,6 +86,6 @@ export const teacher = {
       of: [{ type: 'reference', to: [{ type: 'teacherTags' }] }],
     },
   ],
-};
+}
 
-export default teacher;
+export default teacher

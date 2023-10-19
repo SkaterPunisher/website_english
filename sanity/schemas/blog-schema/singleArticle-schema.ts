@@ -1,4 +1,4 @@
-import test from './singleArticleTypes';
+import test from './singleArticleTypes'
 
 export const singleArticle = {
   name: 'singleArticle',
@@ -49,7 +49,7 @@ export const singleArticle = {
       name: 'tags',
       title: 'Теги статьи',
       type: 'array',
-      of: [{ type: 'string' }],
+      of: [{ type: 'reference', to: [{ type: 'blogTags' }] }],
     },
     {
       name: 'content',
@@ -58,6 +58,6 @@ export const singleArticle = {
       of: [{ type: 'block' }],
     },
   ],
-};
+}
 
-export default singleArticle;
+export default singleArticle
