@@ -3,12 +3,13 @@ import { createClient, groq } from 'next-sanity'
 import { Article } from './singleArticleTypes'
 import { Locale } from '@/i18n-config'
 
-export const getArticles = async (): Promise<Article[]> =>
+export const getArticles = async (lang: Locale): Promise<Article[]> =>
   createClient(clientConfig).fetch(
     groq`*[_type == "singleArticle"]{
       _id,
       _createdAt,
-      name,
+      "name": name[$lang],
+      "description": description[$lang],
       "slug": slug.current,
       "image": {
         "url": image.asset->url,
@@ -20,20 +21,21 @@ export const getArticles = async (): Promise<Article[]> =>
       },
       date,
       timeForRead,
-      "author": author->{firstname, lastname},
+      "author": author->{"firstname": firstname[$lang], "lastname": lastname[$lang]},
       original,
       "tags": tags[]->{tag},
       content,
     }`,
+    { lang },
   )
 
-export const getSingleArticle = async (slug: string): Promise<Article> =>
+export const getArticle = async (slug: string, lang: Locale): Promise<Article> =>
   createClient(clientConfig).fetch(
     groq`*[_type == "singleArticle" && slug.current == $slug][0] {
       _id,
       _createdAt,
-      name,
-      description,
+      "name": name[$lang],
+      "description": description[$lang],
       "slug": slug.current,
       "image": {
         "url": image.asset->url,
@@ -45,10 +47,10 @@ export const getSingleArticle = async (slug: string): Promise<Article> =>
       },
       date,
       timeForRead,
-      "author": author->{firstname, lastname},
+      "author": author->{"firstname": firstname[$lang], "lastname": lastname[$lang]},
       original,
       "tags": tags[]->{tag},
       content,
     }`,
-    { slug },
+    { slug, lang },
   )

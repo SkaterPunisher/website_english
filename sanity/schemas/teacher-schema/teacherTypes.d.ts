@@ -1,5 +1,5 @@
 import { LevelEnglish } from '../levelEnglish-schema/levelEnglishTypes'
-import { TeacherTags } from '../teacherTags-schema/teacherTagsTypes'
+import { TeacherTags } from './teacherTags-schema/teacherTagsTypes'
 
 export type Teacher = {
   _id: string
@@ -9,13 +9,13 @@ export type Teacher = {
   patronymic: string
   slug: string
   video: string
-  image: string
-  imageSmall: string
+  image: Images
+  imageSmall: Images
   price: number
   certificate: string[]
   about: string
   abroad: string
-  startEducation: Date
+  startEducation: string
   audio: string
   level: LevelEnglish[]
   interests: string[]

@@ -1,4 +1,4 @@
-import { BlogTags } from '../blogTags-schema/blogTagsTypes'
+import { BlogTags } from './articleTags-schema/blogTagsTypes'
 import { Teacher } from '../teacher-schema/teacherTypes'
 
 export type Images = {

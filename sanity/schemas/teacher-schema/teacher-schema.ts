@@ -6,12 +6,12 @@ export const teacher = {
     {
       name: 'firstname',
       title: 'Имя',
-      type: 'string',
+      type: 'locale',
     },
     {
       name: 'lastname',
       title: 'Фамилия',
-      type: 'string',
+      type: 'locale',
     },
     {
       name: 'patronymic',

@@ -1,11 +1,16 @@
-import { getSingleArticle } from '@/sanity/schemas/blog-schema/singleArticle-schema-utils'
+import { getArticle } from '@/sanity/schemas/article-schema/singleArticle-schema-utils'
 import type { Metadata } from 'next'
 import { PortableText } from '@portabletext/react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { Locale } from '@/i18n-config'
 
-export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
-  const article = await getSingleArticle(params.id)
+export async function generateMetadata({
+  params: { id, lang },
+}: {
+  params: { id: string; lang: Locale }
+}): Promise<Metadata> {
+  const article = await getArticle(id, lang)
 
   return {
     title: article.name,
@@ -13,10 +18,12 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
   }
 }
 
-export default async function SingleArticle({ params }: { params: { id: string } }) {
-  const singleArticle = await getSingleArticle(params.id)
-
-  console.log(singleArticle)
+export default async function ArticlePage({
+  params: { id, lang },
+}: {
+  params: { id: string; lang: Locale }
+}) {
+  const singleArticle = await getArticle(id, lang)
 
   return (
     <main>

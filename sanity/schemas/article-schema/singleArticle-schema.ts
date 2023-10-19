@@ -8,12 +8,12 @@ export const singleArticle = {
     {
       name: 'name',
       title: 'Заголовок',
-      type: 'string',
+      type: 'locale',
     },
     {
       name: 'description',
       title: 'Описание (кратко для поисковиков)',
-      type: 'string',
+      type: 'locale',
     },
     {
       name: 'slug',
