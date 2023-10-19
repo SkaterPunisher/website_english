@@ -11,6 +11,11 @@ export const singleArticle = {
       type: 'string',
     },
     {
+      name: 'description',
+      title: 'Описание (кратко для поисковиков)',
+      type: 'string',
+    },
+    {
       name: 'slug',
       title: 'Уникальный ключ',
       type: 'slug',

@@ -1,15 +1,22 @@
 import { BlogTags } from '../blogTags-schema/blogTagsTypes'
+import { Teacher } from '../teacher-schema/teacherTypes'
+
+export type Images = {
+  url: string
+  alt: string
+}
 
 export type Article = {
   _id: string
   _createdAt: Date
   name: string
+  description: string
   slug: sting
-  date: Date
+  date: string
   timeForRead: number
-  image: string
-  imageSmall: string
-  author: string
+  image: Images
+  imageSmall: Images
+  author: Teacher
   original: string
   tags: BlogTags[]
   content: PortableTextBlock[]

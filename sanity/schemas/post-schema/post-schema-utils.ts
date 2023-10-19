@@ -1,8 +1,8 @@
-import { clientConfig } from '@/config/client-config';
-import { ProjectTypes } from '@/sanity/schemas/project-schema/projectTypes';
-import { createClient, groq } from 'next-sanity';
-import { PostTypes } from './PostTypes';
-import { Locale } from '@/i18n-config';
+import { clientConfig } from '@/config/client-config'
+import { ProjectTypes } from '@/sanity/schemas/project-schema/projectTypes'
+import { createClient, groq } from 'next-sanity'
+import { PostTypes } from './PostTypes'
+import { Locale } from '@/i18n-config'
 
 export const getPosts = async (lang: Locale): Promise<PostTypes[]> =>
   createClient(clientConfig).fetch(
@@ -15,8 +15,8 @@ export const getPosts = async (lang: Locale): Promise<PostTypes[]> =>
         url,
         "description": description[$lang],
     }`,
-    { lang }
-  );
+    { lang },
+  )
 
 export const getPost = async (slug: string, lang: Locale): Promise<PostTypes> =>
   createClient(clientConfig).fetch(
@@ -29,5 +29,5 @@ export const getPost = async (slug: string, lang: Locale): Promise<PostTypes> =>
       url,
       "description": description[$lang],
   }`,
-    { slug, lang }
-  );
+    { slug, lang },
+  )
