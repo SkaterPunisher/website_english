@@ -1,6 +1,6 @@
 export const levelEnglish = {
   name: 'levelEnglish',
-  title: 'Уровни английского',
+  title: 'Уровни английского (ни удалять, ни добавлять)',
   type: 'document',
   fields: [
     {

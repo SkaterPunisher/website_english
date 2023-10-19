@@ -1,6 +1,6 @@
 export const testTags = {
   name: 'testTags',
-  title: 'Теги для вопроса',
+  title: 'Теги для вопроса (ни удалять, ни добавлять)',
   type: 'document',
   fields: [
     {
@@ -9,6 +9,6 @@ export const testTags = {
       type: 'string',
     },
   ],
-};
+}
 
-export default testTags;
+export default testTags
