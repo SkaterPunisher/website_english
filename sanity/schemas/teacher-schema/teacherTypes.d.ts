@@ -17,5 +17,5 @@ export type Teacher = {
   audio: string;
   level: string[];
   interests: string[];
-  teaches: TeacherTags[];
+  teaches: string[];
 };

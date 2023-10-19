@@ -52,12 +52,6 @@ export const teacher = {
       title: 'О себе',
       type: 'string',
     },
-    // {
-    //   name: 'specialization',
-    //   title: 'Специализация',
-    //   type: 'array',
-    //   of: [{ type: 'string' }],
-    // },
     {
       name: 'abroad',
       title: 'Опыт за границей',
@@ -85,11 +79,17 @@ export const teacher = {
       type: 'array',
       of: [{ type: 'string' }],
     },
+    // {
+    //   name: 'teaches',
+    //   title: 'Преподает',
+    //   type: 'array',
+    //   of: [{ type: 'string' }],
+    // },
     {
       name: 'teaches',
       title: 'Преподает',
       type: 'array',
-      of: [{ type: 'string' }],
+      of: [{ type: 'reference', to: [{ type: 'teacherTags' }] }],
     },
   ],
 };

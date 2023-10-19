@@ -24,7 +24,8 @@ export const singleQuestion = {
     {
       name: 'type',
       title: 'Тип',
-      type: 'string',
+      type: 'reference',
+      to: [{ type: 'testTags' }],
     },
     {
       name: 'description',
@@ -88,11 +89,6 @@ const test = {
       name: 'description',
       title: 'Описание теста',
       type: 'string',
-    },
-    {
-      name: 'url',
-      title: 'Уникальный URL',
-      type: 'url',
     },
     {
       name: 'questions',

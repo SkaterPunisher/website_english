@@ -11,7 +11,7 @@ export type singleAnswer = {
 export type singleQuestion = {
   _id: string;
   _createdAt: Date;
-  type: string;
+  type: TestTags;
   description: string;
   task: string;
   rightAnswer: string[];
@@ -27,7 +27,6 @@ export type Test = {
   slug: sting;
   image: string;
   description: string;
-  url: string | null;
   questions: singleQuestion[];
 };
 

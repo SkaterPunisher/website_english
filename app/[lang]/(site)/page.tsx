@@ -12,6 +12,7 @@ import Image from 'next/image';
 import { getArticles } from '@/sanity/schemas/blog-schema/singleArticle-schema-utils';
 import { PortableText } from '@portabletext/react';
 import { ReactNode } from 'react';
+import { getTeachers } from '@/sanity/schemas/teacher-schema/teacher-schema-utils';
 
 export async function generateMetadata({
   params: { lang },
@@ -35,7 +36,9 @@ export default async function IndexPage({
   const projects = await getProjects();
   const tests = await getTests();
   const articles = await getArticles();
-  console.log(tests[0]);
+  const teachers = await getTeachers();
+  // console.log(tests[0].questions[0]);
+  // console.log(teachers[0].teaches);
 
   return (
     <section>
@@ -45,7 +48,7 @@ export default async function IndexPage({
       <TestAudio />
       {/* <TestVideo /> */}
 
-      <div className='border-y-2  border-gray-500 my-4 p-2'>
+      {/* <div className='border-y-2  border-gray-500 my-4 p-2'>
         {tests[0].questions.map((q) => (
           <>
             <Image src={tests[0].image} width={500} height={500} alt='' />
@@ -55,7 +58,7 @@ export default async function IndexPage({
             <div key={q._id}>{q.explanation}</div>
           </>
         ))}
-      </div>
+      </div> */}
 
       <div className='border-y-2  border-gray-500 my-4 p-2'>
         {/* <PortableText value={articles[0].content} /> */}

@@ -9,29 +9,15 @@ export const getArticles = async (): Promise<Article[]> =>
       _createdAt,
       name,
       "slug": slug.current,
-      "image": image.asset->url,
+      "image": {
+        "url": image.asset->url,
+        "alt": image.alt
+      },
       date,
       timeForRead,
-      author,
+      "author": author->{firstname, lastname},
       original,
       tags,
       content,
     }`
   );
-
-// author2->,
-
-// export const getProject = async (slug: string): Promise<ProjectTypes> =>
-//   createClient(clientConfig).fetch(
-//     groq`*[_type == "project" && slug.current == $slug][0] {
-//       _id,
-//       _createdAt,
-//       name,
-//       "slug": slug.current,
-//       "image": image.asset->url,
-//       url,
-//       content,
-//       category
-//   }`,
-//     { slug }
-//   );
