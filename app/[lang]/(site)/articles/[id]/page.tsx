@@ -28,21 +28,25 @@ export default async function SingleArticle({ params }: { params: { id: string }
         <p>Время на прочтение: {singleArticle.timeForRead}</p>
         <div className="flex">
           Главное изображение
-          <Image
-            src={singleArticle.image.url}
-            width={200}
-            height={200}
-            alt={singleArticle.image.alt}
-          />
+          {singleArticle.image.url ?? (
+            <Image
+              src={singleArticle.image.url}
+              width={200}
+              height={200}
+              alt={singleArticle.image.alt}
+            />
+          )}
         </div>
         <div className="flex">
           Превью изображение
-          <Image
-            src={singleArticle.imageSmall.url}
-            width={200}
-            height={200}
-            alt={singleArticle.imageSmall.alt}
-          />
+          {singleArticle.imageSmall.url ?? (
+            <Image
+              src={singleArticle.imageSmall.url}
+              width={200}
+              height={200}
+              alt={singleArticle.imageSmall.alt}
+            />
+          )}
         </div>
         <p>
           Автор: {singleArticle.author.firstname} {singleArticle.author.lastname}
