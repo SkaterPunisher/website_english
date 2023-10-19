@@ -12,7 +12,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function CreateAwardPage() {
   const articles = await getArticles()
-  console.log(articles)
+  // console.log(articles)
 
   return (
     <div className="p-6">

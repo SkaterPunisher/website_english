@@ -16,6 +16,8 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
 export default async function SingleArticle({ params }: { params: { id: string } }) {
   const singleArticle = await getSingleArticle(params.id)
 
+  console.log(singleArticle)
+
   return (
     <main>
       <Link className="text-blue-500" href="/articles">
@@ -28,7 +30,7 @@ export default async function SingleArticle({ params }: { params: { id: string }
         <p>Время на прочтение: {singleArticle.timeForRead}</p>
         <div className="flex">
           Главное изображение
-          {singleArticle.image.url ?? (
+          {singleArticle.image.url && (
             <Image
               src={singleArticle.image.url}
               width={200}
@@ -39,7 +41,7 @@ export default async function SingleArticle({ params }: { params: { id: string }
         </div>
         <div className="flex">
           Превью изображение
-          {singleArticle.imageSmall.url ?? (
+          {singleArticle.imageSmall.url && (
             <Image
               src={singleArticle.imageSmall.url}
               width={200}

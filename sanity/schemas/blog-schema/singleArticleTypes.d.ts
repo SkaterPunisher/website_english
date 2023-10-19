@@ -2,7 +2,7 @@ import { BlogTags } from '../blogTags-schema/blogTagsTypes'
 import { Teacher } from '../teacher-schema/teacherTypes'
 
 export type Images = {
-  url: string
+  url: string | null
   alt: string
 }
 
