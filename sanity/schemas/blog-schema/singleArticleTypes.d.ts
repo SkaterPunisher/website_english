@@ -8,6 +8,7 @@ export type Article = {
   date: Date
   timeForRead: number
   image: string
+  imageSmall: string
   author: string
   original: string
   tags: BlogTags[]

@@ -28,7 +28,14 @@ export const singleArticle = {
     },
     {
       name: 'image',
-      title: 'Главное изображение (превью)',
+      title: 'Главное изображение (1290px|550px max 0.3MB)',
+      type: 'image',
+      options: { hotspot: true },
+      fields: [{ name: 'alt', title: 'Alt', type: 'string' }],
+    },
+    {
+      name: 'imageSmall',
+      title: 'Превью (528px|364px max 0.1MB)',
       type: 'image',
       options: { hotspot: true },
       fields: [{ name: 'alt', title: 'Alt', type: 'string' }],
@@ -53,7 +60,7 @@ export const singleArticle = {
     },
     {
       name: 'content',
-      title: 'Статья',
+      title: 'Статья (1536px|646px max 0.2MB)',
       type: 'array',
       of: [{ type: 'block' }],
     },
