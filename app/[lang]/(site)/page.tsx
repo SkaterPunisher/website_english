@@ -2,8 +2,6 @@ import { Metadata } from 'next'
 import { Locale } from '@/i18n-config'
 import { getDictionary } from '@/get-dictionary'
 import TestAudio from './_components/TestAudio'
-import TestPosts from './_components/TestPosts'
-import TestProject from './_components/TestProject'
 import TestVideo from './_components/TestVideo'
 import { getTests } from '@/sanity/schemas/test-schema/test-schema-utils'
 import { getTeachers } from '@/sanity/schemas/teacher-schema/teacher-schema-utils'
@@ -26,14 +24,10 @@ export default async function IndexPage({ params: { lang } }: { params: { lang: 
   const tests = await getTests()
 
   // const teachers = await getTeachers()
-  // console.log(tests[0].questions[0]);
-  // console.log(teachers[0].teaches);
 
   return (
     <section>
       <p>Current locale: {lang}</p>
-      {/* <TestPosts posts={posts} /> */}
-      {/* <TestProject projects={projects} /> */}
       <TestAudio />
       {/* <TestVideo /> */}
 

@@ -23,7 +23,6 @@ export default async function TeacherPage({
   params: { id: string; lang: Locale }
 }) {
   const singleTeacher = await getTeacher(id, lang)
-  console.log(singleTeacher)
 
   return (
     <main>
