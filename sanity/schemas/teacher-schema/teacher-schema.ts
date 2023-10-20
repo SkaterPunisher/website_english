@@ -22,7 +22,7 @@ export const teacher = {
       name: 'slug',
       title: 'Уникальный ключ',
       type: 'slug',
-      options: { source: 'lastname' },
+      options: { source: 'lastname.ru' },
     },
     {
       name: 'video',

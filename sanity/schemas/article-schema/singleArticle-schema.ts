@@ -19,7 +19,7 @@ export const singleArticle = {
       name: 'slug',
       title: 'Уникальный ключ',
       type: 'slug',
-      options: { source: 'name' },
+      options: { source: 'name.ru' },
     },
     {
       name: 'date',
