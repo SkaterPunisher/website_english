@@ -4,10 +4,7 @@ import { getDictionary } from '@/get-dictionary'
 import TestAudio from './_components/TestAudio'
 import TestVideo from './_components/TestVideo'
 import { getTests } from '@/sanity/schemas/test-schema/test-schema-utils'
-import { getTeachers } from '@/sanity/schemas/teacher-schema/teacher-schema-utils'
 import FAQ from '@/ui/FAQ/FAQ'
-import { getFaqs } from '@/sanity/schemas/faq-schema/faq-schema-utils'
-import FAQ2 from '@/ui/FAQ2/FAQ2'
 
 export async function generateMetadata({
   params: { lang },
@@ -23,11 +20,7 @@ export async function generateMetadata({
 }
 
 export default async function IndexPage({ params: { lang } }: { params: { lang: Locale } }) {
-  // const posts = await getPosts(`${lang === 'ru' ? 'ru' : 'en'}`);
   const tests = await getTests()
-  // const faq = await getFaqs('main', lang)
-
-  // const teachers = await getTeachers()
 
   return (
     <section>
@@ -35,10 +28,8 @@ export default async function IndexPage({ params: { lang } }: { params: { lang: 
       <TestAudio />
       {/* <FAQ lang={lang} faq={faq} /> */}
 
-      {/* @ts-expect-error Server Component */}
-      <FAQ2 lang={lang} pageName={'about'} />
+      <FAQ lang={lang} pageName={'about'} />
       {/* <TestVideo /> */}
-
       {/* <div className='border-y-2  border-gray-500 my-4 p-2'>
         {tests[0].questions.map((q) => (
           <>
