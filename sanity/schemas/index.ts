@@ -7,6 +7,7 @@ import faq, { singleFAQ } from './faq-schema/faq-schema'
 import levelEnglish from './levelEnglish-schema/levelEnglish-schema'
 import blogTags from './article-schema/articleTags-schema/blogTags-schema'
 import locale from './locale-schema/locale-scheme'
+import faqTags from './faq-schema/faqTags-schema/faqTags-schema'
 
 const schemas = [
   locale,
@@ -21,6 +22,7 @@ const schemas = [
   levelEnglish,
   faq,
   singleFAQ,
+  faqTags,
 ]
 
 export default schemas

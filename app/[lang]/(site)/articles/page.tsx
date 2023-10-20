@@ -2,6 +2,7 @@ import { Locale } from '@/i18n-config'
 import { getArticles } from '@/sanity/schemas/article-schema/singleArticle-schema-utils'
 import { Metadata } from 'next'
 import Link from 'next/link'
+// export const revalidate = 60 * 10 // Это нужно для ревалидации запросов (1 раз в 10 минут). Но уже сделал в groq запросе последним параметром
 
 const title = {
   ru: 'Статьи и советы для изучающих английский язык в Advance English',

@@ -24,7 +24,8 @@ export const faq = {
     {
       name: 'namePage',
       title: 'Для какой страницы',
-      type: 'string',
+      type: 'reference',
+      to: [{ type: 'faqTags' }],
     },
     {
       name: 'faqs',

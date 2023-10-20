@@ -8,5 +8,6 @@ export type singleFAQ = {
 export type FAQ = {
   _id: string
   _createdAt: Date
+  namePage: TestTags
   faqs: singleFAQ[]
 }

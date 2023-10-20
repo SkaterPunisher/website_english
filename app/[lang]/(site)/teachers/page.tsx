@@ -2,6 +2,7 @@ import { Locale } from '@/i18n-config'
 import { getTeachers } from '@/sanity/schemas/teacher-schema/teacher-schema-utils'
 import { Metadata } from 'next'
 import Link from 'next/link'
+// export const revalidate = 60 * 10 // Это нужно для ревалидации запросов (1 раз в 10 минут). Но уже сделал в groq запросе последним параметром
 
 const description = {
   ru: 'Репетиторы и преподаватели онлайн-школы английского языка Зыковой Оксаны | Сильные учителя | Скидки до 30% | Попробуйте бесплатно!',

@@ -32,7 +32,7 @@ export const getTeachers = async (lang: Locale): Promise<Teacher[]> =>
       "teaches": teaches[]->{name, _id},
     }`,
     { lang },
-    { next: { revalidate: 60 } },
+    { next: { revalidate: 60 * 10 } },
   )
 
 export const getTeacher = async (slug: string, lang: Locale): Promise<Teacher> =>
