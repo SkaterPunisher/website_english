@@ -68,6 +68,16 @@ const test = {
   type: 'document',
   fields: [
     {
+      name: 'metaTitle',
+      title: 'Мета заголовок',
+      type: 'string',
+    },
+    {
+      name: 'metaDescription',
+      title: 'Мета описание',
+      type: 'string',
+    },
+    {
       name: 'name',
       title: 'Название теста',
       type: 'string',
@@ -85,7 +95,6 @@ const test = {
       options: { hotspot: true },
       fields: [{ name: 'alt', title: 'Alt', type: 'string' }],
     },
-
     {
       name: 'description',
       title: 'Описание теста',

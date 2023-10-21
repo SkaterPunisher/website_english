@@ -20,6 +20,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   return {
     title: title[lang],
+
     description: description[lang],
   }
 }

@@ -9,6 +9,8 @@ export type Images = {
 export type Article = {
   _id: string
   _createdAt: Date
+  metaTitle: string
+  metaDescription: string
   name: string
   description: string
   slug: sting

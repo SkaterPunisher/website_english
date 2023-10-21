@@ -4,6 +4,8 @@ import { TeacherTags } from './teacherTags-schema/teacherTagsTypes'
 export type Teacher = {
   _id: string
   _createdAt: Date
+  metaTitle: string
+  metaDescription: string
   firstname: string
   lastname: string
   patronymic: string

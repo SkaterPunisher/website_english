@@ -29,7 +29,7 @@ export default async function IndexPage({ params: { lang } }: { params: { lang: 
       {/* <FAQ lang={lang} faq={faq} /> */}
 
       <FAQ lang={lang} pageName={'about'} />
-      {/* <TestVideo /> */}
+      <TestVideo />
       {/* <div className='border-y-2  border-gray-500 my-4 p-2'>
         {tests[0].questions.map((q) => (
           <>

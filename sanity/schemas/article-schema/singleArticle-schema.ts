@@ -6,6 +6,16 @@ export const singleArticle = {
   type: 'document',
   fields: [
     {
+      name: 'metaTitle',
+      title: 'Мета заголовок',
+      type: 'string',
+    },
+    {
+      name: 'metaDescription',
+      title: 'Мета описание',
+      type: 'string',
+    },
+    {
       name: 'name',
       title: 'Заголовок',
       type: 'locale',

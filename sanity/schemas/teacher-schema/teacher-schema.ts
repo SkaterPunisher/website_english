@@ -4,6 +4,16 @@ export const teacher = {
   type: 'document',
   fields: [
     {
+      name: 'metaTitle',
+      title: 'Мета заголовок',
+      type: 'string',
+    },
+    {
+      name: 'metaDescription',
+      title: 'Мета описание',
+      type: 'string',
+    },
+    {
       name: 'firstname',
       title: 'Имя',
       type: 'locale',

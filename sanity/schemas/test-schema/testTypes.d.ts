@@ -23,6 +23,8 @@ export type singleQuestion = {
 export type Test = {
   _id: string
   _createdAt: Date
+  metaTitle: string
+  metaDescription: string
   name: string
   slug: sting
   image: string
