@@ -96,11 +96,6 @@ const test = {
       fields: [{ name: 'alt', title: 'Alt', type: 'string' }],
     },
     {
-      name: 'description',
-      title: 'Описание теста',
-      type: 'string',
-    },
-    {
       name: 'questions',
       title: 'Вопросы',
       type: 'array',

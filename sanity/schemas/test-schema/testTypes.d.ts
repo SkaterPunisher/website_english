@@ -28,7 +28,6 @@ export type Test = {
   name: string
   slug: sting
   image: string
-  description: string
   questions: singleQuestion[]
 }
 

@@ -22,7 +22,7 @@ export const singleArticle = {
     },
     {
       name: 'description',
-      title: 'Описание (кратко для поисковиков)',
+      title: 'Описание (кратко для показа в списке)',
       type: 'locale',
     },
     {
