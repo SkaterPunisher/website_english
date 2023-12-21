@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import '@/styles/app.scss';
+
 * {
   box-sizing: border-box;
 }
@@ -16,12 +18,18 @@ body {
   padding: 0;
   margin: 0;
   font-family: 'Manrope', sans-serif !important;
-  background: var(--white);
+  background-color: var(--white);
+
+  transition: background-color 0.2s, color 0.2s;
 }
 
 body[data-theme='dark'] {
-  background: var(--black);
+  --black: #F9F9F9;
+  --white: #213346;
+  --grayLight: #385370;
+  --light: #2C4259;
 }
+
 // body[data-theme='dark'] {
 //   --black: #ffffff;
 //   --white: #101010;
@@ -29,8 +37,22 @@ body[data-theme='dark'] {
 // }
 
 :root {
-  --black: #101010;
-  --white: #ffffff;
+  --blue: #3090D7,
+  --blueLight: #CBE5F8,
+  --red: #FF3F3F,
+  --redLight: #F9B1B1,
+  --purple: #BD5AF9,
+  --purpleLight: #EAC7FF,
+  --yellow: #C4AE12,
+  --yellowLight: #FFF296,
+  --green: #50DD39,
+
+  --black: #181818,
+  --white: #FFFFFF,
+  --gray: #9F9F9F,
+  --grayLight: #DBDBDB,
+
+  --light: #F9F9F9,
 }
 
 // @media (prefers-color-scheme: light) {

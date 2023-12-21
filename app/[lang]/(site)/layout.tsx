@@ -1,28 +1,23 @@
-import { Locale, i18n } from '@/i18n-config';
-import '@/assets/global.scss';
-import { getDictionary } from '@/get-dictionary';
-import MainProvider from './_components/MainProvider';
+import { Locale, i18n } from '@/i18n-config'
+import '@/styles/global.scss'
+import MainLayout from '@/components/shared/MainLayout/MainLayout'
 
 export async function generateStaticParams() {
-  return i18n.locales.map((locale) => ({ lang: locale }));
+  return i18n.locales.map(locale => ({ lang: locale }))
 }
 
 export default async function Root({
   children,
   params,
 }: {
-  children: React.ReactNode;
-  params: { lang: Locale };
+  children: React.ReactNode
+  params: { lang: Locale }
 }) {
-  const dictionary = await getDictionary(params.lang);
-
   return (
     <html lang={params.lang}>
       <body>
-        <MainProvider dictionary={dictionary.MainLayout}>
-          {children}
-        </MainProvider>
+        <MainLayout>{children}</MainLayout>
       </body>
     </html>
-  );
+  )
 }

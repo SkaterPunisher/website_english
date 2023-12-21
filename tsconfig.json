@@ -21,15 +21,17 @@
     ],
     "paths": {
       "@/*": ["./*"],
-      "@/ui/*": ["./ui/*"]
+      "@/components/*": ["./components/*"],
+      "@/hooks/*": ["./lib/hooks/*"],
+      "@/utils/*": ["./lib/utils/*"],
+      "@/sanity/*": ["./sanity/*"],
+      "@/styles/*": ["./styles/*"],
+      "@/types/*": ["./types/*"],
+      "@/icons/*": ["./public/icons/*"],
+      "@/fonts/*": ["./public/fonts/*"],
+      "@/images/*": ["./public/images/*"]
     }
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    "next.config.js",
-    ".next/types/**/*.ts"
-  ],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "next.config.js", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]
 }
