@@ -1,0 +1,58 @@
+@import '@/styles/app.scss';
+
+.wrapper {
+  width: 100%;
+  background: var(--whiteMain);
+  border-radius: 24px 24px 0 0;
+
+  transition: background 0.2s, color 0.2s;
+
+  @include m {
+    border-radius: 50px 50px 0 0;
+  }
+
+  .content {
+    padding: 40px 16px;
+    width: 100%;
+
+    @include m {
+      padding: 50px 20px;
+    }
+
+    @include xl {
+      width: 1560px;
+      margin: auto;
+    }
+
+    .links {
+      margin-top: 24px;
+      .link {
+        cursor: pointer;
+        margin-bottom: 24px;
+      }
+
+      .last {
+        margin-bottom: 0px;
+      }
+    }
+
+    .buttons {
+      margin-top: 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+
+      .address {
+        margin-top: 16px;
+        width: fit-content;
+      }
+    }
+
+    .reserved {
+      margin-top: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+  }
+}

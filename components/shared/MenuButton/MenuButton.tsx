@@ -12,8 +12,6 @@ const MenuButton = () => {
     query: '(min-width: 768px)',
   })
 
-  // const toggleOpen = () => setOpen(!isOpen)
-
   const lineVariants = {
     closed: {
       rotate: 0,
@@ -92,40 +90,6 @@ const MenuButton = () => {
         <MenuButtonContent />
       </Popover>
     </DialogTrigger>
-    // <div className={styles.icon}>
-    //   <svg
-    //     onClick={toggleOpen}
-    //     width="50"
-    //     height="50"
-    //     viewBox="0 0 50 50"
-    //     fill="none"
-    //     xmlns="http://www.w3.org/2000/svg"
-    //   >
-    //     <rect width="50" height="50" rx="25" fill="#F9F9F9" />
-    //     <motion.rect
-    //       x="13"
-    //       y="20"
-    //       width="24"
-    //       height="2"
-    //       fill="#181818"
-    //       animate={isOpen ? 'open' : 'closed'}
-    //       variants={lineVariants}
-    //       initial="closed"
-    //       transition={{ duration: 0.3 }}
-    //     />
-    //     <motion.rect
-    //       x="13"
-    //       y="27"
-    //       width="24"
-    //       height="2"
-    //       fill="#181818"
-    //       animate={isOpen ? 'open' : 'closed'}
-    //       variants={line2Variants}
-    //       initial="closed"
-    //       transition={{ duration: 0.3 }}
-    //     />
-    //   </svg>
-    // </div>
   )
 }
 

@@ -7,7 +7,7 @@ import styles from './Logo.module.scss'
 import { CustomLink } from '../CustomLink/CustomLink'
 import { useMediaQuery } from 'react-responsive'
 
-const Logo = () => {
+const Logo = ({ forFooter }: { forFooter?: boolean }) => {
   const isSymbol = useMediaQuery({
     query: '(max-width: 449px)',
   })
@@ -20,25 +20,35 @@ const Logo = () => {
     query: '(min-width: 768px)',
   })
 
-  return (
-    <CustomLink href="/">
-      {isFull && (
+  if (forFooter) {
+    return (
+      <CustomLink href="/">
         <div className={styles.logo}>
           <LogoIcon />
         </div>
-      )}
-      {isRight && (
-        <div className={styles.logoRight}>
-          <LogoRight />
-        </div>
-      )}
-      {isSymbol && (
-        <div className={styles.logoSymbol}>
-          <LogoSymbol />
-        </div>
-      )}
-    </CustomLink>
-  )
+      </CustomLink>
+    )
+  } else {
+    return (
+      <CustomLink href="/">
+        {isFull && (
+          <div className={styles.logo}>
+            <LogoIcon />
+          </div>
+        )}
+        {isRight && (
+          <div className={styles.logoRight}>
+            <LogoRight />
+          </div>
+        )}
+        {isSymbol && (
+          <div className={styles.logoSymbol}>
+            <LogoSymbol />
+          </div>
+        )}
+      </CustomLink>
+    )
+  }
 }
 
 export default Logo

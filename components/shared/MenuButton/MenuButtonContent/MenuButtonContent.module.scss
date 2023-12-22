@@ -76,7 +76,6 @@
 
       .subList {
         margin-left: 20px;
-        margin-bottom: 13px;
         overflow: hidden;
 
         @include s {
@@ -86,6 +85,10 @@
         .subLink {
           padding: 13px 0;
         }
+      }
+
+      .openSubList {
+        margin-bottom: 13px;
       }
     }
   }

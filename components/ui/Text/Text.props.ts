@@ -4,6 +4,6 @@ export type TextProps = DetailedHTMLProps<
   HTMLAttributes<HTMLParagraphElement>,
   HTMLParagraphElement
 > & {
-  size?: 's' | 'l' | 'xl' | 'button'
+  size?: 'xs' | 's' | 'l' | 'xl' | 'button'
   underline?: boolean
 }

@@ -4,6 +4,10 @@
   border-radius: 20px;
 }
 
+.xs {
+  padding: 15px 0;
+}
+
 .s {
   padding: 25px 0;
 }
@@ -19,5 +23,19 @@
     color: var(--black);
     background-color: var(--white);
     border: 1px solid var(--black);
+  }
+}
+
+.white {
+  color: var(--whblackite);
+  background-color: var(--white);
+  border: 1px solid transparent;
+
+  transition: color 0.2s, background-color 0.2s, border 0.2s;
+
+  &:hover {
+    color: var(--white);
+    background-color: var(--black);
+    border: 1px solid var(--white);
   }
 }
