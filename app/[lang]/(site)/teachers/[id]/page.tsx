@@ -12,7 +12,7 @@ export async function generateMetadata({
   const teacher = await getTeacher(id, lang)
 
   return {
-    title: `${teacher.firstname} ${teacher.lastname}`,
+    title: `${teacher.firstname} ${teacher.lastname} | Advanced English`,
     description: `Лучший репетитор по английскому языку только в онлайн школе Зыковой Оксаны | Advance English это ${teacher.firstname} ${teacher.lastname}`,
   }
 }

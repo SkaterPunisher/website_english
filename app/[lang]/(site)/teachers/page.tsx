@@ -4,24 +4,16 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 // export const revalidate = 60 * 10 // Это нужно для ревалидации запросов (1 раз в 10 минут). Но уже сделал в groq запросе последним параметром
 
-const description = {
-  ru: 'Репетиторы и преподаватели онлайн-школы английского языка Зыковой Оксаны | Сильные учителя | Скидки до 30% | Попробуйте бесплатно!',
-  en: `Tutors and teachers of Oksana's Online English Language School | Strong Teachers | Discounts up to 30% | Try it for free!`,
-}
-const title = {
-  ru: 'Сильные репетиторы в онлайн школе Зыкова Оксана | Advance English',
-  en: 'Strong tutors at Oksana Zykova online School | Advance English',
-}
-
 export async function generateMetadata({
   params: { lang },
 }: {
   params: { lang: Locale }
 }): Promise<Metadata> {
   return {
-    title: title[lang],
+    title: 'Сильные репетиторы в онлайн школе Зыкова Оксана | Advanced English',
 
-    description: description[lang],
+    description:
+      'Репетиторы и преподаватели онлайн-школы английского языка Зыковой Оксаны | Сильные учителя | Скидки до 30% | Попробуйте бесплатно!',
   }
 }
 
