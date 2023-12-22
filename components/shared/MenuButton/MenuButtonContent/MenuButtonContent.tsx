@@ -32,7 +32,7 @@ const MenuButtonContent = ({ setOpen, className, ...props }: MenuButtonContentPr
       <ul className={styles.list}>
         {linksMenu.map(item => (
           <li key={item.link} className={styles.item}>
-            <CustomLink href={item.link} className={styles.link}>
+            <CustomLink href={item.link} className={styles.link} onClick={() => setOpen(false)}>
               <Text size="xl">{item.name}</Text>
             </CustomLink>
           </li>
