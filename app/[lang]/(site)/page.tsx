@@ -4,8 +4,9 @@ import FAQ from '@/components/shared/FAQ/FAQ'
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'Advanced English && Zykova Oksana',
-    description: 'Профессиональные преподаватели английского языка по доступной цене',
+    title: 'Zykova Oksana § Advanced English ',
+    description:
+      'Онлайн-школа английского языка «Zykova Oksana § Advanced English»⠀➤ Профессиональные преподаватели английского языка⠀➤ Доступные цены и скидки на курсы до 40% ☑️Бесплатный первый урок!',
   }
 }
 

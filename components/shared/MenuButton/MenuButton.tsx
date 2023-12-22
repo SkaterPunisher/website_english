@@ -87,7 +87,7 @@ const MenuButton = () => {
         isOpen={isOpen}
         onOpenChange={setOpen}
       >
-        <MenuButtonContent />
+        <MenuButtonContent setOpen={setOpen} />
       </Popover>
     </DialogTrigger>
   )

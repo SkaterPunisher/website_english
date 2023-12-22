@@ -8,8 +8,9 @@ import ArrowDownIcon from '@/icons/chevron-down.svg'
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { linksKnowledge, linksMenu, linksOther } from '@/constants/links'
+import { MenuButtonContentProps } from './MenuButtonContent.props'
 
-const MenuButtonContent = () => {
+const MenuButtonContent = ({ setOpen, className, ...props }: MenuButtonContentProps) => {
   const [knowledgeContent, setKnowledgeContent] = useState(false)
   const [otherContent, setOtherContent] = useState(false)
 
@@ -55,7 +56,11 @@ const MenuButtonContent = () => {
             <ul className={cn(styles.subList, { [styles.openSubList]: knowledgeContent })}>
               {linksKnowledge.map(item => (
                 <li key={item.link} className={styles.subItem}>
-                  <CustomLink href={item.link} className={styles.subLink}>
+                  <CustomLink
+                    href={item.link}
+                    className={styles.subLink}
+                    onClick={() => setOpen(false)}
+                  >
                     <Text size="l">{item.name}</Text>
                   </CustomLink>
                 </li>
@@ -82,7 +87,11 @@ const MenuButtonContent = () => {
             <ul className={cn(styles.subList, { [styles.openSubList]: otherContent })}>
               {linksOther.map(item => (
                 <li key={item.link} className={styles.subItem}>
-                  <CustomLink href={item.link} className={styles.subLink}>
+                  <CustomLink
+                    href={item.link}
+                    className={styles.subLink}
+                    onClick={() => setOpen(false)}
+                  >
                     <Text size="l">{item.name}</Text>
                   </CustomLink>
                 </li>

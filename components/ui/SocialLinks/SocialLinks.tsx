@@ -9,16 +9,16 @@ import ViberIcon from '@/icons/viber.svg'
 const SocialLinks = ({ className, ...props }: SocialLinksProps) => {
   return (
     <div className={cn(styles.wrapper, className)} {...props}>
-      <a className={styles.icon}>
+      <a href="https://vk.com/englishinbogorodsk" className={styles.icon}>
         <VKIcon />
       </a>
-      <a className={styles.icon}>
+      <a href="https://t.me/Advanced_English_Zykova" className={styles.icon}>
         <TelegramIcon />
       </a>
-      <a className={styles.icon}>
+      <a href="https://www.instagram.com/englishschool_bg" className={styles.icon}>
         <InstagramIcon />
       </a>
-      <a className={styles.icon}>
+      <a href="#" className={styles.icon}>
         <ViberIcon />
       </a>
     </div>

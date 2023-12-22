@@ -14,7 +14,9 @@ const Footer = ({ className, ...props }: FooterProps) => {
   return (
     <footer className={cn(styles.wrapper, className)} {...props}>
       <div className={styles.content}>
-        <Logo forFooter={true} />
+        <div className={styles.logo}>
+          <Logo forFooter={true} />
+        </div>
 
         <ul className={styles.links}>
           {linksFooter.map((link, index) => {
@@ -51,7 +53,7 @@ const Footer = ({ className, ...props }: FooterProps) => {
 
           <SocialLinks />
 
-          <Text size="xs" className={styles.address}>
+          <Text size="xs">
             * Instagram принадлежит компании Meta, признанной экстремистской организацией и
             запрещенной в РФ
           </Text>
@@ -62,7 +64,7 @@ const Footer = ({ className, ...props }: FooterProps) => {
             Advanced English © — Все права защищены
           </Text>
           <Text size="xs" className={styles.address}>
-            2023
+            2024
           </Text>
         </div>
       </div>

@@ -15,6 +15,25 @@
     padding: 40px 16px;
     width: 100%;
 
+    @include s {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas:
+        'logo logo'
+        'links links'
+        'buttons buttons'
+        'reserved reserved';
+      gap: 20px 0;
+    }
+
+    @include l {
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-areas:
+        'logo links buttons'
+        'reserved reserved reserved';
+      gap: 20px 40px;
+    }
+
     @include m {
       padding: 50px 20px;
     }
@@ -24,11 +43,36 @@
       margin: auto;
     }
 
+    .logo {
+      @include s {
+        grid-area: logo;
+      }
+    }
+
     .links {
       margin-top: 24px;
+
+      @include s {
+        grid-area: links;
+        margin-top: 0px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+
+      @include l {
+        grid-template-rows: min-content min-content min-content min-content;
+      }
+
       .link {
         cursor: pointer;
         margin-bottom: 24px;
+        border-bottom: 1px solid transparent;
+
+        transition: border-bottom 0.2s;
+
+        &:hover {
+          border-bottom: 1px solid var(--black);
+        }
       }
 
       .last {
@@ -42,9 +86,25 @@
       flex-direction: column;
       gap: 24px;
 
+      @include s {
+        grid-area: buttons;
+        margin-top: 0px;
+      }
+
       .address {
         margin-top: 16px;
         width: fit-content;
+        border-bottom: 1px solid transparent;
+
+        transition: border-bottom 0.2s;
+
+        @include s {
+          margin-top: 0px;
+        }
+
+        &:hover {
+          border-bottom: 1px solid var(--black);
+        }
       }
     }
 
@@ -53,6 +113,13 @@
       display: flex;
       flex-direction: column;
       gap: 24px;
+
+      @include s {
+        margin-top: 0px;
+        grid-area: reserved;
+        flex-direction: row;
+        justify-content: space-between;
+      }
     }
   }
 }

@@ -26,7 +26,7 @@ export default async function ArticlesPage({ params: { lang } }: { params: { lan
       </Link>
 
       {articles?.map((article, index) => (
-        <div className="flex " key={article._id}>
+        <div className="flex " key={article.slug}>
           <p>{index + 1}: </p>
           <Link href={`/knowledge-base/articles/${article.slug}`}>{article.name}</Link>
         </div>

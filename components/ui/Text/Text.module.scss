@@ -9,6 +9,10 @@
   font-size: 16px;
   font-weight: 300;
   line-height: 140%;
+
+  @include s {
+    font-size: 18px;
+  }
 }
 
 .s {
