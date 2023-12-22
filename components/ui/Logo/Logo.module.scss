@@ -1,0 +1,35 @@
+.logo {
+  width: 251px;
+
+  svg {
+    path {
+      fill: var(--black);
+
+      transition: fill 0.2s;
+    }
+  }
+}
+
+.logoRight {
+  width: 150px;
+
+  svg {
+    path {
+      fill: var(--black);
+
+      transition: fill 0.2s;
+    }
+  }
+}
+
+.logoSymbol {
+  width: 45px;
+
+  svg {
+    path {
+      fill: var(--black);
+
+      transition: fill 0.2s;
+    }
+  }
+}

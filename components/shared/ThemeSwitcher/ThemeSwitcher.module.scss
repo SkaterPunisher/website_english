@@ -1,12 +1,5 @@
 .wrapper {
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
-  padding: 8px;
-  background: var(--light);
-  cursor: pointer;
-
-  transition: background 0.2s, color 0.2s;
+  background: var(--menuIcon);
 
   .icon {
     width: 24px;

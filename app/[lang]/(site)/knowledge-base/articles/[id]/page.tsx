@@ -63,7 +63,7 @@ export default async function ArticlePage({
         <p>Оригинал: {singleArticle.original}</p>
         <p>
           Теги:{' '}
-          {singleArticle.tags.map(t => (
+          {singleArticle.tags?.map(t => (
             <span key={t._id} className="text-blue-500">
               {t.tag}{' '}
             </span>

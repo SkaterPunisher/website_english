@@ -6,6 +6,8 @@
 
 * {
   box-sizing: border-box;
+  border: none;
+  outline: none;
 }
 
 a {
@@ -17,17 +19,27 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Manrope', sans-serif !important;
+  font-family: $fontCommon;
   background-color: var(--white);
+
+  color: var(--black);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
 
   transition: background-color 0.2s, color 0.2s;
 }
 
 body[data-theme='dark'] {
-  --black: #F9F9F9;
+  --black: #f9f9f9;
   --white: #213346;
+  --whiteMain: #2c4259;
   --grayLight: #385370;
-  --light: #2C4259;
+  --light: #2c4259;
+
+  --menuIcon: #213346;
+  --menuIconHover: #56677a;
 }
 
 // body[data-theme='dark'] {
@@ -37,33 +49,35 @@ body[data-theme='dark'] {
 // }
 
 :root {
-  --blue: #3090D7,
-  --blueLight: #CBE5F8,
-  --red: #FF3F3F,
-  --redLight: #F9B1B1,
-  --purple: #BD5AF9,
-  --purpleLight: #EAC7FF,
-  --yellow: #C4AE12,
-  --yellowLight: #FFF296,
-  --green: #50DD39,
+  --blue: #3090d7;
+  --blueLight: #cbe5f8;
+  --red: #ff3f3f;
+  --redLight: #f9b1b1;
+  --purple: #bd5af9;
+  --purpleLight: #eac7ff;
+  --yellow: #c4ae12;
+  --yellowLight: #fff296;
+  --green: #50dd39;
 
-  --black: #181818,
-  --white: #FFFFFF,
-  --gray: #9F9F9F,
-  --grayLight: #DBDBDB,
+  --black: #181818;
+  --white: #ffffff;
+  --whiteMain: #ffffff;
+  --gray: #9f9f9f;
+  --grayLight: #dbdbdb;
 
-  --light: #F9F9F9,
+  --light: #f9f9f9;
+
+  --menuIcon: #f9f9f9;
+  --menuIconHover: #ededed;
 }
 
-// @media (prefers-color-scheme: light) {
-//   body {
-//     background: #FFF;
-//     color: #333;
-//   }
-// }
-// @media (prefers-color-scheme: dark) {
-//   body {
-//     background: #333;
-//     color: #FFF;
-//   }
-// }
+.buttonIconWrapper {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  padding: 8px;
+  cursor: pointer;
+
+  transition: background 0.2s, color 0.2s;
+}

@@ -1,0 +1,30 @@
+.wrapper {
+  background: var(--yellowLight);
+
+  transition: background-color 0.2s;
+
+  &:hover {
+    background: var(--yellow);
+  }
+
+  .icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .count {
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 110%; /* 11px */
+
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    padding: 0 3px;
+    border-radius: 100%;
+    background-color: white;
+    color: black;
+    text-align: center;
+  }
+}

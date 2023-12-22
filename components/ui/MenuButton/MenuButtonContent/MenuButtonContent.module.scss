@@ -1,0 +1,103 @@
+@import '@/styles/app.scss';
+
+.content {
+  width: 100%;
+  padding: 0 15px;
+
+  @include s {
+    padding: 0 30px;
+  }
+  @include m {
+    width: 1034px;
+    margin: auto;
+  }
+
+  .list {
+    margin: 40px 0;
+    .item {
+      border-bottom: 1px solid var(--gray);
+      cursor: pointer;
+
+      &:first-child {
+        border-top: 1px solid var(--gray);
+      }
+
+      .link,
+      .subLink {
+        width: 100%;
+        padding: 26px 0;
+        transition: background-color 0.2s;
+
+        &:hover {
+          background-color: var(--light);
+        }
+      }
+
+      .menu {
+        width: 100%;
+        padding: 26px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        transition: background-color 0.2s;
+
+        &:hover {
+          background-color: var(--light);
+        }
+
+        .arrowWrapper {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 30px;
+          height: 30px;
+          border-radius: 100%;
+          background-color: var(--menuIconHover);
+
+          @include s {
+            width: 40px;
+            height: 40px;
+          }
+
+          svg {
+            transition: transform 0.2s;
+          }
+
+          svg path {
+            stroke: var(--black);
+          }
+        }
+
+        .arrow {
+          width: 15px;
+        }
+      }
+
+      .subList {
+        margin-left: 20px;
+        margin-bottom: 13px;
+        overflow: hidden;
+
+        @include s {
+          margin-left: 40px;
+        }
+
+        .subLink {
+          padding: 13px 0;
+        }
+      }
+    }
+  }
+
+  .links {
+    margin-top: 20px;
+    margin-bottom: 50px;
+  }
+}
+
+.open {
+  svg {
+    transform: rotate(-180deg);
+  }
+}

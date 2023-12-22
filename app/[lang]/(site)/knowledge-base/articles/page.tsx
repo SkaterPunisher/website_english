@@ -25,10 +25,10 @@ export default async function ArticlesPage({ params: { lang } }: { params: { lan
         На главную
       </Link>
 
-      {articles.map((article, index) => (
+      {articles?.map((article, index) => (
         <div className="flex " key={article._id}>
           <p>{index + 1}: </p>
-          <Link href={`/articles/${article.slug}`}>{article.name}</Link>
+          <Link href={`/knowledge-base/articles/${article.slug}`}>{article.name}</Link>
         </div>
       ))}
     </div>
