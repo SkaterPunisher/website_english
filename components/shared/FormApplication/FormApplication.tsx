@@ -13,6 +13,11 @@ import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import FlagIcon from '@/icons/falg.svg'
 import CloseIcon from '@/icons/close.svg'
+import axios from 'axios'
+
+const TOKEN = process.env.TOKEN
+const CHAT_ID = process.env.CHAT_ID
+const URL_API = `https://api.telegram.org/bot${TOKEN}/sendMessage`
 
 type Form = {
   firstName: string
@@ -49,7 +54,30 @@ const FormApplication = () => {
     exit: { opacity: 0 },
   }
 
-  const onSubmit = (data: Form) => {
+  const onSubmit = async (data: Form) => {
+    let message = `<b>Заявка с Advanced English</b> \n`
+    message += `<b>Имя :</b> ${data.firstName} \n`
+    message += `<b>Телефон :</b> ${data.phone} \n`
+
+    axios
+      .post(URL_API, {
+        chat_id: CHAT_ID,
+        parse_mode: 'html',
+        text: message,
+      })
+      .then(res => {
+        alert('Спасибо! Заявка отправлена. Мы свяжемся с Вами в ближайшие 15 минут!')
+      })
+      .catch(err => {
+        alert('Произошла ошибка. Попробуйте позже.')
+        console.log(err)
+      })
+
+    toggleApplicationForm()
+    reset()
+  }
+
+  const onClose = () => {
     toggleApplicationForm()
     reset()
   }
@@ -144,7 +172,7 @@ const FormApplication = () => {
               <FlagIcon />
             </div>
 
-            <div className={styles.close} onClick={toggleApplicationForm}>
+            <div className={styles.close} onClick={onClose}>
               <CloseIcon />
             </div>
           </div>
