@@ -1,0 +1,21 @@
+@import '@/styles/app.scss';
+
+.wrapper {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+
+  .message {
+    display: flex;
+
+    .messageText {
+      margin-left: 10px;
+      color: var(--black);
+    }
+  }
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+}

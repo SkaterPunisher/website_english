@@ -14,6 +14,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import FlagIcon from '@/icons/falg.svg'
 import CloseIcon from '@/icons/close.svg'
 import axios from 'axios'
+import { showToast } from '@/components/ui/CustomToast/CustomToast'
 
 const TOKEN = process.env.TOKEN
 const CHAT_ID = process.env.CHAT_ID
@@ -66,11 +67,10 @@ const FormApplication = () => {
         text: message,
       })
       .then(res => {
-        alert('Спасибо! Заявка отправлена. Мы свяжемся с Вами в ближайшие 15 минут!')
+        showToast('success', 'Спасибо! Заявка отправлена. Мы свяжемся с Вами в ближайшие 15 минут!')
       })
       .catch(err => {
-        alert('Произошла ошибка. Попробуйте позже.')
-        console.log(err)
+        showToast('error', `Произошла ошибка. Попробуйте позже. ${err.message}`)
       })
 
     toggleApplicationForm()
