@@ -1,0 +1,97 @@
+@import '@/styles/app.scss';
+
+.field {
+  display: flex;
+  flex-direction: column;
+
+  .error,
+  .helper {
+    padding: 0 6px;
+    font-family: Montserrat;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px; /* 133.333% */
+    letter-spacing: 0.48px;
+  }
+
+  .error {
+    color: var(--black);
+  }
+
+  .helper {
+    color: var(--gray-500);
+  }
+
+  .label {
+    padding: 0 6px;
+    color: var(--gray-800);
+    font-family: Montserrat;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px; /* 142.857% */
+  }
+
+  .inputWrapper {
+    position: relative;
+
+    .passwordToggleIcon {
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+    }
+
+    .input {
+      width: 100%;
+      color: var(--black);
+      /* Components/Input data */
+      font-family: Montserrat;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 24px; /* 150% */
+
+      margin: 0 !important;
+      border-radius: 20px;
+      border: 1px solid var(--menuIcon);
+      padding: 25px 14px;
+      background-color: var(--white);
+      outline: none;
+      transition: border 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+
+      &::placeholder {
+        color: var(--gray-500);
+        /* Components/Input data */
+        font-family: Montserrat;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 24px; /* 150% */
+      }
+      &:focus {
+        box-shadow: 0px 0px 0px 1px rgba(41, 37, 36, 0.6);
+      }
+    }
+
+    .inputError {
+      border: 1px solid var(--red);
+    }
+
+    .inputWithIcon {
+      padding-right: 45px;
+    }
+  }
+}
+
+.labelShow {
+  display: none;
+}
+
+.input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 100px var(--light) inset !important;
+  box-shadow: 0 0 0 100px var(--light) inset !important;
+  -webkit-text-fill-color: var(--gray-500) !important;
+}

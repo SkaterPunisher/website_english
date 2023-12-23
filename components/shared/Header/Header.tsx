@@ -12,6 +12,7 @@ import BasketButton from '@/components/ui/BasketButton/BasketButton'
 import Button from '@/components/ui/Button/Button'
 import ArrowRightIcon from '@/icons/arrow-right.svg'
 import { useMediaQuery } from 'react-responsive'
+import { useApplicationStore } from '@/stores/application.store'
 
 const Header = ({ className, lang, ...props }: HeaderProps) => {
   const pathName = usePathname()
@@ -19,6 +20,8 @@ const Header = ({ className, lang, ...props }: HeaderProps) => {
   const isRight = useMediaQuery({
     query: '(min-width: 768px)',
   })
+
+  const { toggleApplicationForm } = useApplicationStore()
 
   return (
     <header className={cn(styles.header, className)} {...props}>
@@ -67,7 +70,13 @@ const Header = ({ className, lang, ...props }: HeaderProps) => {
       </div>
 
       <div className={styles.cart}>
-        <Button placeholder={isRight ? 'Оставить заявку' : undefined} color="purple">
+        <Button
+          placeholder={isRight ? 'Оставить заявку' : undefined}
+          color="purple"
+          onClick={() => {
+            toggleApplicationForm()
+          }}
+        >
           <ArrowRightIcon style={{ width: 24 }} />
         </Button>
 

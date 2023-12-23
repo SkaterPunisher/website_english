@@ -4,4 +4,5 @@ export type BtnProps = DetailedHTMLProps<HTMLAttributes<HTMLButtonElement>, HTML
   children?: React.ReactNode
   size?: 'xs' | 's'
   color?: 'black' | 'white'
+  disabled?: boolean
 }

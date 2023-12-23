@@ -1,7 +1,6 @@
 import React from 'react'
 import LogoIcon from '@/icons/logo.svg'
 import LogoRight from '@/icons/logo-right.svg'
-import LogoLeft from '@/icons/logo-left.svg'
 import LogoSymbol from '@/icons/logo-symbol.svg'
 import styles from './Logo.module.scss'
 import { CustomLink } from '../CustomLink/CustomLink'
