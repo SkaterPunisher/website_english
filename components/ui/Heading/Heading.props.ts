@@ -4,5 +4,5 @@ export type HeadingProps = DetailedHTMLProps<
   HTMLAttributes<HTMLHeadingElement>,
   HTMLHeadingElement
 > & {
-  tag?: 'h2'
+  tag?: 'h1' | 'h2'
 }

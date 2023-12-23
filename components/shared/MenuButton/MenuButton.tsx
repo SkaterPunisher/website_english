@@ -83,7 +83,7 @@ const MenuButton = () => {
       <Popover
         className={styles.popover}
         containerPadding={0}
-        offset={!isRight ? 16 : 30}
+        offset={!isRight ? -62 : -75}
         isOpen={isOpen}
         onOpenChange={setOpen}
       >

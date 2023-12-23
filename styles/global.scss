@@ -32,10 +32,22 @@ body {
 }
 
 body[data-theme='dark'] {
-  --blueLight: #2C4259;
+  --blueLightWrapper: #213346;
+  --blueLightIcon: #56677a;
+
+  --redLightWrapper: #213346;
+
+  --purpleLightWrapper: #213346;
+
+  --yellowLightWrapper: #213346;
+  --yellowLightIcon: #56677a;
 
   --black: #f9f9f9;
+  --blackHover: #e7e7e7;
+
   --white: #213346;
+  --whiteHover: #56677a;
+
   --whiteMain: #2c4259;
   --grayLight: #385370;
   --light: #2c4259;
@@ -53,16 +65,30 @@ body[data-theme='dark'] {
 :root {
   --blue: #3090d7;
   --blueLight: #cbe5f8;
+  --blueLightWrapper: #cbe5f8;
+  --blueLightIcon: #e6f3fc;
+
   --red: #ff3f3f;
   --redLight: #f9b1b1;
+  --redLightWrapper: #f9b1b1;
+
   --purple: #bd5af9;
   --purpleLight: #eac7ff;
+  --purpleLightWrapper: #eac7ff;
+
   --yellow: #c4ae12;
   --yellowLight: #fff296;
+  --yellowLightWrapper: #fff296;
+  --yellowLightIcon: #fae75f;
+
   --green: #50dd39;
 
   --black: #181818;
+  --blackHover: #343232;
+
   --white: #ffffff;
+  --whiteHover: #e7e7e7;
+
   --whiteMain: #fafafa;
   --gray: #9f9f9f;
   --grayLight: #dbdbdb;
@@ -84,37 +110,46 @@ body[data-theme='dark'] {
   transition: background 0.2s, color 0.2s;
 }
 
+.layout {
+  width: 100%;
+  padding: 40px 16px;
+
+  @include s {
+    padding: 40px 20px;
+  }
+
+  @include l {
+    margin: auto;
+    width: 1280px;
+  }
+}
+
+// _________________Стилизация скроллбара_________________
 /* Скрывает стрелки скролла */
 ::-webkit-scrollbar-button {
   display: none;
 }
-
 /* Стиль трека (дорожки) скролла */
 ::-webkit-scrollbar-track {
   background: transparent; /* Сделать фон трека прозрачным */
 }
-
 /* Стиль самого скроллбара (ползунка) */
 ::-webkit-scrollbar-thumb {
   background: gray; /* Задать цвет ползунка */
   border-radius: 10px; /* Если нужны скругленные углы */
 }
-
 /* Стили для ползунка в состоянии :hover и :active */
 ::-webkit-scrollbar-thumb:hover {
   background: darkgray; /* Цвет ползунка при наведении */
 }
-
 ::-webkit-scrollbar-thumb:active {
   background: #686868; /* Цвет ползунка при нажатии */
 }
-
 /* Размеры скроллбара */
 ::-webkit-scrollbar {
   width: 8px; /* Ширина для вертикального скролла */
   height: 8px; /* Высота для горизонтального скролла */
 }
-
 /* Убирает скроллбар-угол */
 ::-webkit-scrollbar-corner {
   display: none;

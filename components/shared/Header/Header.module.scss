@@ -16,6 +16,11 @@
 
   transition: background 0.2s, color 0.2s;
 
+  position: fixed;
+  // Позиционируем в центре экрана по вертикали
+  left: 50%; // Позиционируем в центре экрана по горизонтали
+  transform: translate(-50%, 0);
+
   @include xs {
     grid-template-columns: [startLogo] auto [endLogo] 1fr [startMenu] auto [endMenu] 1fr [startCart] auto [endCart];
   }

@@ -1,0 +1,95 @@
+@import '@/styles/app.scss';
+
+.wrapper {
+  background-color: red;
+  padding-top: 80px;
+  margin-top: -75px;
+  border-radius: 0 0 32px 32px;
+  overflow: hidden;
+  transition: background 0.2s, color 0.2s;
+
+  @include s {
+    padding-top: 145px;
+    padding-bottom: 45px;
+    margin-top: -100px;
+    border-radius: 0 0 40px 40px;
+  }
+
+  .contentWrapper {
+    position: relative;
+
+    .content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      @include s {
+        gap: 32px;
+      }
+    }
+
+    .icon {
+      z-index: 1;
+      position: absolute;
+      top: -60px;
+      left: 0;
+      width: 700px;
+
+      @include s {
+        width: 967px;
+      }
+    }
+  }
+}
+
+.blue {
+  background-color: var(--blueLightWrapper);
+}
+.red {
+  background-color: var(--redLightWrapper);
+}
+.purple {
+  background-color: var(--purpleLightWrapper);
+}
+.yellow {
+  background-color: var(--yellowLightWrapper);
+}
+
+.iconYellow {
+  svg {
+    path {
+      transition: stroke 0.2s;
+      stroke: var(--yellowLightIcon);
+    }
+  }
+}
+.iconBlue {
+  top: -110px !important;
+
+  @include s {
+    width: 1200px !important;
+  }
+
+  svg {
+    path {
+      transition: stroke 0.2s;
+      stroke: var(--blueLightIcon);
+    }
+  }
+}
+
+// .icon .blue {
+// }
+// .icon .red {
+// }
+// .icon .purple {
+// }
+// .icon .yellow {
+//   svg {
+//     path {
+//       stroke: var(--yellowLightWrapper);
+//     }
+//   }
+// }

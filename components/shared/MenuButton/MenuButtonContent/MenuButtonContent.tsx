@@ -101,8 +101,8 @@ const MenuButtonContent = ({ setOpen, className, ...props }: MenuButtonContentPr
         </li>
       </ul>
 
-      <a href={`tel:+79506253446`}>
-        <Btn>+7 (950) 625-34-46</Btn>
+      <a href={`tel:+79506253446`} className={styles.btn}>
+        <Btn className={styles.btn}>+7 (950) 625-34-46</Btn>
       </a>
 
       <SocialLinks className={styles.links} />

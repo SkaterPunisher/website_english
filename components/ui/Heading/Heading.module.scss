@@ -6,6 +6,18 @@
   font-style: normal;
 }
 
+.h1 {
+  font-size: 40px;
+
+  font-weight: 600;
+  line-height: 110%; /* 81.4px */
+  letter-spacing: -3.5px;
+
+  @include s {
+    font-size: 74px;
+  }
+}
+
 .h2 {
   font-size: 32px;
   letter-spacing: -1px;

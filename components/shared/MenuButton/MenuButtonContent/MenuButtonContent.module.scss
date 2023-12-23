@@ -3,13 +3,19 @@
 .content {
   width: 100%;
   padding: 0 15px;
+  padding-top: 75px;
 
   @include s {
     padding: 0 30px;
+    padding-top: 100px;
   }
   @include m {
     width: 1034px;
     margin: auto;
+  }
+
+  .btn {
+    width: 100%;
   }
 
   .list {

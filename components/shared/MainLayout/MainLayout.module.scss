@@ -1,3 +1,5 @@
+@import '@/styles/app.scss';
+
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -5,5 +7,10 @@
 }
 
 .content {
+  margin-top: 75px;
   flex-grow: 1;
+
+  @include s {
+    margin-top: 100px;
+  }
 }

@@ -40,13 +40,13 @@ const Footer = ({ className, ...props }: FooterProps) => {
           </Text>
 
           <a href={contacts.phone.link}>
-            <Btn size="xs" color="white">
+            <Btn size="xs" color="white" className={styles.btn}>
               {contacts.phone.name}
             </Btn>
           </a>
 
           <a href={contacts.email.link}>
-            <Btn size="xs" color="white">
+            <Btn size="xs" color="white" className={styles.btn}>
               {contacts.email.name}
             </Btn>
           </a>
