@@ -5,6 +5,17 @@
   font-style: normal;
 }
 
+.xxs {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%; /* 18.2px */
+
+  @include s {
+    font-size: 16px;
+  }
+}
+
 .xs {
   font-size: 16px;
   font-weight: 300;

@@ -1,0 +1,11 @@
+@import '@/styles/app.scss';
+
+.new {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+
+  @include m {
+    grid-template-columns: 2fr 1fr;
+  }
+}

@@ -5,7 +5,7 @@ import { Locale } from '@/i18n-config'
 
 export const getArticles = async (lang: Locale): Promise<Article[]> =>
   createClient(clientConfig).fetch(
-    groq`*[_type == "singleArticle"]{
+    groq`*[_type == "singleArticle"] | order(_createdAt desc){
       _id,
       _createdAt,
       "name": name[$lang],

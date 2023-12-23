@@ -21,7 +21,7 @@ const HeaderPage = ({
   const { toggleApplicationForm } = useApplicationStore()
 
   return (
-    <div className={cn(styles.wrapper, styles[color], className)} {...props}>
+    <section className={cn(styles.wrapper, styles[color], className)} {...props}>
       <div className={cn(styles.contentWrapper, 'layout')}>
         <div className={styles.content}>
           <Heading tag="h1">{title}</Heading>
@@ -52,7 +52,7 @@ const HeaderPage = ({
           </div>
         )} */}
       </div>
-    </div>
+    </section>
   )
 }
 
