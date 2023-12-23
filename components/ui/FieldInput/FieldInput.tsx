@@ -1,13 +1,13 @@
-'use client';
+'use client'
 
-import styles from './FieldInput.module.scss';
-import cn from 'classnames';
-import EyeIcon from './eye.svg';
-import { FieldError, Input, Label, TextField } from 'react-aria-components';
-import { FieldInputProps } from './FieldInput.props';
-import { ForwardedRef, forwardRef, useState } from 'react';
-import { handleMaskedChange } from './inputMask';
-import { AnimatePresence, motion } from 'framer-motion';
+import styles from './FieldInput.module.scss'
+import cn from 'classnames'
+import EyeIcon from './eye.svg'
+import { FieldError, Input, Label, TextField } from 'react-aria-components'
+import { FieldInputProps } from './FieldInput.props'
+import { ForwardedRef, forwardRef, useState } from 'react'
+import { handleMaskedChange } from './inputMask'
+import { AnimatePresence, motion } from 'framer-motion'
 
 export const FieldInput = forwardRef(
   (
@@ -30,20 +30,19 @@ export const FieldInput = forwardRef(
     }: FieldInputProps,
     ref: ForwardedRef<HTMLInputElement>,
   ) => {
-    const [isPasswordVisible, setPasswordVisible] = useState(false);
+    const [isPasswordVisible, setPasswordVisible] = useState(false)
 
     // Toggle the visibility of the password
-    const togglePasswordVisibility = () => setPasswordVisible((prev) => !prev);
+    const togglePasswordVisibility = () => setPasswordVisible(prev => !prev)
 
     // Determine the actual input type based on whether the password is visible
-    const inputActualType =
-      type === 'password' && isPasswordVisible ? 'text' : type;
+    const inputActualType = type === 'password' && isPasswordVisible ? 'text' : type
 
     const variants = {
       hidden: { y: '-100%', opacity: 0 },
       visible: { y: '0', opacity: 1 },
       exit: { y: '-100%', opacity: 0 },
-    };
+    }
 
     return (
       <TextField
@@ -60,9 +59,7 @@ export const FieldInput = forwardRef(
         validationBehavior="aria"
         isInvalid={isInvalid}
       >
-        <Label className={cn(styles.label, { [styles.labelShow]: !labelShow })}>
-          {labelText}
-        </Label>
+        <Label className={cn(styles.label, { [styles.labelShow]: !labelShow })}>{labelText}</Label>
 
         <div className={styles.inputWrapper}>
           {type === 'tel' ? (
@@ -70,15 +67,11 @@ export const FieldInput = forwardRef(
               className={cn(styles.input)}
               placeholder={placeholder}
               value={value}
-              onChange={(e) => handleMaskedChange(e, onChange)}
+              onChange={e => handleMaskedChange(e, onChange)}
               ref={ref}
             />
           ) : (
-            <Input
-              className={cn(styles.input)}
-              placeholder={placeholder}
-              ref={ref}
-            />
+            <Input className={cn(styles.input)} placeholder={placeholder} ref={ref} />
           )}
 
           {type === 'password' && (
@@ -105,6 +98,7 @@ export const FieldInput = forwardRef(
               exit="exit"
               variants={variants}
               transition={{ duration: 0.5 }}
+              className={styles.errorWrapper}
             >
               <FieldError className={styles.error}>
                 {error === 'Required' ? 'Поле обязательное' : error}
@@ -117,8 +111,8 @@ export const FieldInput = forwardRef(
           <FieldError className={styles.error}>{error}</FieldError>
         )} */}
       </TextField>
-    );
+    )
   },
-);
+)
 
-FieldInput.displayName = 'FieldInput';
+FieldInput.displayName = 'FieldInput'

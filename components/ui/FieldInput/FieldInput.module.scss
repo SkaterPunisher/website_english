@@ -3,6 +3,13 @@
 .field {
   display: flex;
   flex-direction: column;
+  position: relative;
+
+  .errorWrapper {
+    position: absolute;
+    bottom: -22px;
+    left: 10px;
+  }
 
   .error,
   .helper {

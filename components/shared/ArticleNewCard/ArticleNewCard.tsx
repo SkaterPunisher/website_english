@@ -1,13 +1,13 @@
 import { ArticleNewCardProps } from './ArticleNewCard.props'
 import styles from './ArticleNewCard.module.scss'
 import cn from 'classnames'
-import Image from 'next/image'
 import DefaultImages from '@/components/ui/DefaultImages/DefaultImages'
 import Container from '@/components/ui/Container/Container'
 import Heading from '@/components/ui/Heading/Heading'
 import { formatDate } from '@/lib/utils/convertData'
 import Text from '@/components/ui/Text/Text'
 import BookIcon from '@/icons/book-open.svg'
+import SparkleIcon from '@/icons/sparkle.svg'
 
 const ArticleNewCard = ({ article, className, ...props }: ArticleNewCardProps) => {
   return article ? (
@@ -19,6 +19,14 @@ const ArticleNewCard = ({ article, className, ...props }: ArticleNewCardProps) =
         width={770}
         height={465}
       />
+
+      <div className={styles.new}>
+        <div className={styles.icon}>
+          <SparkleIcon />
+        </div>
+        <Text size="s">Новая статья</Text>
+      </div>
+
       <Container size="s" className={styles.content}>
         <Heading tag="h3">{article.name}</Heading>
         <div className={styles.info}>

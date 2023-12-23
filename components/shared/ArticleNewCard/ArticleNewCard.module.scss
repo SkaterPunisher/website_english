@@ -5,9 +5,31 @@
   overflow: hidden;
   box-shadow: 0px -4px 8px 0px rgba(0, 0, 0, 0.04), 0px 0px 4px 0px rgba(0, 0, 0, 0.02),
     0px 4px 8px 0px rgba(0, 0, 0, 0.04), 0px 0px 4px 0px rgba(0, 0, 0, 0.02);
+  position: relative;
 
   @include s {
     border-radius: 20px;
+  }
+
+  .new {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--purpleLight);
+    border-radius: 10px;
+    padding: 8px 16px;
+
+    @include s {
+      top: 32px;
+      left: 32px;
+    }
+
+    .icon {
+      width: 24px;
+    }
   }
 
   .img {
@@ -22,7 +44,7 @@
     flex-direction: column;
     gap: 16px;
     transition: background-color 0.2s;
-    background-color: var(--light);
+    background-color: var(--lightWhite);
 
     .info {
       display: flex;

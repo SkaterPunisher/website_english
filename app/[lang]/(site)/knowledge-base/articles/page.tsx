@@ -32,20 +32,6 @@ export default async function ArticlesPage({ params: { lang } }: { params: { lan
       />
 
       {articles && <ArticlesPages articles={articles} />}
-
-      {/* <div className="layout">
-        <section className={styles.new}>
-          <ArticleNewCard article={articles[0]} />
-          <div className={styles.add}>Подписка</div>
-        </section>
-
-        {articles?.map((article, index) => (
-          <div className="flex " key={article.slug}>
-            <p>{index + 1}: </p>
-            <Link href={`/knowledge-base/articles/${article.slug}`}>{article.name}</Link>
-          </div>
-        ))}
-      </div> */}
     </main>
   )
 }

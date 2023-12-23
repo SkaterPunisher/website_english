@@ -1,0 +1,66 @@
+@import '@/styles/app.scss';
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 264px;
+  gap: 20px;
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    .title {
+      cursor: pointer;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .info {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      .desc {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .infoTime {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+
+        .data {
+          color: var(--gray);
+        }
+
+        .time {
+          color: var(--gray);
+          display: flex;
+          align-items: center;
+          gap: 8px;
+
+          .icon {
+            width: 24px;
+          }
+        }
+      }
+    }
+  }
+  .img {
+    height: 182px;
+    border-radius: 16px;
+    object-fit: cover;
+  }
+}

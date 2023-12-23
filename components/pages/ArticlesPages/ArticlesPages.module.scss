@@ -1,11 +1,55 @@
 @import '@/styles/app.scss';
 
-.new {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
+.wrapper {
+  .new {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
 
-  @include m {
-    grid-template-columns: 2fr 1fr;
+    @include m {
+      grid-template-columns: 2fr 1fr;
+    }
+  }
+
+  .articlesWrapper {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'tags'
+      'title'
+      'articles';
+    gap: 20px 20px;
+
+    @include s {
+      margin-top: 60px;
+      gap: 40px 20px;
+    }
+
+    @include m {
+      grid-template-columns: 2fr 1fr;
+      grid-template-areas:
+        'title title'
+        'articles tags';
+    }
+
+    .title {
+      grid-area: title;
+    }
+
+    .articles {
+      grid-area: articles;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+
+      @include s {
+        gap: 40px;
+      }
+    }
+
+    .tags {
+      grid-area: tags;
+    }
   }
 }
