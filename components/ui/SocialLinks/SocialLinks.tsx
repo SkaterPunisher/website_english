@@ -18,7 +18,7 @@ const SocialLinks = ({ className, ...props }: SocialLinksProps) => {
       <a href="https://www.instagram.com/englishschool_bg" className={styles.icon}>
         <InstagramIcon />
       </a>
-      <a href="#" className={styles.icon}>
+      <a href="viber://chat?number=%2B79506253446" className={styles.icon}>
         <ViberIcon />
       </a>
     </div>
