@@ -5,6 +5,12 @@
   .item {
     list-style-type: none;
     margin-right: 10px;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom 0.2s;
+
+    &:hover {
+      border-bottom: 1px solid var(--black);
+    }
 
     &:last-child {
       margin-right: 0;

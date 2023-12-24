@@ -41,11 +41,7 @@
       grid-area: articles;
       display: flex;
       flex-direction: column;
-      gap: 30px;
-
-      @include s {
-        gap: 40px;
-      }
+      gap: 40px;
     }
 
     .tags {

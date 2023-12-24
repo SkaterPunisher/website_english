@@ -8,6 +8,8 @@ import { formatDate } from '@/lib/utils/convertData'
 import Text from '@/components/ui/Text/Text'
 import BookIcon from '@/icons/book-open.svg'
 import SparkleIcon from '@/icons/sparkle.svg'
+import Link from 'next/link'
+import { CustomLink } from '@/components/ui/CustomLink/CustomLink'
 
 const ArticleNewCard = ({ article, className, ...props }: ArticleNewCardProps) => {
   return article ? (
@@ -28,7 +30,12 @@ const ArticleNewCard = ({ article, className, ...props }: ArticleNewCardProps) =
       </div>
 
       <Container size="s" className={styles.content}>
-        <Heading tag="h3">{article.name}</Heading>
+        <CustomLink href={`/knowledge-base/articles/${article.slug}`}>
+          <Heading tag="h3" className={styles.title}>
+            {article.name}
+          </Heading>
+        </CustomLink>
+
         <div className={styles.info}>
           <Text className={styles.data} size="xxs">
             {formatDate(article._createdAt)}

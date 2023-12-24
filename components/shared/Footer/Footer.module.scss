@@ -115,7 +115,8 @@
       margin-top: 24px;
       display: flex;
       flex-direction: column;
-      gap: 24px;
+      align-items: center;
+      gap: 10px;
 
       @include s {
         margin-top: 0px;

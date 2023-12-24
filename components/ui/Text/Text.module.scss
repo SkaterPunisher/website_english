@@ -27,14 +27,18 @@
 }
 
 .s {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 400;
   line-height: 140%; /* 25.2px */
+
+  @include s {
+    font-size: 18px;
+  }
 }
 
 .l {
   font-size: 18px;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 110%;
 
   @include s {

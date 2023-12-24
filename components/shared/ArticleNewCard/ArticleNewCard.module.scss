@@ -46,6 +46,14 @@
     transition: background-color 0.2s;
     background-color: var(--lightWhite);
 
+    .title {
+      cursor: pointer;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
     .info {
       display: flex;
       align-items: center;

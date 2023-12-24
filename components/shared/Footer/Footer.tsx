@@ -9,6 +9,7 @@ import Text from '@/components/ui/Text/Text'
 import Btn from '@/components/ui/Btn/Btn'
 import { contacts } from '@/constants/contacts'
 import SocialLinks from '@/components/ui/SocialLinks/SocialLinks'
+import LocaleSwitcher from '@/components/shared/LocaleSwitcher/LocaleSwitcher'
 
 const Footer = ({ className, ...props }: FooterProps) => {
   return (
@@ -66,6 +67,7 @@ const Footer = ({ className, ...props }: FooterProps) => {
           <Text size="xs" className={styles.address}>
             2024
           </Text>
+          <LocaleSwitcher />
         </div>
       </div>
     </footer>

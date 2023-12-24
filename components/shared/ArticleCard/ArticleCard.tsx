@@ -5,14 +5,17 @@ import DefaultImages from '@/components/ui/DefaultImages/DefaultImages'
 import Text from '@/components/ui/Text/Text'
 import { formatDate } from '@/lib/utils/convertData'
 import BookIcon from '@/icons/book-open.svg'
+import { CustomLink } from '@/components/ui/CustomLink/CustomLink'
 
 const ArticleCard = ({ article, className, ...props }: ArticleCardProps) => {
   return (
     <div className={cn(styles.wrapper, className)} {...props}>
       <div className={styles.content}>
-        <Text size="l" className={styles.title}>
-          {article.name}
-        </Text>
+        <CustomLink href={`/knowledge-base/articles/${article.slug}`}>
+          <Text size="l" className={styles.title}>
+            {article.name}
+          </Text>
+        </CustomLink>
 
         <div className={styles.info}>
           <Text size="s" className={styles.desc}>
