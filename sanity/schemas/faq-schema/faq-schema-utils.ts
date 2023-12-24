@@ -8,6 +8,7 @@ export const getFaqs = async (page: string, lang: Locale): Promise<FAQ> =>
     groq`*[_type == "faq" && namePage->page == $page][0] {
       _id,
       _createdAt,
+      title,
       "namePage": namePage->{page},
       faqs
     }`,

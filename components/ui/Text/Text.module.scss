@@ -36,10 +36,32 @@
   }
 }
 
+.sl {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 140%; /* 22.4px */
+
+  @include s {
+    font-size: 20px;
+  }
+}
+
 .l {
   font-size: 18px;
   font-weight: 500;
   line-height: 110%;
+
+  @include s {
+    font-size: 24px;
+  }
+}
+
+.ll {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 24px */
 
   @include s {
     font-size: 24px;

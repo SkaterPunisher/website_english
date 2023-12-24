@@ -22,13 +22,8 @@ export const faq = {
   type: 'document',
   fields: [
     {
-      name: 'metaTitle',
-      title: 'Мета заголовок',
-      type: 'string',
-    },
-    {
-      name: 'metaDescription',
-      title: 'Мета описание',
+      name: 'title',
+      title: 'Заголовок',
       type: 'string',
     },
     {

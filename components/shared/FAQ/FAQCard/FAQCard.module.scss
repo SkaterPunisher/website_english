@@ -1,0 +1,55 @@
+@import '@/styles/app.scss';
+
+.card {
+  position: relative;
+
+  .button {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 25px 0;
+
+    .text {
+      text-align: start;
+    }
+
+    .icon {
+      flex-shrink: 0;
+      width: 38px;
+
+      svg {
+        transition: transform 0.2s ease-in-out;
+        rect {
+          transition: fill 0.2s ease-in-out;
+          fill: var(--menuIconHover);
+        }
+      }
+    }
+
+    .expanded svg {
+      transform: rotate(-90deg);
+
+      rect {
+        fill: var(--purpleLightIcon);
+      }
+    }
+  }
+
+  .popover {
+    border-radius: 12px;
+    padding-left: 24px;
+    padding-right: 24px;
+    background-color: var(--purpleLightIcon);
+    z-index: 99 !important;
+    margin-bottom: 25px;
+    overflow: hidden;
+
+    @include l {
+      position: absolute;
+      top: 50px;
+      left: -12.5px;
+      width: 625px;
+      transform: rotate(-5deg);
+    }
+  }
+}

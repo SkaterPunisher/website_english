@@ -1,3 +1,87 @@
-.wrapper {
-  display: block;
+@import '@/styles/app.scss';
+
+.section {
+  margin-top: 20px;
+
+  .wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    gap: 20px;
+
+    @include l {
+      grid-template-rows: auto;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .title {
+      margin-top: 50px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+
+      @include s {
+        gap: 50px;
+      }
+
+      .header {
+        position: relative;
+
+        .heading {
+          position: relative;
+          z-index: 2;
+        }
+
+        .icon {
+          z-index: 0;
+          position: absolute;
+          top: 60%;
+          left: 20%;
+          transform: translate(-20%, -60%);
+          width: 200px;
+
+          svg {
+            path {
+              // opacity: 0.5;
+              stroke: var(--yellowLightIcon);
+            }
+          }
+        }
+      }
+
+      .footer {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        .text {
+          position: relative;
+          color: var(--gray);
+          z-index: 2;
+        }
+
+        .social {
+          justify-content: flex-start;
+        }
+      }
+    }
+
+    .faq {
+      margin-top: 40px;
+
+      @include l {
+        margin-top: 0px;
+      }
+
+      .card {
+        transition: border-bottom 0.2s, border-top 0.2s;
+        border-bottom: 2px solid var(--light);
+        cursor: pointer;
+
+        &:first-child {
+          border-top: 2px solid var(--light);
+        }
+      }
+    }
+  }
 }

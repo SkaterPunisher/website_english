@@ -1,6 +1,5 @@
 import { Metadata } from 'next'
 import { Locale } from '@/i18n-config'
-import FAQ from '@/components/shared/FAQ/FAQ'
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
@@ -14,8 +13,6 @@ export default async function IndexPage({ params: { lang } }: { params: { lang: 
   return (
     <section>
       <p>Current locale: {lang}</p>
-
-      <FAQ lang={lang} pageName={'about'} />
     </section>
   )
 }

@@ -1,4 +1,5 @@
 import ArticlesPages from '@/components/pages/ArticlesPages/ArticlesPages'
+import FAQ from '@/components/shared/FAQ/FAQ'
 import HeaderPage from '@/components/shared/HeaderPage/HeaderPage'
 import ButtonBack from '@/components/ui/ButtonBack/ButtonBack'
 import { Locale } from '@/i18n-config'
@@ -35,6 +36,8 @@ export default async function ArticlesPage({ params: { lang } }: { params: { lan
       <ButtonBack href={`/knowledge-base`}>База знаний</ButtonBack>
 
       {articles && <ArticlesPages articles={articles} tags={tags} />}
+
+      <FAQ lang={lang} pageName={'articles'} />
     </main>
   )
 }
