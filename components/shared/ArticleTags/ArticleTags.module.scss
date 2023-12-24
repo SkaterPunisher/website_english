@@ -1,0 +1,28 @@
+@import '@/styles/app.scss';
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  .tags {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+
+    .tag {
+      cursor: pointer;
+      padding: 8px 16px;
+      border-radius: 10px;
+      background-color: var(--whiteHover);
+      transition: background-color 0.2s, color 0.2s;
+      text-transform: lowercase;
+    }
+
+    .active {
+      background-color: var(--black);
+      color: var(--white);
+    }
+  }
+}

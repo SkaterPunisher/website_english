@@ -1,6 +1,7 @@
 import ArticlesPages from '@/components/pages/ArticlesPages/ArticlesPages'
 import HeaderPage from '@/components/shared/HeaderPage/HeaderPage'
 import { Locale } from '@/i18n-config'
+import { getTags } from '@/sanity/schemas/article-schema/articleTags-schema/blogTags-schema-utils'
 import { getArticles } from '@/sanity/schemas/article-schema/singleArticle-schema-utils'
 import { Metadata } from 'next'
 // export const revalidate = 60 * 10 // Это нужно для ревалидации запросов (1 раз в 10 минут). Но уже сделал в groq запросе последним параметром
@@ -19,8 +20,7 @@ export async function generateMetadata({
 
 export default async function ArticlesPage({ params: { lang } }: { params: { lang: Locale } }) {
   const articles = await getArticles(lang)
-
-  console.log(articles)
+  const tags = await getTags(lang)
 
   return (
     <main>
@@ -31,7 +31,7 @@ export default async function ArticlesPage({ params: { lang } }: { params: { lan
         description="Все статьи нашего блога написаны нашими преподавателями и разивают темы, которые мы проходим на курсах. Изучите их подробнее, чтобы узнать новые темы английского языка"
       />
 
-      {articles && <ArticlesPages articles={articles} />}
+      {articles && <ArticlesPages articles={articles} tags={tags} />}
     </main>
   )
 }

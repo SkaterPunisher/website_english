@@ -8,7 +8,6 @@ import { formatDate } from '@/lib/utils/convertData'
 import Text from '@/components/ui/Text/Text'
 import BookIcon from '@/icons/book-open.svg'
 import SparkleIcon from '@/icons/sparkle.svg'
-import Link from 'next/link'
 import { CustomLink } from '@/components/ui/CustomLink/CustomLink'
 
 const ArticleNewCard = ({ article, className, ...props }: ArticleNewCardProps) => {
@@ -41,9 +40,9 @@ const ArticleNewCard = ({ article, className, ...props }: ArticleNewCardProps) =
             {formatDate(article._createdAt)}
           </Text>
           <Text className={styles.time} size="xxs">
-            <div className={styles.icon}>
-              <BookIcon />
-            </div>
+            {/* <div className={styles.icon}> */}
+            <BookIcon className={styles.icon} />
+            {/* </div> */}
             {article.timeForRead} мин чтения
           </Text>
         </div>

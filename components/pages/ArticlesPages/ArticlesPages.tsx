@@ -4,9 +4,10 @@ import { ArticlesPagesProps } from './ArticlesPages.props'
 import ArticleNewCard from '@/components/shared/ArticleNewCard/ArticleNewCard'
 import FormSubscriptionForNews from '@/components/shared/FormSubscriptionForNews/FormSubscriptionForNews'
 import Heading from '@/components/ui/Heading/Heading'
-import ArticleCard from '@/components/shared/ArticleCard/ArticleCard'
+import ArticleTags from '@/components/shared/ArticleTags/ArticleTags'
+import ArticlesCard from '@/components/shared/ArticlesCard/ArticlesCard'
 
-const ArticlesPages = ({ articles, className, ...props }: ArticlesPagesProps) => {
+const ArticlesPages = ({ tags, articles, className, ...props }: ArticlesPagesProps) => {
   return (
     <div className={cn(styles.wrapper, 'layout', className)} {...props}>
       <section className={styles.new}>
@@ -20,13 +21,9 @@ const ArticlesPages = ({ articles, className, ...props }: ArticlesPagesProps) =>
             Все статьи
           </Heading>
 
-          <div className={styles.articles}>
-            {articles?.map((article, index) => {
-              if (index > 0) return <ArticleCard article={article} key={article.slug} />
-            })}
-          </div>
+          <ArticlesCard className={styles.articles} articles={articles} />
 
-          <div className={styles.tags}>123</div>
+          <ArticleTags tags={tags} className={styles.tags} />
         </section>
       )}
     </div>
