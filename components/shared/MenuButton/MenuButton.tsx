@@ -5,42 +5,42 @@ import { Button, DialogTrigger, Popover } from 'react-aria-components'
 import { useMediaQuery } from 'react-responsive'
 import MenuButtonContent from './MenuButtonContent/MenuButtonContent'
 
+const lineVariants = {
+  closed: {
+    rotate: 0,
+    translateY: 0,
+    translateX: 0,
+    opacity: 1,
+  },
+  open: {
+    rotate: 45,
+    translateY: 4,
+    translateX: 0,
+    opacity: 1,
+  },
+}
+
+const line2Variants = {
+  closed: {
+    rotate: 0,
+    translateY: 0,
+    translateX: 0,
+    opacity: 1,
+  },
+  open: {
+    rotate: -45,
+    translateY: -3,
+    translateX: 0,
+    opacity: 1,
+  },
+}
+
 const MenuButton = () => {
   let [isOpen, setOpen] = useState(false)
 
   const isRight = useMediaQuery({
     query: '(min-width: 768px)',
   })
-
-  const lineVariants = {
-    closed: {
-      rotate: 0,
-      translateY: 0,
-      translateX: 0,
-      opacity: 1,
-    },
-    open: {
-      rotate: 45,
-      translateY: 4,
-      translateX: 0,
-      opacity: 1,
-    },
-  }
-
-  const line2Variants = {
-    closed: {
-      rotate: 0,
-      translateY: 0,
-      translateX: 0,
-      opacity: 1,
-    },
-    open: {
-      rotate: -45,
-      translateY: -3,
-      translateX: 0,
-      opacity: 1,
-    },
-  }
 
   return (
     <DialogTrigger>

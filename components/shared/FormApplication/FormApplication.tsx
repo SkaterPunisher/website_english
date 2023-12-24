@@ -20,6 +20,12 @@ const TOKEN = process.env.TOKEN
 const CHAT_ID = process.env.CHAT_ID
 const URL_API = `https://api.telegram.org/bot${TOKEN}/sendMessage`
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1 },
+  exit: { opacity: 0 },
+}
+
 type Form = {
   firstName: string
   phone: string
@@ -48,12 +54,6 @@ const FormApplication = () => {
     mode: 'onBlur',
     resolver: zodResolver(formSchema),
   })
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1 },
-    exit: { opacity: 0 },
-  }
 
   const onSubmit = async (data: Form) => {
     let message = `<b>Заявка с Advanced English</b> \n`

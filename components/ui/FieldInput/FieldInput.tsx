@@ -9,6 +9,12 @@ import { ForwardedRef, forwardRef, useState } from 'react'
 import { handleMaskedChange } from './inputMask'
 import { AnimatePresence, motion } from 'framer-motion'
 
+const variants = {
+  hidden: { y: '-100%', opacity: 0 },
+  visible: { y: '0', opacity: 1 },
+  exit: { y: '-100%', opacity: 0 },
+}
+
 export const FieldInput = forwardRef(
   (
     {
@@ -37,12 +43,6 @@ export const FieldInput = forwardRef(
 
     // Determine the actual input type based on whether the password is visible
     const inputActualType = type === 'password' && isPasswordVisible ? 'text' : type
-
-    const variants = {
-      hidden: { y: '-100%', opacity: 0 },
-      visible: { y: '0', opacity: 1 },
-      exit: { y: '-100%', opacity: 0 },
-    }
 
     return (
       <TextField

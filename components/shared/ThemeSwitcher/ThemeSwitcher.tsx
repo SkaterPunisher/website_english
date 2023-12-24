@@ -5,13 +5,13 @@ import MoonIcon from '@/icons/moon.svg'
 import SunIcon from '@/icons/sun.svg'
 import cn from 'classnames'
 
+const transitionSettings = {
+  duration: 0.1,
+  ease: 'easeInOut',
+}
+
 const ThemeSwitcher = () => {
   const { theme, handleChangeTheme } = useThemeDetector()
-
-  const transitionSettings = {
-    duration: 0.1,
-    ease: 'easeInOut',
-  }
 
   return (
     <div className={cn(styles.wrapper, 'buttonIconWrapper')} onClick={handleChangeTheme}>

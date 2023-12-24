@@ -10,6 +10,11 @@ import { motion } from 'framer-motion'
 import { linksKnowledge, linksMenu, linksOther } from '@/constants/links'
 import { MenuButtonContentProps } from './MenuButtonContent.props'
 
+const variants = {
+  open: { opacity: 1, height: 'auto' },
+  closed: { opacity: 0, height: 0 },
+}
+
 const MenuButtonContent = ({ setOpen, className, ...props }: MenuButtonContentProps) => {
   const [knowledgeContent, setKnowledgeContent] = useState(false)
   const [otherContent, setOtherContent] = useState(false)
@@ -20,11 +25,6 @@ const MenuButtonContent = ({ setOpen, className, ...props }: MenuButtonContentPr
 
   const handleOpenOther = () => {
     setOtherContent(!otherContent)
-  }
-
-  const variants = {
-    open: { opacity: 1, height: 'auto' },
-    closed: { opacity: 0, height: 0 },
   }
 
   return (
