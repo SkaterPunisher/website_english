@@ -52,9 +52,15 @@ const FAQCard = ({ faq, className, ...props }: FAQCardProps) => {
             key={faq._id}
             ref={popoverRef}
             className={styles.popover}
-            initial={{ opacity: 0, maxHeight: 0, paddingTop: 0, paddingBottom: 0, margin: 0 }}
-            animate={{ opacity: 1, maxHeight: '1000px', paddingTop: '24px', paddingBottom: '24px' }}
-            exit={{ opacity: 0, maxHeight: 0, paddingTop: 0, paddingBottom: 0, margin: 0 }}
+            initial={{ opacity: 0, maxHeight: 0, paddingTop: 0, paddingBottom: 0, marginBottom: 0 }}
+            animate={{
+              opacity: 1,
+              maxHeight: '600px',
+              paddingTop: '24px',
+              paddingBottom: '24px',
+              marginBottom: '25px',
+            }}
+            exit={{ opacity: 0, maxHeight: 0, paddingTop: 0, paddingBottom: 0, marginBottom: 0 }}
             transition={{ duration: 0.2 }}
           >
             {faq.answer}

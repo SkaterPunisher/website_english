@@ -38,7 +38,9 @@ const ArticleTags = ({ tags, className, ...props }: ArticleTagsProps) => {
             })}
           >
             <Text size="s" className={styles.text}>
-              Выберите темы
+              {allTags.length
+                ? allTags.map(tag => `# ${tag.trim().toLowerCase()}`).join(', ')
+                : 'Выберите темы'}
             </Text>
             <ArrowDownIcon className={styles.icon} />
           </Button>
