@@ -1,7 +1,7 @@
 import styles from './ArticlesPages.module.scss'
 import cn from 'classnames'
 import { ArticlesPagesProps } from './ArticlesPages.props'
-import ArticleNewCard from '@/components/shared/ArticleNewCard/ArticleNewCard'
+import ArticleNewCard from '@/components/shared/ArticlesNewCard/ArticlesNewCard'
 import FormSubscriptionForNews from '@/components/shared/FormSubscriptionForNews/FormSubscriptionForNews'
 import Heading from '@/components/ui/Heading/Heading'
 import ArticleTags from '@/components/shared/ArticleTags/ArticleTags'

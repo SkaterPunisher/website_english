@@ -1,5 +1,5 @@
-import { ArticleNewCardProps } from './ArticleNewCard.props'
-import styles from './ArticleNewCard.module.scss'
+import { ArticlesNewCardProps } from './ArticlesNewCard.props'
+import styles from './ArticlesNewCard.module.scss'
 import cn from 'classnames'
 import DefaultImages from '@/components/ui/DefaultImages/DefaultImages'
 import Container from '@/components/ui/Container/Container'
@@ -10,7 +10,7 @@ import BookIcon from '@/icons/book-open.svg'
 import SparkleIcon from '@/icons/sparkle.svg'
 import { CustomLink } from '@/components/ui/CustomLink/CustomLink'
 
-const ArticleNewCard = ({ article, className, ...props }: ArticleNewCardProps) => {
+const ArticlesNewCard = ({ article, className, ...props }: ArticlesNewCardProps) => {
   return article ? (
     <div className={cn(styles.wrapper, className)} {...props}>
       <DefaultImages
@@ -40,9 +40,7 @@ const ArticleNewCard = ({ article, className, ...props }: ArticleNewCardProps) =
             {formatDate(article._createdAt)}
           </Text>
           <Text className={styles.time} size="xxs">
-            {/* <div className={styles.icon}> */}
             <BookIcon className={styles.icon} />
-            {/* </div> */}
             {article.timeForRead} мин чтения
           </Text>
         </div>
@@ -51,4 +49,4 @@ const ArticleNewCard = ({ article, className, ...props }: ArticleNewCardProps) =
   ) : null
 }
 
-export default ArticleNewCard
+export default ArticlesNewCard

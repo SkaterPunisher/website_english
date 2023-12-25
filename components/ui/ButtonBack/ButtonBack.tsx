@@ -11,7 +11,9 @@ const ButtonBack = ({ href, children, className, ...props }: ButtonBackProps) =>
       <CustomLink href={href} className={styles.link}>
         <button className={cn(styles.button, className)} {...props}>
           <ArrowIcon className={styles.icon} />
-          <Text size="s">{children}</Text>
+          <Text size="s" className={styles.text}>
+            {children}
+          </Text>
         </button>
       </CustomLink>
     </div>

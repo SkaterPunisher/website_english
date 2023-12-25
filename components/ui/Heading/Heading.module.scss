@@ -17,6 +17,19 @@
   }
 }
 
+.h1-s {
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 110%; /* 35.2px */
+  letter-spacing: -1px;
+
+  @include s {
+    font-size: 48px;
+    letter-spacing: -3.5px;
+  }
+}
+
 .h2 {
   font-size: 32px;
   letter-spacing: -1px;

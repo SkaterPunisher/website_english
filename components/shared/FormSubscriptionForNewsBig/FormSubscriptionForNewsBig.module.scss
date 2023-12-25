@@ -1,0 +1,122 @@
+@import '@/styles/app.scss';
+
+.wrapper {
+  transition: background 0.2s;
+  background-color: var(--yellowLightSubscription);
+
+  .contentWrapper {
+    width: 100%;
+    padding: 40px 16px;
+    display: grid;
+    gap: 20px;
+    align-items: center;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    position: relative;
+    overflow: hidden;
+
+    @include s {
+      padding: 40px 20px;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+    }
+
+    @include l {
+      margin: auto;
+      width: 1280px;
+    }
+
+    .title {
+      font-weight: 600;
+      text-align: center;
+      z-index: 1;
+      position: relative;
+
+      @include s {
+        text-align: left;
+      }
+    }
+
+    .subtitle {
+      text-align: center;
+      z-index: 1;
+      position: relative;
+
+      @include s {
+        text-align: left;
+      }
+    }
+
+    .form {
+      z-index: 1;
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 24px;
+
+      width: 100%;
+
+      @include s {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+      }
+
+      @include l {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+      }
+
+      .button {
+        width: 100%;
+      }
+    }
+
+    .link {
+      margin-top: 20px;
+      color: var(--gray);
+      z-index: 1;
+      position: relative;
+    }
+
+    .icon_1,
+    .icon_2 {
+      width: 380px;
+      position: absolute;
+      z-index: 0;
+
+      svg {
+        path {
+          transition: stroke 0.2s;
+          stroke: var(--yellowLightIcon);
+        }
+      }
+    }
+
+    .icon_1 {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      @include s {
+        top: 10px;
+        left: 0px;
+        transform: translate(0%, 0%);
+      }
+
+      @include l {
+        top: -20px;
+      }
+    }
+
+    .icon_2 {
+      top: 0;
+      right: 50px;
+      display: none;
+
+      @include m {
+        display: block;
+      }
+    }
+  }
+}

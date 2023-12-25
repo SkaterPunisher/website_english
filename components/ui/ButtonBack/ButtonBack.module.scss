@@ -20,11 +20,14 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    border-bottom: 1px solid transparent;
-    transition: border-bottom 0.2s;
 
-    &:hover {
-      border-bottom: 1px solid var(--black);
+    .text {
+      border-bottom: 1px solid transparent;
+      transition: border-bottom 0.2s;
+
+      &:hover {
+        border-bottom: 1px solid var(--black);
+      }
     }
 
     .icon {

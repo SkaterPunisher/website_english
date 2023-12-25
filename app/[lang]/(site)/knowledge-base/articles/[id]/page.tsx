@@ -4,6 +4,8 @@ import { PortableText } from '@portabletext/react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Locale } from '@/i18n-config'
+import ArticlePage from '@/components/pages/ArticlePage/ArticlePage'
+import ButtonBack from '@/components/ui/ButtonBack/ButtonBack'
 
 export async function generateMetadata({
   params: { id, lang },
@@ -13,12 +15,12 @@ export async function generateMetadata({
   const article = await getArticle(id, lang)
 
   return {
-    title: article.name,
-    description: article.description,
+    title: `${article.name} < Zykova Oksana § Advanced English`,
+    description: `${article.description} | Блог Zykova Oksana § Advanced English`,
   }
 }
 
-export default async function ArticlePage({
+export default async function ArticleSinglePage({
   params: { id, lang },
 }: {
   params: { id: string; lang: Locale }
@@ -27,7 +29,14 @@ export default async function ArticlePage({
 
   return (
     <main>
-      <Link className="text-blue-500" href="/articles">
+      <ButtonBack href={`/knowledge-base/articles`}>Все статьи</ButtonBack>
+      <ArticlePage article={singleArticle} />
+    </main>
+  )
+}
+
+{
+  /* <Link className="text-blue-500" href="/articles">
         Все статьи
       </Link>
       <div key={singleArticle._id} className="border-y-2  border-gray-500 my-4 p-2">
@@ -79,7 +88,5 @@ export default async function ArticlePage({
             }
           })}
         </div>
-      </div>
-    </main>
-  )
+      </div> */
 }

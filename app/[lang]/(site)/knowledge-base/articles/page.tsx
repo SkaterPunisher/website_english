@@ -1,4 +1,4 @@
-import ArticlesPages from '@/components/pages/ArticlesPages/ArticlesPages'
+import ArticlesPages from '@/components/pages/ArticlesPage/ArticlesPages'
 import FAQ from '@/components/shared/FAQ/FAQ'
 import HeaderPage from '@/components/shared/HeaderPage/HeaderPage'
 import ButtonBack from '@/components/ui/ButtonBack/ButtonBack'
