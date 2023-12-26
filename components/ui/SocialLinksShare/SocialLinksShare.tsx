@@ -8,7 +8,6 @@ import TelegramIcon from '@/icons/telegram.svg'
 import InstagramIcon from '@/icons/instagram.svg'
 import ViberIcon from '@/icons/viber.svg'
 import Text from '@/components/ui/Text/Text'
-
 import {
   TelegramShareButton,
   ViberShareButton,
@@ -24,19 +23,19 @@ const SocialLinksShare = ({ className, ...props }: SocialLinksShareProps) => {
     <div className={cn(styles.wrapper, className)} {...props}>
       <Text size="ll">Поделиться в социальных сетях</Text>
       <div className={styles.links}>
-        <VKShareButton url={pathname}>
+        <VKShareButton noVkLinks={true} url={`https://www.english-zykova.ru/${pathname}`}>
           <VKIcon className={styles.icon} />
         </VKShareButton>
 
-        <TelegramShareButton url={pathname}>
+        <TelegramShareButton url={`https://www.english-zykova.ru/${pathname}`}>
           <TelegramIcon className={styles.icon} />
         </TelegramShareButton>
 
-        <WhatsappShareButton url={pathname}>
+        <WhatsappShareButton url={`https://www.english-zykova.ru/${pathname}`}>
           <InstagramIcon className={styles.icon} />
         </WhatsappShareButton>
 
-        <ViberShareButton url={pathname}>
+        <ViberShareButton url={`https://www.english-zykova.ru/${pathname}`}>
           <ViberIcon className={styles.icon} />
         </ViberShareButton>
       </div>
