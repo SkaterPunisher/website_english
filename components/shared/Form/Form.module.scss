@@ -1,0 +1,88 @@
+@import '@/styles/app.scss';
+
+.wrapper {
+  border-radius: 20px;
+  background: var(--blueLightWrapper);
+  transition: background 0.2s;
+  position: relative;
+  padding: 40px 16px;
+  margin: 0 -16px;
+
+  @include s {
+    padding: 70px;
+    margin: 0 0px;
+  }
+
+  .flag {
+    position: absolute;
+    top: -80px;
+    right: -110px;
+    width: 200px;
+
+    @include m {
+      top: -60px;
+      right: -60px;
+    }
+  }
+
+  .content {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr;
+    gap: 40px;
+
+    @include l {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .form {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+
+      .button {
+        width: 100%;
+      }
+    }
+
+    .heading {
+      margin-bottom: 10px;
+    }
+
+    .advantages {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      margin-top: 30px;
+
+      @include l {
+        margin-top: 0px;
+      }
+
+      .item {
+        display: flex;
+        flex-direction: column;
+
+        gap: 16px;
+
+        @include s {
+          flex-direction: row;
+          align-items: center;
+        }
+
+        .icon {
+          width: 34px;
+          height: 34px;
+          border-radius: 100%;
+          background-color: var(--white);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-shrink: 0;
+
+          transition: background-color 0.2s;
+        }
+      }
+    }
+  }
+}

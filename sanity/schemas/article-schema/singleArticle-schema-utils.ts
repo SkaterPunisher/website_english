@@ -27,7 +27,7 @@ export const getArticles = async (lang: Locale): Promise<Article[]> =>
       content,
     }`,
     { lang },
-    { next: { revalidate: 60 * 10 } },
+    { next: { revalidate: 60 * 1 } },
   )
 
 export const getArticle = async (slug: string, lang: Locale): Promise<Article> =>
