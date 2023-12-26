@@ -12,6 +12,7 @@ import { showToast } from '@/components/ui/CustomToast/CustomToast'
 import { FieldInput } from '@/components/ui/FieldInput'
 import VectorIcon_1 from '@/icons/vector-yellow-form-1.svg'
 import VectorIcon_2 from '@/icons/vector-yellow-form-2.svg'
+import { CustomLink } from '@/components/ui/CustomLink/CustomLink'
 
 const TOKEN = process.env.TOKEN
 const CHAT_ID = process.env.CHAT_ID
@@ -102,13 +103,15 @@ const FormSubscriptionForNewsBig = () => {
               className={styles.button}
               color="black"
             >
-              Записаться
+              Подписаться
             </Btn>
           </form>
 
           <Text size="xxs" className={styles.link}>
-            Нажимая «Подписаться», вы принимаете условия{' '}
-            <Link href="/privacy-advanced-english">политики конфиденциальности</Link>
+            Нажимая "Подписаться", вы принимаете условия{' '}
+            <CustomLink className={styles.linkText} href="/privacy-advanced-english">
+              политики конфиденциальности
+            </CustomLink>
           </Text>
         </div>
 

@@ -2,13 +2,9 @@ import { ArticleSingleContentProps } from './ArticleSingleContent.props'
 import styles from './ArticleSingleContent.module.scss'
 import cn from 'classnames'
 import DefaultImages from '@/components/ui/DefaultImages/DefaultImages'
-import Text from '@/components/ui/Text/Text'
-import { formatDate } from '@/lib/utils/convertData'
-import BookIcon from '@/icons/book-open.svg'
-import { CustomLink } from '@/components/ui/CustomLink/CustomLink'
-import Heading from '@/components/ui/Heading/Heading'
 import { PortableText } from '@portabletext/react'
 import SocialLinksShare from '@/components/ui/SocialLinksShare/SocialLinksShare'
+import FormDiscount from '../FormDiscount/FormDiscount'
 
 const ArticleSingleContent = ({ article, className, ...props }: ArticleSingleContentProps) => {
   return (
@@ -31,7 +27,10 @@ const ArticleSingleContent = ({ article, className, ...props }: ArticleSingleCon
         })}
         <SocialLinksShare />
       </div>
-      <div></div>
+
+      <div>
+        <FormDiscount className={styles.formDiscount} />
+      </div>
     </section>
   )
 }

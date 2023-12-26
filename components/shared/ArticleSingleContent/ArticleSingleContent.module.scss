@@ -5,7 +5,7 @@
   grid-template-columns: 1fr;
   gap: 20px;
 
-  @include s {
+  @include m {
     grid-template-columns: 2fr 1fr;
   }
 
@@ -20,6 +20,17 @@
       @include s {
         height: 323px;
       }
+    }
+  }
+
+  .formDiscount {
+    display: none;
+
+    @include m {
+      padding-top: 120px;
+      display: flex;
+      position: sticky;
+      top: 0;
     }
   }
 }

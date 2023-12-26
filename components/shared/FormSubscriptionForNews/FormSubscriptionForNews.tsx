@@ -92,7 +92,7 @@ const FormSubscriptionForNews = () => {
           className={styles.button}
           color="black"
         >
-          Записаться
+          Подписаться
         </Btn>
       </form>
 

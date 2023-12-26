@@ -77,6 +77,15 @@
       color: var(--gray);
       z-index: 1;
       position: relative;
+
+      .linkText {
+        transition: border-bottom 0.2s;
+        border-bottom: 1px solid transparent;
+
+        &:hover {
+          border-bottom: 1px solid var(--gray);
+        }
+      }
     }
 
     .icon_1,
