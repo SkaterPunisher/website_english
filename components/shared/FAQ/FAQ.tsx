@@ -8,10 +8,10 @@ import Text from '@/components/ui/Text/Text'
 import SocialLinks from '@/components/ui/SocialLinks/SocialLinks'
 import FAQCard from './FAQCard/FAQCard'
 
-export default async function FAQ({ lang, pageName, className, ...props }: FAQProps) {
-  const faq = await getFaqs(pageName, lang)
+export default async function FAQ({ lang, allFAQ, pageName, className, ...props }: FAQProps) {
+  const faqs = await getFaqs(allFAQ ? 'all' : pageName, lang)
 
-  if (faq && faq.faqs.length > 0) {
+  if (faqs && faqs.length > 0) {
     return (
       <section className={cn(styles.section, 'layout', className)} {...props}>
         <div className={styles.wrapper}>
@@ -34,9 +34,9 @@ export default async function FAQ({ lang, pageName, className, ...props }: FAQPr
           </div>
 
           <ul className={styles.faq}>
-            {faq.faqs.map(faq => (
-              <FAQCard key={faq._id} faq={faq} className={styles.card} />
-            ))}
+            {faqs.map(faq =>
+              faq.faqs.map(faq => <FAQCard key={faq._id} faq={faq} className={styles.card} />),
+            )}
           </ul>
         </div>
       </section>

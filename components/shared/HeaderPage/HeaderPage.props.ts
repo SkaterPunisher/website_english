@@ -4,5 +4,5 @@ export type HeaderPageProps = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, 
   color?: 'blue' | 'red' | 'purple' | 'yellow'
   title: string
   description: string
-  btnText: string
+  btnText?: string
 }

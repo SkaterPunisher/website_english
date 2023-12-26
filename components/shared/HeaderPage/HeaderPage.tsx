@@ -26,9 +26,11 @@ const HeaderPage = ({
         <div className={styles.content}>
           <Heading tag="h1">{title}</Heading>
           <Text size="s">{description}</Text>
-          <Btn color="black" onClick={toggleApplicationForm}>
-            {btnText}
-          </Btn>
+          {btnText && (
+            <Btn color="black" onClick={toggleApplicationForm}>
+              {btnText}
+            </Btn>
+          )}
         </div>
 
         {color === 'yellow' && (

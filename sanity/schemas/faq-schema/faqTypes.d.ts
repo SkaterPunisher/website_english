@@ -12,3 +12,5 @@ export type FAQ = {
   namePage: TestTags
   faqs: singleFAQ[]
 }
+
+export type FAQs = FAQ[]
