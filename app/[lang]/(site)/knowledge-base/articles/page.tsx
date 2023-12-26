@@ -37,7 +37,7 @@ export default async function ArticlesPage({ params: { lang } }: { params: { lan
 
       {articles && <ArticlesPages articles={articles} tags={tags} />}
 
-      <FAQ lang={lang} pageName={'articles'} />
+      <FAQ lang={lang} pageName={'Главная'} />
     </main>
   )
 }

@@ -3,4 +3,5 @@ import { DetailedHTMLProps, HTMLAttributes } from 'react'
 
 export type ArticlePageProps = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> & {
   article: Article
+  lang: 'ru' | 'en'
 }

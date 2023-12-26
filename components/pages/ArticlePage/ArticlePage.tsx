@@ -5,14 +5,18 @@ import ArticleSingleTitle from '@/components/shared/ArticleSingleTitle/ArticleSi
 import FormSubscriptionForNewsBig from '@/components/shared/FormSubscriptionForNewsBig/FormSubscriptionForNewsBig'
 import ArticleSingleContent from '@/components/shared/ArticleSingleContent/ArticleSingleContent'
 import Form from '@/components/shared/Form/Form'
+import FAQ from '@/components/shared/FAQ/FAQ'
+import ArticleSingleCards from '@/components/shared/ArticleSingleCards/ArticleSingleCards'
 
-const ArticlePage = ({ article, className, ...props }: ArticlePageProps) => {
+const ArticlePage = ({ lang, article, className, ...props }: ArticlePageProps) => {
   return (
     <div className={cn(styles.wrapper, className)} {...props}>
       <ArticleSingleTitle article={article} />
       <FormSubscriptionForNewsBig />
       <ArticleSingleContent article={article} />
       <Form />
+      <ArticleSingleCards lang={lang} tags={article.tags.map(tag => tag.tag)} />
+      <FAQ lang={lang} pageName={'Главная'} />
     </div>
   )
 }
