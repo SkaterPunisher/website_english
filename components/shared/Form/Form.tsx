@@ -12,6 +12,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import FlagIcon from '@/icons/falg.svg'
 import axios from 'axios'
 import { showToast } from '@/components/ui/CustomToast/CustomToast'
+import cn from 'classnames'
 
 const TOKEN = process.env.TOKEN
 const CHAT_ID = process.env.CHAT_ID
@@ -66,7 +67,7 @@ const Form = () => {
   }
 
   return (
-    <section className="layout">
+    <section className={cn(styles.section, 'layout')}>
       <div className={styles.wrapper}>
         <Heading tag="h2" className={styles.heading}>
           Запишитесь на бесплатный <br /> вводный урок
