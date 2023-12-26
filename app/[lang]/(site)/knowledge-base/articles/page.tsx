@@ -29,7 +29,7 @@ export default async function ArticlesPage({ params: { lang } }: { params: { lan
       <HeaderPage
         color="yellow"
         btnText="Оставить заявку"
-        title="Блог Advanced English"
+        title="Блог Zykova Oksana § Advanced English"
         description="Все статьи нашего блога написаны нашими преподавателями и разивают темы, которые мы проходим на курсах. Изучите их подробнее, чтобы узнать новые темы английского языка"
       />
 

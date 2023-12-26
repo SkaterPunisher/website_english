@@ -5,6 +5,7 @@ import cn from 'classnames'
 import { HeaderPageProps } from './HeaderPage.props'
 import VectorYellow from '@/icons/vector-yellow.svg'
 import VectorBlue from '@/icons/vector-blue.svg'
+import VectorPurple from '@/icons/vector-purple.svg'
 import Heading from '@/components/ui/Heading/Heading'
 import Text from '@/components/ui/Text/Text'
 import Btn from '@/components/ui/Btn/Btn'
@@ -41,6 +42,11 @@ const HeaderPage = ({
         {color === 'blue' && (
           <div className={cn(styles.icon, styles.iconBlue)}>
             <VectorBlue />
+          </div>
+        )}
+        {color === 'purple' && (
+          <div className={cn(styles.icon, styles.iconPurple)}>
+            <VectorPurple />
           </div>
         )}
         {/* {color === 'purple' && (

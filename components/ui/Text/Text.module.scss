@@ -3,6 +3,8 @@
 .text {
   font-family: Montserrat;
   font-style: normal;
+  color: var(--black);
+  transition: color 0.2s;
 }
 
 .xxs {

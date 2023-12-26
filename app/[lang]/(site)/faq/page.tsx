@@ -3,7 +3,6 @@ import Form from '@/components/shared/Form/Form'
 import HeaderPage from '@/components/shared/HeaderPage/HeaderPage'
 import { Locale } from '@/i18n-config'
 import { Metadata } from 'next'
-import React from 'react'
 
 export async function generateMetadata({
   params: { lang },
@@ -11,8 +10,9 @@ export async function generateMetadata({
   params: { lang: Locale }
 }): Promise<Metadata> {
   return {
-    title: 'Вопрос-ответ Advenced English | Zykova Oksana',
-    description: 'Описание страницы вопрос-ответ Advenced English | Zykova Oksana',
+    title: 'Ответы на популярные вопросы про обучение в центре Zykova Oksana § Advanced English',
+    description:
+      'Здесь вы сможете узнать ответы на самые популярные вопросы о обучении в центре английского языка  Zykova Oksana § Advanced English',
   }
 }
 
@@ -20,7 +20,7 @@ export default async function FAQPage({ params: { lang } }: { params: { lang: Lo
   return (
     <main>
       <HeaderPage
-        color="yellow"
+        color="purple"
         title="Вопрос-ответ"
         description="На этой странице вы можете посмотреть ответы на самые частые вопросы и ответы на них от наших преподавателей"
       />
