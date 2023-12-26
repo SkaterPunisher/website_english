@@ -7,6 +7,7 @@ import DefaultImages from '@/components/ui/DefaultImages/DefaultImages'
 import Text from '@/components/ui/Text/Text'
 import { formatDate } from '@/lib/utils/convertData'
 import BookIcon from '@/icons/book-open.svg'
+import { CustomLink } from '@/components/ui/CustomLink/CustomLink'
 
 async function ArticleSingleCards({ lang, tags, className, ...props }: ArticleSingleCardsProps) {
   const articles = await getArticlesByAnyTag(lang, tags)
@@ -27,9 +28,11 @@ async function ArticleSingleCards({ lang, tags, className, ...props }: ArticleSi
                 height={300}
                 alt={index.toString()}
               />
-              <Heading tag="h3" className={styles.title}>
-                {article.name}
-              </Heading>
+              <CustomLink href={`/knowledge-base/articles/${article.slug}`}>
+                <Heading tag="h3" className={styles.title}>
+                  {article.name}
+                </Heading>
+              </CustomLink>
               <Text size="s" className={styles.description}>
                 {article.description}
               </Text>

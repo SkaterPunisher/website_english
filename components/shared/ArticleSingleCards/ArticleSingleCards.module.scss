@@ -55,6 +55,10 @@
       .title {
         -webkit-line-clamp: 3;
         -moz-line-clamp: 3;
+
+        &:hover {
+          text-decoration: underline;
+        }
       }
 
       .description {
