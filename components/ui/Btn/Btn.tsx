@@ -17,7 +17,7 @@ const Btn = ({
       className={cn(styles.button, styles[color], styles[size], className)}
       {...props}
     >
-      <Text size="s">{children}</Text>
+      {children}
     </button>
   )
 }

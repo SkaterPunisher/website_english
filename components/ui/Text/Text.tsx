@@ -1,4 +1,3 @@
-'use client'
 import React from 'react'
 import { TextProps } from './Text.props'
 import cn from 'classnames'
