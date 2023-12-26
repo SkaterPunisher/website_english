@@ -1,6 +1,6 @@
 'use client'
 
-import styles from './FormApplication.module.scss'
+import styles from './FormModal.module.scss'
 import { motion, AnimatePresence } from 'framer-motion'
 import Btn from '@/components/ui/Btn/Btn'
 import { useApplicationStore } from '@/stores/application.store'
@@ -42,7 +42,7 @@ const formSchema = z.object({
     .min(18, { message: 'Введите полный номер' }),
 })
 
-const FormApplication = () => {
+const FormModal = () => {
   const { isVisible, toggleApplicationForm } = useApplicationStore()
 
   const {
@@ -182,4 +182,4 @@ const FormApplication = () => {
   )
 }
 
-export default FormApplication
+export default FormModal

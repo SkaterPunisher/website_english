@@ -60,7 +60,7 @@ const FormSubscriptionForNewsBig = () => {
   }
 
   return (
-    <div className={styles.wrapper}>
+    <section className={styles.wrapper}>
       <div className={styles.contentWrapper}>
         <div>
           <Text size="l" className={styles.title}>
@@ -119,7 +119,7 @@ const FormSubscriptionForNewsBig = () => {
           <VectorIcon_2 />
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 

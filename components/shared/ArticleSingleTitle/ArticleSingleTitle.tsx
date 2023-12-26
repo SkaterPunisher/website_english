@@ -10,7 +10,7 @@ import Heading from '@/components/ui/Heading/Heading'
 
 const ArticleSingleTitle = ({ article, className, ...props }: ArticleSingleTitleProps) => {
   return (
-    <div className={cn(styles.wrapper, 'layout', className)} {...props}>
+    <section className={cn(styles.wrapper, 'layout', className)} {...props}>
       <div className={styles.titleWrapper}>
         <Heading tag="h1-s" className={styles.title}>
           {article.name}
@@ -54,7 +54,7 @@ const ArticleSingleTitle = ({ article, className, ...props }: ArticleSingleTitle
           </Text>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 
