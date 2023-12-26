@@ -2,8 +2,6 @@
 
 import Container from '@/components/ui/Container/Container'
 import styles from './FormSubscriptionForNews.module.scss'
-import cn from 'classnames'
-import { FormSubscriptionForNewsProps } from './FormSubscriptionForNews.props'
 import Text from '@/components/ui/Text/Text'
 import Link from 'next/link'
 import { useForm, Controller } from 'react-hook-form'
@@ -29,7 +27,7 @@ const formSchema = z.object({
     .email({ message: 'Не корректный email' }),
 })
 
-const FormSubscriptionForNews = ({ className, ...props }: FormSubscriptionForNewsProps) => {
+const FormSubscriptionForNews = () => {
   const {
     handleSubmit,
     formState: { errors, isDirty, isValid },
@@ -61,7 +59,7 @@ const FormSubscriptionForNews = ({ className, ...props }: FormSubscriptionForNew
   }
 
   return (
-    <Container className={cn(styles.wrapper, className)} {...props}>
+    <Container className={styles.wrapper}>
       <Text size="l">Подписаться на рассылку новостей</Text>
 
       <form className={styles.form}>

@@ -1,8 +1,6 @@
 'use client'
 
 import styles from './FormSubscriptionForNewsBig.module.scss'
-import cn from 'classnames'
-import { FormSubscriptionForNewsBigProps } from './FormSubscriptionForNewsBig.props'
 import Text from '@/components/ui/Text/Text'
 import Link from 'next/link'
 import { useForm, Controller } from 'react-hook-form'
@@ -30,7 +28,7 @@ const formSchema = z.object({
     .email({ message: 'Не корректный email' }),
 })
 
-const FormSubscriptionForNewsBig = ({ className, ...props }: FormSubscriptionForNewsBigProps) => {
+const FormSubscriptionForNewsBig = () => {
   const {
     handleSubmit,
     formState: { errors, isDirty, isValid },
@@ -62,7 +60,7 @@ const FormSubscriptionForNewsBig = ({ className, ...props }: FormSubscriptionFor
   }
 
   return (
-    <div className={cn(styles.wrapper, className)} {...props}>
+    <div className={styles.wrapper}>
       <div className={styles.contentWrapper}>
         <div>
           <Text size="l" className={styles.title}>

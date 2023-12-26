@@ -1,5 +1,3 @@
-import React from 'react'
-import { FooterProps } from './Footer.props'
 import cn from 'classnames'
 import styles from './Footer.module.scss'
 import Logo from '@/components/ui/Logo/Logo'
@@ -11,9 +9,9 @@ import { contacts } from '@/constants/contacts'
 import SocialLinks from '@/components/ui/SocialLinks/SocialLinks'
 import LocaleSwitcher from '@/components/shared/LocaleSwitcher/LocaleSwitcher'
 
-const Footer = ({ className, ...props }: FooterProps) => {
+const Footer = () => {
   return (
-    <footer className={cn(styles.wrapper, className)} {...props}>
+    <footer className={styles.wrapper}>
       <div className={styles.content}>
         <div className={styles.logo}>
           <Logo forFooter={true} />
