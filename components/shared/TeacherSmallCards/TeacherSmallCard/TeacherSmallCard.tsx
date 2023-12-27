@@ -7,7 +7,7 @@ import Heading from '@/components/ui/Heading/Heading'
 import Text from '@/components/ui/Text/Text'
 import { useRef } from 'react'
 import { useVideoPlayer } from '@/lib/hooks/useVideoPlayer'
-import PlayIcon from '@/icons/play.svg'
+
 import Container from '@/components/ui/Container/Container'
 import HomeIcon from '@/icons/home.svg'
 import EducationIcon from '@/icons/education.svg'
@@ -26,28 +26,19 @@ const TeacherSmallCard = ({ teacher, className, ...props }: TeacherSmallCardProp
 
   const { toggleApplicationForm } = useApplicationStore()
 
-  const { tag } = useTeacherTagsStore()
-
   return (
     <div className={cn(styles.wrapper, className)} {...props} key={teacher._id}>
-      <div className={styles.videoWrapper}>
-        <VideoPlayer
-          isPlaying={isPlaying}
-          srcPoster={teacher.image.url}
-          srcVideo={teacher.video.url}
-          ref={videoRef}
-        />
-
-        {!isPlaying && (
-          <div className={styles.playIcon} onClick={togglePlayPause}>
-            <PlayIcon />
-          </div>
-        )}
-      </div>
+      <VideoPlayer
+        isPlaying={isPlaying}
+        srcPoster={teacher.image.url}
+        srcVideo={teacher.video.url}
+        ref={videoRef}
+        togglePlayPause={togglePlayPause}
+      />
 
       <Container size="m" className={styles.content}>
         <div className={styles.title}>
-          <Heading tag="h4">{teacher.lastname}</Heading>
+          <Heading tag="h4">{teacher.firstname}</Heading>
           <Text size="ll">от {teacher.price} ₽ за урок</Text>
         </div>
 

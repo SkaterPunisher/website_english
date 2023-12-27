@@ -27,13 +27,13 @@ const TeacherSmallCards = ({ teachers, className, ...props }: TeacherSmallCardsP
     <motion.div initial="initial" animate="enter" exit="exit" variants={listVariants}>
       {teachers?.filter(filterTeacherByTags).map(teacher => (
         <motion.div
-          key={teacher._id}
+          key={teacher.slug}
           variants={listVariants}
           initial="initial"
           animate="enter"
           exit="exit"
         >
-          <TeacherSmallCard key={teacher._id} teacher={teacher} />
+          <TeacherSmallCard teacher={teacher} />
         </motion.div>
       ))}
     </motion.div>

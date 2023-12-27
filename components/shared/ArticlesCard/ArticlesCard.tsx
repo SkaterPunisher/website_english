@@ -63,9 +63,7 @@ const ArticlesCard = ({ articles, className, ...props }: ArticlesCardProps) => {
                   {formatDate(article._createdAt)}
                 </Text>
                 <Text className={styles.time} size="xxs">
-                  {/* <div className={styles.icon}> */}
                   <BookIcon className={styles.icon} />
-                  {/* </div> */}
                   {article.timeForRead} мин чтения
                 </Text>
               </div>

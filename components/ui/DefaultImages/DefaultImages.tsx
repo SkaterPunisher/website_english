@@ -5,34 +5,33 @@ import Default from '@/images/default-Images.jpg'
 
 const DefaultImages = ({
   src,
-  alt,
-  draggable,
-  priority = true,
   width,
   height,
+  alt,
+  fill,
+  sizes,
+  quality,
+  priority,
+  placeholder,
+  loading,
+  draggable,
   className,
   ...props
 }: ImageDefaultProps) => {
-  return src ? (
+  return (
     <Image
       className={className}
-      src={src}
+      src={src ? src : Default}
       alt={alt ? alt : ''}
       width={width}
       height={height}
       draggable={draggable}
-      priority={priority}
-      {...props}
-    />
-  ) : (
-    <Image
-      className={className}
-      src={Default}
-      alt={alt ? alt : ''}
-      width={width}
-      height={height}
-      draggable={draggable}
-      priority={priority}
+      // priority={priority}
+      fill={fill}
+      sizes={sizes}
+      quality={quality}
+      placeholder={placeholder}
+      loading={loading}
       {...props}
     />
   )
