@@ -12,8 +12,8 @@ export async function generateMetadata({
   const teacher = await getTeacher(id, lang)
 
   return {
-    title: `${teacher.firstname} ${teacher.lastname} | Advanced English`,
-    description: `Лучший репетитор по английскому языку только в онлайн школе Зыковой Оксаны | Advance English это ${teacher.firstname} ${teacher.lastname}`,
+    title: `${teacher.firstname} ${teacher.lastname} Zykova Oksana § Advanced English`,
+    description: `Лучший преподаватель по английскому языку только в онлайн студии Zykova Oksana § Advanced English это ${teacher.firstname} ${teacher.lastname}`,
   }
 }
 
@@ -32,7 +32,7 @@ export default async function TeacherPage({
       <p>Фамилия: {singleTeacher.lastname}</p>
       <p>Имя: {singleTeacher.firstname}</p>
       <p>Отчество: {singleTeacher.patronymic}</p>
-      <div className="flex">
+      {/* <div className="flex">
         Превью изображение
         {singleTeacher.imageSmall.url && (
           <Image
@@ -91,7 +91,7 @@ export default async function TeacherPage({
             {l.level}{' '}
           </span>
         ))}
-      </p>
+      </p> */}
       {/* <div key={singleArticle._id} className="border-y-2  border-gray-500 my-4 p-2">
         <p>Заголовок: {singleArticle.name}</p>
         <p>Slug: {singleArticle.slug}</p>

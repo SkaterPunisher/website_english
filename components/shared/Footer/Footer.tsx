@@ -33,8 +33,14 @@ const Footer = () => {
 
         <div className={styles.buttons}>
           <Text size="xs" className={styles.address}>
-            <a href={contacts.address.link} target="_blank">
-              {contacts.address.name}
+            <a href={contacts.address1.link} target="_blank">
+              {contacts.address1.name}
+            </a>
+          </Text>
+
+          <Text size="xs" className={styles.address}>
+            <a href={contacts.address2.link} target="_blank">
+              {contacts.address2.name}
             </a>
           </Text>
 

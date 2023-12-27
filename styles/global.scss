@@ -134,32 +134,47 @@ body[data-theme='dark'] {
 }
 
 // _________________Стилизация скроллбара_________________
-/* Скрывает стрелки скролла */
-::-webkit-scrollbar-button {
-  display: none;
-}
-/* Стиль трека (дорожки) скролла */
-::-webkit-scrollbar-track {
-  background: transparent; /* Сделать фон трека прозрачным */
-}
-/* Стиль самого скроллбара (ползунка) */
-::-webkit-scrollbar-thumb {
-  background: gray; /* Задать цвет ползунка */
-  border-radius: 10px; /* Если нужны скругленные углы */
-}
-/* Стили для ползунка в состоянии :hover и :active */
-::-webkit-scrollbar-thumb:hover {
-  background: darkgray; /* Цвет ползунка при наведении */
-}
-::-webkit-scrollbar-thumb:active {
-  background: #686868; /* Цвет ползунка при нажатии */
-}
-/* Размеры скроллбара */
+// /* Скрывает стрелки скролла */
+// ::-webkit-scrollbar-button {
+//   display: none;
+// }
+// /* Стиль трека (дорожки) скролла */
+// ::-webkit-scrollbar-track {
+//   background: transparent; /* Сделать фон трека прозрачным */
+// }
+// /* Стиль самого скроллбара (ползунка) */
+// ::-webkit-scrollbar-thumb {
+//   background: gray; /* Задать цвет ползунка */
+//   border-radius: 10px; /* Если нужны скругленные углы */
+// }
+// /* Стили для ползунка в состоянии :hover и :active */
+// ::-webkit-scrollbar-thumb:hover {
+//   background: darkgray; /* Цвет ползунка при наведении */
+// }
+// ::-webkit-scrollbar-thumb:active {
+//   background: #686868; /* Цвет ползунка при нажатии */
+// }
+// /* Размеры скроллбара */
+// ::-webkit-scrollbar {
+//   width: 8px; /* Ширина для вертикального скролла */
+//   height: 8px; /* Высота для горизонтального скролла */
+// }
+// /* Убирает скроллбар-угол */
+// ::-webkit-scrollbar-corner {
+//   display: none;
+// }
+// _________________Полностью скрываю скроллбар_________________
+/* Скрыть скроллбары в Webkit-браузерах */
 ::-webkit-scrollbar {
-  width: 8px; /* Ширина для вертикального скролла */
-  height: 8px; /* Высота для горизонтального скролла */
-}
-/* Убирает скроллбар-угол */
-::-webkit-scrollbar-corner {
   display: none;
+}
+
+/* Скрыть скроллбары в IE, Edge и Firefox */
+* {
+  -ms-overflow-style: none; /* для Internet Explorer и Edge */
+  scrollbar-width: none; /* для Firefox */
+}
+
+*::-webkit-scrollbar {
+  display: none; /* Для остальных браузеров на движке Webkit, таких как Chrome и Safari */
 }

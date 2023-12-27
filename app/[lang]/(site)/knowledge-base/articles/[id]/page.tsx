@@ -1,7 +1,7 @@
 import { getArticle } from '@/sanity/schemas/article-schema/singleArticle-schema-utils'
 import type { Metadata } from 'next'
 import { Locale } from '@/i18n-config'
-import ArticlePage from '@/components/pages/ArticlePage/ArticlePage'
+import ArticlePage from '@/app/[lang]/(site)/knowledge-base/articles/[id]/_components/ArticlePage/ArticlePage'
 import ButtonBack from '@/components/ui/ButtonBack/ButtonBack'
 
 export async function generateMetadata({

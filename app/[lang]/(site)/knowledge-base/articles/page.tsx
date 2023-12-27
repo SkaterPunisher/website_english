@@ -1,11 +1,11 @@
-import ArticlesPages from '@/components/pages/ArticlesPage/ArticlesPages'
 import FAQ from '@/components/shared/FAQ/FAQ'
 import HeaderPage from '@/components/shared/HeaderPage/HeaderPage'
 import ButtonBack from '@/components/ui/ButtonBack/ButtonBack'
 import { Locale } from '@/i18n-config'
-import { getTags } from '@/sanity/schemas/article-schema/articleTags-schema/blogTags-schema-utils'
+import { getArticleTags } from '@/sanity/schemas/article-schema/articleTags-schema/blogTags-schema-utils'
 import { getArticles } from '@/sanity/schemas/article-schema/singleArticle-schema-utils'
 import { Metadata } from 'next'
+import ArticlesPages from './_components/ArticlesPage/ArticlesPages'
 // export const revalidate = 60 * 10 // Это нужно для ревалидации запросов (1 раз в 10 минут). Но уже сделал в groq запросе последним параметром
 
 export async function generateMetadata({
@@ -22,14 +22,14 @@ export async function generateMetadata({
 
 export default async function ArticlesPage({ params: { lang } }: { params: { lang: Locale } }) {
   const articles = await getArticles(lang)
-  const tags = await getTags(lang)
+  const tags = await getArticleTags(lang)
 
   return (
     <main>
       <HeaderPage
         color="yellow"
         btnText="Оставить заявку"
-        title="Блог Zykova Oksana § Advanced English"
+        title="Блог Advanced English"
         description="Все статьи нашего блога написаны нашими преподавателями и разивают темы, которые мы проходим на курсах. Изучите их подробнее, чтобы узнать новые темы английского языка"
       />
 
@@ -37,7 +37,7 @@ export default async function ArticlesPage({ params: { lang } }: { params: { lan
 
       {articles && <ArticlesPages articles={articles} tags={tags} />}
 
-      <FAQ lang={lang} pageName={'Главная'} />
+      <FAQ lang={lang} pageName={'Статья'} />
     </main>
   )
 }

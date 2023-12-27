@@ -16,7 +16,7 @@ const ArticlePage = ({ lang, article, className, ...props }: ArticlePageProps) =
       <ArticleSingleContent article={article} />
       <Form />
       <ArticleSingleCards lang={lang} tags={article.tags.map(tag => tag.tag)} />
-      <FAQ lang={lang} pageName={'Главная'} />
+      <FAQ lang={lang} pageName={'Статья'} />
     </div>
   )
 }

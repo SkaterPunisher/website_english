@@ -3,7 +3,7 @@
 import styles from './Form.module.scss'
 import Btn from '@/components/ui/Btn/Btn'
 import Heading from '@/components/ui/Heading/Heading'
-import { formApplication } from '@/constants/formApplication'
+import { formApplication, formApplicationForTeacher } from '@/constants/formApplication'
 import Text from '@/components/ui/Text/Text'
 import { FieldInput } from '@/components/ui/FieldInput'
 import { Controller, useForm } from 'react-hook-form'
@@ -34,7 +34,7 @@ const formSchema = z.object({
     .min(18, { message: 'Введите полный номер' }),
 })
 
-const Form = () => {
+const Form = ({ forTeachersPage }: { forTeachersPage?: boolean }) => {
   const {
     handleSubmit,
     formState: { errors, isDirty, isValid },
@@ -70,12 +70,20 @@ const Form = () => {
     <section className={cn(styles.section, 'layout')}>
       <div className={styles.wrapper}>
         <Heading tag="h2" className={styles.heading}>
-          Запишитесь на бесплатный <br /> вводный урок
+          {forTeachersPage ? (
+            <>
+              Затрудняетесь с выбором <br /> преподавателя?
+            </>
+          ) : (
+            <>
+              Запишитесь на бесплатный <br /> вводный урок
+            </>
+          )}
         </Heading>
 
         <div className={styles.content}>
           <ul className={styles.advantages}>
-            {formApplication.map(item => (
+            {(forTeachersPage ? formApplicationForTeacher : formApplication).map(item => (
               <li key={item.id} className={styles.item}>
                 <div className={styles.icon}>
                   <Text size="s">{item.id}</Text>
@@ -138,7 +146,7 @@ const Form = () => {
               className={styles.button}
               color="black"
             >
-              Записаться
+              {forTeachersPage ? 'Оставить заяку' : 'Записаться'}
             </Btn>
           </form>
         </div>

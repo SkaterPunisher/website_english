@@ -10,7 +10,9 @@ export type Teacher = {
   lastname: string
   patronymic: string
   slug: string
-  video: string
+  video: {
+    url: string
+  }
   image: Images
   imageSmall: Images
   price: number
@@ -18,7 +20,9 @@ export type Teacher = {
   about: string
   abroad: string
   startEducation: string
-  audio: string
+  audio: {
+    url: string
+  }
   level: LevelEnglish[]
   interests: string[]
   teaches: TeacherTags[]

@@ -1,7 +1,11 @@
 export const contacts = {
-  address: {
+  address1: {
     link: 'https://yandex.ru/maps/-/CDqwvENi',
     name: 'г. Богородск, пер. Кузнечный, дом 1 (2 этаж)',
+  },
+  address2: {
+    link: 'https://yandex.ru/maps/-/CDqdEWnU',
+    name: 'сп. Новинки, ул. Центральная, дом 6а (2 этаж)',
   },
   phone: {
     link: 'tel:+79506253446',

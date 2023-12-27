@@ -37,7 +37,18 @@ export const teacher = {
     {
       name: 'video',
       title: 'Видео',
-      type: 'string',
+      type: 'file',
+      options: {
+        accept: 'video/*',
+      },
+      fields: [
+        {
+          name: 'url',
+          title: 'URL',
+          type: 'url',
+        },
+        // Дополнительные поля, такие как описание, alt текст и т.д.
+      ],
     },
     {
       name: 'image',
@@ -82,7 +93,18 @@ export const teacher = {
     {
       name: 'audio',
       title: 'Аудио',
-      type: 'string',
+      type: 'file',
+      options: {
+        accept: 'audio/*',
+      },
+      fields: [
+        {
+          name: 'url',
+          title: 'URL',
+          type: 'url',
+        },
+        // Дополнительные поля, такие как описание, alt текст и т.д.
+      ],
     },
     {
       name: 'level',

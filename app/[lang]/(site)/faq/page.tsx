@@ -10,9 +10,9 @@ export async function generateMetadata({
   params: { lang: Locale }
 }): Promise<Metadata> {
   return {
-    title: 'Ответы на популярные вопросы про обучение в центре Zykova Oksana § Advanced English',
+    title: 'Ответы на популярные вопросы про обучение в студии Zykova Oksana § Advanced English',
     description:
-      'Здесь вы сможете узнать ответы на самые популярные вопросы о обучении в центре английского языка  Zykova Oksana § Advanced English',
+      'Здесь вы сможете узнать ответы на самые популярные вопросы о обучении в студии английского языка  Zykova Oksana § Advanced English',
   }
 }
 
@@ -25,7 +25,7 @@ export default async function FAQPage({ params: { lang } }: { params: { lang: Lo
         description="На этой странице вы можете посмотреть ответы на самые частые вопросы и ответы на них от наших преподавателей"
       />
 
-      <FAQ lang={lang} pageName={'Главная'} allFAQ={true} />
+      <FAQ lang={lang} pageName={'Тест'} allFAQ={true} />
       <Form />
     </main>
   )

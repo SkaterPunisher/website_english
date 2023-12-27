@@ -8,11 +8,15 @@ export const getTeachers = async (lang: Locale): Promise<Teacher[]> =>
     groq`*[_type == "teacher"]{
       _id,
       _createdAt,
+      metaDescription,
+      metaTitle,
       "firstname": firstname[$lang],
       "lastname": lastname[$lang],
       patronymic,
       "slug": slug.current,
-      video,
+      "video": {
+        "url": video.asset->url,
+      },
       "image": {
         "url": image.asset->url,
         "alt": image.alt
@@ -26,8 +30,10 @@ export const getTeachers = async (lang: Locale): Promise<Teacher[]> =>
       about,
       abroad,
       startEducation,
-      audio,
-      level,
+      "audio": {
+        "url": audio.asset->url,
+      },
+      "level": level[]->{level, _id},
       interests,
       "teaches": teaches[]->{name, _id},
     }`,
@@ -40,11 +46,15 @@ export const getTeacher = async (slug: string, lang: Locale): Promise<Teacher> =
     groq`*[_type == "teacher" && slug.current == $slug][0] {
       _id,
       _createdAt,
+      metaDescription,
+      metaTitle,
       "firstname": firstname[$lang],
       "lastname": lastname[$lang],
       patronymic,
       "slug": slug.current,
-      video,
+      "video": {
+        "url": video.asset->url,
+      },
       "image": {
         "url": image.asset->url,
         "alt": image.alt
@@ -58,7 +68,9 @@ export const getTeacher = async (slug: string, lang: Locale): Promise<Teacher> =
       about,
       abroad,
       startEducation,
-      audio,
+      "audio": {
+        "url": audio.asset->url,
+      },
       "level": level[]->{level, _id},
       interests,
       "teaches": teaches[]->{name, _id},

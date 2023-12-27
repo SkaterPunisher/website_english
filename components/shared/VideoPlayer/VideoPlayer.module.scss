@@ -1,0 +1,12 @@
+.video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-color: black; /* Фоновый цвет до загрузки видео или постера */
+
+  &:fullscreen {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* В полноэкранном режиме видео должно показываться целиком */
+  }
+}

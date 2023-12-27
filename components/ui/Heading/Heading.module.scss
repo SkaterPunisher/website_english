@@ -54,3 +54,14 @@
     line-height: 120%; /* 38.4px */
   }
 }
+
+.h4 {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%; /* 31.2px */
+
+  @include s {
+    font-size: 40px;
+  }
+}

@@ -55,15 +55,19 @@
 
     border-radius: 12px;
     border: 1px solid var(--black);
-    padding: 25px 14px;
+    padding: 20px 14px;
     background-color: var(--white);
     outline: none;
     transition: border 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
 
+    @include s {
+      padding: 20px 24px;
+    }
+
     svg {
-      width: 24px;
-      height: 24px;
+      width: 20px;
+      height: 20px;
       transition: transform 0.2s ease-in-out;
       flex-shrink: 0;
 
@@ -90,6 +94,12 @@
   width: calc(100% - 40px);
   max-height: 300px !important;
   overflow-y: auto;
+
+  scrollbar-width: none; /* Для Firefox */
+
+  &::-webkit-scrollbar {
+    display: none; /* Для WebKit-браузеров, таких как Chrome и Safari */
+  }
 
   &[data-entering] {
     animation: popover-slide 300ms;
