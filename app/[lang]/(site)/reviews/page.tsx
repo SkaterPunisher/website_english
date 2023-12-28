@@ -1,3 +1,5 @@
+import YandexMap2 from '@/components/shared/YandexMapBG/YandexMapBG'
+import YandexReviews from '@/components/shared/YandexReviews/YandexReviews'
 import { Locale } from '@/i18n-config'
 import { Metadata } from 'next'
 import React from 'react'
@@ -14,5 +16,9 @@ export async function generateMetadata({
 }
 
 export default async function ReviewsPage({ params: { lang } }: { params: { lang: Locale } }) {
-  return <div>Страница отзывов</div>
+  return (
+    <main>
+      <YandexReviews />
+    </main>
+  )
 }

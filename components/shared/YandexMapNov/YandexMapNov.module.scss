@@ -1,0 +1,15 @@
+@import '@/styles/app.scss';
+
+.wrapper {
+  overflow: hidden;
+  border-radius: 16px;
+
+  .map {
+    height: 350px;
+    width: 100%;
+
+    @include s {
+      height: 600px;
+    }
+  }
+}
