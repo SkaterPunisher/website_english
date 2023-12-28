@@ -3,6 +3,8 @@ import { Locale } from '@/i18n-config'
 import { getTeacher } from '@/sanity/schemas/teacher-schema/teacher-schema-utils'
 import ButtonBack from '@/components/ui/ButtonBack/ButtonBack'
 import TeacherSmallCard from '@/components/shared/TeacherSmallCards/TeacherSmallCard/TeacherSmallCard'
+import Form from '@/components/shared/Form/Form'
+import FAQ from '@/components/shared/FAQ/FAQ'
 
 export async function generateMetadata({
   params: { id, lang },
@@ -31,6 +33,9 @@ export default async function TeacherPage({
       <section className="layout">
         <TeacherSmallCard teacher={singleTeacher} forSingleTeacher={true} />
       </section>
+
+      <Form forTeachersPage={true} />
+      <FAQ lang={lang} pageName={'Преподаватель'} />
     </main>
   )
 }

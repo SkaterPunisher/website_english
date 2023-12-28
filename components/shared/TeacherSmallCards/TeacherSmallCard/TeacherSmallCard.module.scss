@@ -18,6 +18,7 @@
     flex-direction: column;
     gap: 40px;
     background-color: var(--lightWhite);
+    transition: background-color 0.2s;
 
     @include s {
       border-radius: 20px;
@@ -28,6 +29,7 @@
       justify-content: space-between;
       padding-bottom: 16px;
       border-bottom: 1px solid var(--gray);
+      transition: border-bottom 0.2s;
     }
 
     .list {
@@ -73,10 +75,92 @@
     }
   }
 
-  .about {
+  .about,
+  .levelWrapper,
+  .teachWrapper,
+  .interestWrapper {
     display: flex;
     flex-direction: column;
     gap: 16px;
+  }
+
+  .levelWrapper {
+    .level {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-rows: 1fr;
+      gap: 16px;
+      overflow-x: auto;
+
+      .item {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        border-radius: 8px;
+        background-color: var(--menuIcon);
+        transition: background-color 0.2s;
+        padding: 16px;
+      }
+    }
+  }
+
+  .teachWrapper {
+    .teachList {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+
+      .teachItem {
+        padding: 8px 16px;
+        border-radius: 8px;
+        transition: border 0.2s;
+        p {
+          transition: color 0.2s;
+        }
+
+        &:nth-child(4n + 1) {
+          border: 1px solid var(--blueLightIcon);
+          p {
+            color: var(--blue);
+          }
+        }
+
+        &:nth-child(4n + 2) {
+          border: 1px solid var(--redLightIcon);
+          p {
+            color: var(--red);
+          }
+        }
+
+        &:nth-child(4n + 3) {
+          border: 1px solid var(--yellowLightIcon);
+          p {
+            color: var(--yellow);
+          }
+        }
+        &:nth-child(4n + 4) {
+          border: 1px solid var(--purpleLightIcon);
+          p {
+            color: var(--purple);
+          }
+        }
+      }
+    }
+  }
+
+  .interestWrapper {
+    .interestList {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+
+      .interestItem {
+        padding: 8px 16px;
+        border-radius: 8px;
+        background-color: var(--menuIcon);
+        transition: background-color 0.2s;
+      }
+    }
   }
 }
 

@@ -20,6 +20,7 @@ import { useApplicationStore } from '@/stores/application.store'
 import AnimatedCounter from '@/components/ui/AnimatedCounter/AnimatedCounter'
 import dayjs from 'dayjs'
 import AudioPlayer from '@/components/ui/AudioPlayer/AudioPlayer'
+import { levelEnglish } from '@/constants/levelEnglish'
 
 const TeacherSmallCard = ({
   teacher,
@@ -102,6 +103,40 @@ const TeacherSmallCard = ({
             <div className={styles.about}>
               <Heading tag="h3">О себе</Heading>
               <AudioPlayer audio={teacher.audio.url} />
+            </div>
+
+            <div className={styles.levelWrapper}>
+              <Heading tag="h3">Уврони</Heading>
+              <ul className={styles.level}>
+                {teacher.level.map(level => (
+                  <li key={level._id} className={styles.item}>
+                    <Heading tag="h3">{level.level}</Heading>
+                    <Text size="xxs">{levelEnglish[level.level]}</Text>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className={styles.teachWrapper}>
+              <Heading tag="h3">Преподает</Heading>
+              <ul className={styles.teachList}>
+                {teacher.teaches.map(teach => (
+                  <li key={teach._id} className={styles.teachItem}>
+                    <Text size="s">{teach.name}</Text>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className={styles.interestWrapper}>
+              <Heading tag="h3">Интересы</Heading>
+              <ul className={styles.interestList}>
+                {teacher.interests.map((interest, index) => (
+                  <li key={index} className={styles.interestItem}>
+                    <Text size="s">{interest}</Text>
+                  </li>
+                ))}
+              </ul>
             </div>
           </>
         )}
