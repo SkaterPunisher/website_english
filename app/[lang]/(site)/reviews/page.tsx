@@ -1,4 +1,3 @@
-import YandexMap2 from '@/components/shared/YandexMapBG/YandexMapBG'
 import YandexReviews from '@/components/shared/YandexReviews/YandexReviews'
 import { Locale } from '@/i18n-config'
 import { Metadata } from 'next'

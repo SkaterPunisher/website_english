@@ -1,35 +1,88 @@
-.wrapper {
-  width: 560px;
-  height: 800px;
-  overflow: hidden;
-  position: relative;
+@import '@/styles/app.scss';
 
-  .map {
-    width: 100%;
-    height: 100%;
-    border: 1px solid #e6e6e6;
-    border-radius: 8px;
-    box-sizing: border-box;
-  }
+.section {
+  margin-top: 20px;
 
-  .link {
-    box-sizing: border-box;
-    text-decoration: none;
-    color: #b3b3b3;
-    font-size: 10px;
-    font-family: YS Text, sans-serif;
-    padding: 0 20px;
-    position: absolute;
-    bottom: 8px;
-    width: 100%;
-    text-align: center;
-    left: 0;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: block;
-    max-height: 14px;
-    white-space: nowrap;
-    padding: 0 16px;
-    box-sizing: border-box;
+  .wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    gap: 20px;
+
+    @include m {
+      grid-template-rows: auto;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .title {
+      margin-top: 50px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+
+      @include s {
+        gap: 50px;
+      }
+
+      .header {
+        position: relative;
+
+        .heading {
+          position: relative;
+          z-index: 2;
+        }
+
+        .icon {
+          z-index: 0;
+          position: absolute;
+          top: 60%;
+          left: 20%;
+          transform: translate(-20%, -60%);
+          width: 200px;
+
+          svg {
+            path {
+              // opacity: 0.5;
+              stroke: var(--yellowLightIcon);
+            }
+          }
+        }
+      }
+    }
+
+    .reviewsWrapper {
+      width: 100%;
+      height: 800px;
+      overflow: hidden;
+      position: relative;
+
+      .map {
+        width: 100%;
+        height: 100%;
+        border-radius: 8px;
+        box-sizing: border-box;
+      }
+
+      .link {
+        box-sizing: border-box;
+        text-decoration: none;
+        color: #b3b3b3;
+        font-size: 10px;
+        font-family: YS Text, sans-serif;
+        padding: 0 20px;
+        position: absolute;
+        bottom: 8px;
+        width: 100%;
+        text-align: center;
+        left: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: block;
+        max-height: 14px;
+        white-space: nowrap;
+        padding: 0 16px;
+        box-sizing: border-box;
+      }
+    }
   }
 }
