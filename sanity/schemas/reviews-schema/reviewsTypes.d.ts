@@ -11,9 +11,9 @@ export type Reviews = [
         // В Sanity файлы представлены ссылкой на объект asset
         _ref: string // Ссылка на видеофайл в Sanity
       }
-      url?: string // URL видео (опционально, если добавляете дополнительные поля для URL)
       // Дополнительные поля, такие как описание, alt текст и т.д., если они есть
       assetUrl?: string
+      preview?: string
     }>
   },
 ]

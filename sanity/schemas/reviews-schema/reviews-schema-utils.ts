@@ -10,8 +10,8 @@ export const getReviews = async (lang: Locale): Promise<Reviews> =>
       _createdAt,
       videos[] {
         _key,
-        "url": url.current,
-        "assetUrl": asset->url
+        "assetUrl": asset->url,
+        "preview": preview.asset->url
       }
     }`,
     { lang },

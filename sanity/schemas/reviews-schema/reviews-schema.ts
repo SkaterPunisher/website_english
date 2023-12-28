@@ -15,9 +15,11 @@ export const reviews = {
           },
           fields: [
             {
-              name: 'url',
-              title: 'URL',
-              type: 'url',
+              name: 'preview',
+              title: 'Превью',
+              type: 'image',
+              options: { hotspot: true },
+              fields: [{ name: 'alt', title: 'Alt', type: 'string' }],
             },
           ],
         },

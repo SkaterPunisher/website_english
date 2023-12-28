@@ -5,7 +5,7 @@ import VideoPlayer from '../../VideoPlayer/VideoPlayer'
 import { useVideoPlayer } from '@/lib/hooks/useVideoPlayer'
 import { ReviewCardProps } from './ReviewCard.props'
 
-const ReviewCard = ({ src, className }: ReviewCardProps) => {
+const ReviewCard = ({ src, srcPoster, className }: ReviewCardProps) => {
   const videoRef = useRef<HTMLVideoElement>(null)
   const { isPlaying, togglePlayPause } = useVideoPlayer(videoRef)
 
@@ -14,6 +14,7 @@ const ReviewCard = ({ src, className }: ReviewCardProps) => {
       className={className}
       isPlaying={isPlaying}
       srcVideo={src}
+      srcPoster={srcPoster}
       ref={videoRef}
       togglePlayPause={togglePlayPause}
     />

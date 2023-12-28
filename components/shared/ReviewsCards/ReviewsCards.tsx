@@ -1,5 +1,3 @@
-'use client'
-
 import styles from './ReviewsCards.module.scss'
 import cn from 'classnames'
 import { ReviewsCardsProps } from './ReviewsCards.props'
@@ -33,7 +31,12 @@ const ReviewsCards = ({ button, reviews, className, ...props }: ReviewsCardsProp
 
       <div className={styles.wrapper}>
         {reviews[0].videos.map(url => (
-          <ReviewCard key={url.assetUrl} src={url.assetUrl!} className={styles.video} />
+          <ReviewCard
+            key={url._key}
+            src={url.assetUrl!}
+            className={styles.video}
+            srcPoster={url.preview}
+          />
         ))}
       </div>
     </section>
