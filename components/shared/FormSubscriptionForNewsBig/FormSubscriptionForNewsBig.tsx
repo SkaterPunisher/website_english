@@ -2,7 +2,6 @@
 
 import styles from './FormSubscriptionForNewsBig.module.scss'
 import Text from '@/components/ui/Text/Text'
-import Link from 'next/link'
 import { useForm, Controller } from 'react-hook-form'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'

@@ -28,6 +28,12 @@
       @include s {
         gap: 32px;
       }
+
+      .text {
+        @include m {
+          max-width: 70%;
+        }
+      }
     }
 
     .icon {

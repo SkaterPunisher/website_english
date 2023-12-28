@@ -1,0 +1,69 @@
+@import '@/styles/app.scss';
+
+.wrapper {
+  .contacts {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-bottom: 40px;
+    gap: 40px;
+
+    @include m {
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .item {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      .link {
+        width: fit-content;
+        border-bottom: 1px solid transparent;
+        transition: border-bottom 0.2s;
+        cursor: pointer;
+
+        &:hover {
+          border-bottom: 1px solid var(--black);
+        }
+      }
+    }
+  }
+
+  .maps {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+
+    @include m {
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .map {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      @include m {
+        gap: 40px;
+      }
+
+      .address {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        .link {
+          border-bottom: 1px solid transparent;
+          transition: border-bottom 0.2s;
+          width: fit-content;
+
+          &:hover {
+            border-bottom: 1px solid var(--black);
+          }
+        }
+      }
+    }
+  }
+}

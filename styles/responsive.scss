@@ -1,9 +1,16 @@
 $breakpoint-xxs: 320px;
+$breakpoint-xxss: 352px;
 $breakpoint-xs: 450px;
 $breakpoint-s: 768px;
 $breakpoint-m: 1024px;
 $breakpoint-l: 1280px;
 $breakpoint-xl: 1560px;
+
+@mixin xxss {
+  @include breakpoint($breakpoint-xxss) {
+    @content;
+  }
+}
 
 @mixin xxs {
   @include breakpoint($breakpoint-xxs) {

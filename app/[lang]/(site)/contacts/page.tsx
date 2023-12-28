@@ -1,3 +1,7 @@
+import Contacts from '@/components/shared/Contacts/Contacts'
+import FormContactWithManagement from '@/components/shared/FormContactWithManagement/FormContactWithManagement'
+import HeaderPage from '@/components/shared/HeaderPage/HeaderPage'
+import TelegramSupport from '@/components/shared/TelegramSupport/TelegramSupport'
 import { Locale } from '@/i18n-config'
 import { Metadata } from 'next'
 import React from 'react'
@@ -8,11 +12,27 @@ export async function generateMetadata({
   params: { lang: Locale }
 }): Promise<Metadata> {
   return {
-    title: 'Контакты Advenced English | Zykova Oksana',
-    description: 'Описание страницы контактов Advenced English | Zykova Oksana',
+    title: 'Контакты онлайн студии английского языка Zykova Oksana § Advanced English',
+    description: 'Телефон: +7 (950) 625-34-46.⠀ 🕘⠀С 10:00 до 19:00 по будням',
   }
 }
 
 export default async function ContactsPage({ params: { lang } }: { params: { lang: Locale } }) {
-  return <div>Страница контактов</div>
+  return (
+    <main>
+      <HeaderPage
+        color="yellow"
+        title="Адреса и контакты"
+        description="Работаем ежедневно с 9:00 до 20:00 по московскому времени, уроки проводим круглосуточно. Свяжитесь с нами любым удобным способом!"
+      />
+
+      <section className="layout">
+        <Contacts />
+      </section>
+
+      <FormContactWithManagement />
+
+      <TelegramSupport />
+    </main>
+  )
 }

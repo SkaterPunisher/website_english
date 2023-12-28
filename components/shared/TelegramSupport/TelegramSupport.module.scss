@@ -1,0 +1,88 @@
+@import '@/styles/app.scss';
+
+.wrapper {
+  .content {
+    padding: 32px 16px;
+    border-radius: 20px;
+    background-color: var(--blueLightSubscription);
+    transition: background-color 0.2s;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+
+    @include s {
+      padding: 32px;
+    }
+
+    @include m {
+      grid-template-columns: 1fr 1fr;
+      padding: 70px;
+    }
+
+    .info {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 32px;
+
+      .infoText {
+        .infoTitle {
+          margin-bottom: 20px;
+        }
+
+        .list {
+          display: flex;
+          flex-direction: column;
+          gap: 40px;
+
+          .item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+
+            .circle {
+              flex-shrink: 0;
+              transition: background-color 0.2s;
+              background-color: var(--white);
+              width: 34px;
+              height: 34px;
+              border-radius: 100%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+          }
+        }
+      }
+    }
+
+    .img {
+      border-radius: 40px;
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+
+      @include m {
+        height: 440px;
+      }
+    }
+  }
+}
+
+.mobile {
+  button {
+    width: 100%;
+  }
+
+  @include m {
+    display: none;
+  }
+}
+
+.desktop {
+  display: none;
+
+  @include m {
+    display: block;
+  }
+}

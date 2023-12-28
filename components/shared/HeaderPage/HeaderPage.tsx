@@ -26,7 +26,9 @@ const HeaderPage = ({
       <div className={cn(styles.contentWrapper, 'layout')}>
         <div className={styles.content}>
           <Heading tag="h1">{title}</Heading>
-          <Text size="s">{description}</Text>
+          <Text size="s" className={styles.text}>
+            {description}
+          </Text>
           {btnText && (
             <Btn color="black" onClick={toggleApplicationForm}>
               {btnText}
