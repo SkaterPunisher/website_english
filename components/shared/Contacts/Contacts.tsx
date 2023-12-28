@@ -11,7 +11,7 @@ const Contacts = ({ className, ...props }: ContactsProps) => {
     <div className={cn(styles.wrapper, className)} {...props}>
       <ul className={styles.contacts}>
         <li className={styles.item}>
-          <a href={contacts.email.link}>
+          <a href={contacts.email.link} className={styles.a}>
             <Text className={styles.link} size="ll">
               {contacts.email.name}
             </Text>
@@ -19,7 +19,7 @@ const Contacts = ({ className, ...props }: ContactsProps) => {
           </a>
         </li>
         <li className={styles.item}>
-          <a href={contacts.phone.link}>
+          <a href={contacts.phone.link} className={styles.a}>
             <Text className={styles.link} size="ll">
               {contacts.phone.name}
             </Text>
@@ -31,7 +31,7 @@ const Contacts = ({ className, ...props }: ContactsProps) => {
       <ul className={styles.maps}>
         <li className={styles.map}>
           <div className={styles.address}>
-            <Link target="_blank" href={contacts.address1.link}>
+            <Link target="_blank" className={styles.a} href={contacts.address1.link}>
               <Text className={styles.link} size="ll">
                 {contacts.address1.name}
               </Text>
@@ -42,7 +42,7 @@ const Contacts = ({ className, ...props }: ContactsProps) => {
         </li>
         <li className={styles.map}>
           <div className={styles.address}>
-            <Link target="_blank" href={contacts.address2.link}>
+            <Link target="_blank" className={styles.a} href={contacts.address2.link}>
               <Text className={styles.link} size="ll">
                 {contacts.address2.name}
               </Text>
