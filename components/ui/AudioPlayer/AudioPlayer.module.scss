@@ -1,0 +1,40 @@
+@import '@/styles/app.scss';
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  align-items: center;
+  padding: 16px 16px;
+  border-radius: 8px;
+  background-color: var(--menuIcon);
+  transition: background-color 0.2s;
+
+  @include s {
+    grid-template-columns: 80px 1fr;
+    padding: 26px 32px;
+  }
+
+  .btn {
+    width: 60px;
+    height: 60px;
+
+    border: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: var(--purpleLight);
+
+    @include s {
+      width: 70px;
+      height: 70px;
+    }
+
+    .icon {
+      width: 40px;
+      height: 40px;
+    }
+  }
+}

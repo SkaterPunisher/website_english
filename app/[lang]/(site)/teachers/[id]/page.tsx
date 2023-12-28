@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Locale } from '@/i18n-config'
 import { getTeacher } from '@/sanity/schemas/teacher-schema/teacher-schema-utils'
 import ButtonBack from '@/components/ui/ButtonBack/ButtonBack'
+import TeacherSmallCard from '@/components/shared/TeacherSmallCards/TeacherSmallCard/TeacherSmallCard'
 
 export async function generateMetadata({
   params: { id, lang },
@@ -26,14 +27,9 @@ export default async function TeacherPage({
   return (
     <main>
       <ButtonBack href={`/teachers`}>Все преподаватели</ButtonBack>
+
       <section className="layout">
-        {/* <DefaultImages
-        className={styles.img}
-        src={article.image.url as string}
-        alt={article.image.alt}
-        width={1300}
-        height={550}
-      /> */}
+        <TeacherSmallCard teacher={singleTeacher} forSingleTeacher={true} />
       </section>
     </main>
   )

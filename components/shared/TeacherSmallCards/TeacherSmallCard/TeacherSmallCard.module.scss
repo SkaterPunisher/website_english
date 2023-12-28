@@ -17,6 +17,7 @@
     display: flex;
     flex-direction: column;
     gap: 40px;
+    background-color: var(--lightWhite);
 
     @include s {
       border-radius: 20px;
@@ -57,5 +58,28 @@
         align-items: center;
       }
     }
+
+    .experience {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      @include s {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
   }
+
+  .about {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
+.single {
+  margin-top: 0px;
 }

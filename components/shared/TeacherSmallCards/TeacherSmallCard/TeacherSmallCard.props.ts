@@ -6,4 +6,5 @@ export type TeacherSmallCardProps = DetailedHTMLProps<
   HTMLDivElement
 > & {
   teacher: Teacher
+  forSingleTeacher?: boolean
 }
