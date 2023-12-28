@@ -8,6 +8,7 @@ import levelEnglish from './levelEnglish-schema/levelEnglish-schema'
 import blogTags from './article-schema/articleTags-schema/blogTags-schema'
 import locale from './locale-schema/locale-scheme'
 import faqTags from './faq-schema/faqTags-schema/faqTags-schema'
+import reviews from './reviews-schema/reviews-schema'
 
 const schemas = [
   locale,
@@ -23,6 +24,7 @@ const schemas = [
   faq,
   singleFAQ,
   faqTags,
+  reviews,
 ]
 
 export default schemas

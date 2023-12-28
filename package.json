@@ -8,7 +8,6 @@
   "dependencies": {
     "@formatjs/intl-localematcher": "0.2.32",
     "@hookform/resolvers": "^3.3.2",
-    "@pbe/react-yandex-maps": "^1.2.5",
     "@portabletext/react": "^3.0.11",
     "@sanity/vision": "^3.14.4",
     "@types/uniqid": "^5.3.4",

@@ -2,6 +2,7 @@ import { ForwardedRef, forwardRef } from 'react'
 import { VideoPlayerProps } from './VideoPlayer.props'
 import styles from './VideoPlayer.module.scss'
 import PlayIcon from '@/icons/play.svg'
+import cn from 'classnames'
 
 const VideoPlayer = forwardRef(
   (
@@ -9,7 +10,7 @@ const VideoPlayer = forwardRef(
     ref: ForwardedRef<HTMLVideoElement>,
   ) => {
     return (
-      <div className={styles.videoWrapper}>
+      <div className={cn(styles.videoWrapper, className)}>
         <video
           className={styles.video}
           controls={isPlaying}

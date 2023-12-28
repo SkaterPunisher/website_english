@@ -1,0 +1,73 @@
+@import '@/styles/app.scss';
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-bottom: 40px;
+
+  .title {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    gap: 20px;
+
+    @include s {
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-direction: row;
+    }
+
+    .wrapperIcon {
+      position: relative;
+
+      .heading {
+        position: relative;
+        z-index: 1;
+      }
+
+      .icon {
+        z-index: 0;
+        position: absolute;
+        top: -25px;
+        left: 75px;
+        width: 150px;
+
+        @include s {
+          top: -30px;
+          left: 100px;
+          width: 180px;
+        }
+      }
+
+      svg {
+        path {
+          transition: stroke 0.2s;
+          stroke: var(--purpleLightIcon);
+        }
+      }
+    }
+
+    .link {
+      z-index: 1;
+    }
+  }
+  .wrapper {
+    display: flex;
+    gap: 20px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+
+    .video {
+      flex-shrink: 0;
+      width: 250px;
+      height: 375px;
+
+      @include s {
+        width: 375px;
+        height: 525px;
+      }
+    }
+  }
+}

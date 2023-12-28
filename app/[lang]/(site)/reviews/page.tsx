@@ -1,5 +1,8 @@
+import HeaderPage from '@/components/shared/HeaderPage/HeaderPage'
+import ReviewsCards from '@/components/shared/ReviewsCards/ReviewsCards'
 import YandexReviews from '@/components/shared/YandexReviews/YandexReviews'
 import { Locale } from '@/i18n-config'
+import { getReviews } from '@/sanity/schemas/reviews-schema/reviews-schema-utils'
 import { Metadata } from 'next'
 import React from 'react'
 
@@ -9,14 +12,26 @@ export async function generateMetadata({
   params: { lang: Locale }
 }): Promise<Metadata> {
   return {
-    title: 'Отзывы Advenced English | Zykova Oksana',
-    description: 'Описание страницы отзывов Advenced English | Zykova Oksana',
+    title:
+      'Стоит ли учить английский в онлайн студии, отзывы наших учеников ‹ Инглекс Advenced English | Zykova Oksana',
+    description:
+      'Отзывы об онлайн студии английского Advenced English | Zykova Oksana⠀➤ Сильные преподаватели Скидки до 30% ☑️Попробуйте бесплатно! ',
   }
 }
 
 export default async function ReviewsPage({ params: { lang } }: { params: { lang: Locale } }) {
+  const reviews = await getReviews(lang)
+
   return (
     <main>
+      <HeaderPage
+        color="purple"
+        title="Отзывы"
+        description="На этой странице вы можете посмотреть отзывы наших клиентов"
+      />
+
+      <ReviewsCards reviews={reviews} />
+
       <YandexReviews />
     </main>
   )
