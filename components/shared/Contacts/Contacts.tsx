@@ -1,7 +1,7 @@
 import cn from 'classnames'
 import styles from './Contacts.module.scss'
 import { ContactsProps } from './Contacts.props'
-import YandexMap from '@/components/ui/YandexMap/YandexMap'
+import YandexMap from '@/components/shared/YandexMap/YandexMap'
 import Text from '@/components/ui/Text/Text'
 import { contacts } from '@/constants/contacts'
 import Link from 'next/link'
@@ -38,7 +38,7 @@ const Contacts = ({ className, ...props }: ContactsProps) => {
             </Link>
             <Text size="xxs">Advanced English {'>'} Богородск</Text>
           </div>
-          <YandexMap center={[56.106319, 43.521247]} zoom={18} />
+          <YandexMap key={'56.10631943.521247'} center={[56.106319, 43.521247]} zoom={18} />
         </li>
         <li className={styles.map}>
           <div className={styles.address}>
@@ -49,7 +49,7 @@ const Contacts = ({ className, ...props }: ContactsProps) => {
             </Link>
             <Text size="xxs">Advanced English {'>'} Новинки</Text>
           </div>
-          <YandexMap center={[56.203763, 43.880141]} zoom={18} />
+          <YandexMap key={'5610631943521247'} center={[56.203763, 43.880141]} zoom={18} />
         </li>
       </ul>
     </div>
