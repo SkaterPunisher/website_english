@@ -20,7 +20,13 @@ async function ArticleSingleCards({ lang, tags, className, ...props }: ArticleSi
           Вас может заинтересовать
         </Heading>
 
-        <HelperScroll className={styles.helper} />
+        <HelperScroll
+          className={cn(styles.helper, {
+            [styles.two]: articles.length >= 2,
+            [styles.three]: articles.length >= 3,
+            [styles.four]: articles.length >= 4,
+          })}
+        />
 
         <ul className={styles.cards}>
           {articles.map((article, index) => (

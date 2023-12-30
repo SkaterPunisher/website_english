@@ -8,6 +8,14 @@
 
   .helper {
     margin-bottom: -20px;
+
+    @include s {
+      display: flex;
+    }
+
+    @include l {
+      display: none;
+    }
   }
 
   .title {

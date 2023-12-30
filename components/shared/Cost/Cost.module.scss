@@ -3,6 +3,14 @@
 .section {
   .helper {
     margin-top: 80px;
+
+    @include s {
+      display: flex;
+    }
+
+    @include l {
+      display: none;
+    }
   }
 
   .title {

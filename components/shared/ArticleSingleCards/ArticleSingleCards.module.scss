@@ -9,6 +9,22 @@
     margin-bottom: -4px;
   }
 
+  .two {
+    @include s {
+      display: flex;
+    }
+  }
+
+  .three {
+    @include m {
+      display: flex;
+    }
+  }
+
+  .four {
+    display: flex;
+  }
+
   .cards {
     display: flex;
     gap: 20px;
