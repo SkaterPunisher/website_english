@@ -13,4 +13,5 @@ export const getFaqs = async (page: string, lang: Locale): Promise<FAQs> =>
     faqs
   }`,
     { page, lang },
+    { next: { revalidate: 60 * 10 } },
   )

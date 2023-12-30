@@ -1,0 +1,116 @@
+@import '@/styles/app.scss';
+
+.scrollWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  @include s {
+    display: none;
+  }
+
+  .hint {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100px;
+    height: 50px;
+    overflow: hidden;
+
+    .hintRectangle {
+      width: 60px;
+      height: 50px;
+      background-color: var(--light);
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+
+    .wrapper {
+      width: 70px;
+      height: 50px;
+      background-color: var(--white);
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 2;
+      animation: drag 2s infinite;
+      margin-right: -100px;
+
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 10px;
+
+      .rectangle {
+        flex-shrink: 0;
+        width: 60px;
+        height: 50px;
+        background-color: var(--light);
+      }
+
+      .firstRectangle {
+        width: 70px;
+        border-left: 10px solid var(--white) !important;
+      }
+    }
+
+    .finger {
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      top: 5px;
+      z-index: 3;
+      animation: swipe 2s infinite;
+      color: var(--gray);
+      transition: color 0.2s;
+    }
+  }
+}
+
+@keyframes drag {
+  0% {
+    opacity: 1;
+  }
+  30% {
+    right: 0;
+  }
+  50% {
+  }
+  80% {
+    right: 70px;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    right: 70px;
+  }
+}
+
+@keyframes swipe {
+  0%,
+  20% {
+    transform: scale(0);
+    right: 0;
+  }
+  30% {
+    transform: scale(1);
+    right: 0;
+  }
+  80% {
+    right: 73px;
+  }
+  98% {
+    right: 73px;
+    transform: scale(1);
+  }
+  100% {
+    right: 73px;
+    transform: scale(0);
+  }
+}

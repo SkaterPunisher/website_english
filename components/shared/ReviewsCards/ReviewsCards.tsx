@@ -7,6 +7,7 @@ import Button from '@/components/ui/Button/Button'
 import ArrowRightIcon from '@/icons/arrow-right.svg'
 import { CustomLink } from '@/components/ui/CustomLink/CustomLink'
 import Vector from '@/icons/vector-purple-reviews.svg'
+import HelperScroll from '../HelperScroll/HelperScroll'
 
 const ReviewsCards = ({ button, reviews, className, ...props }: ReviewsCardsProps) => {
   return (
@@ -28,6 +29,8 @@ const ReviewsCards = ({ button, reviews, className, ...props }: ReviewsCardsProp
           </CustomLink>
         ) : null}
       </div>
+
+      <HelperScroll className={styles.helper} />
 
       <div className={styles.wrapper}>
         {reviews[0].videos.map(url => (

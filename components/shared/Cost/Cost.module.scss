@@ -1,0 +1,158 @@
+@import '@/styles/app.scss';
+
+.section {
+  .helper {
+    margin-top: 80px;
+  }
+
+  .title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-top: 40px;
+
+    .heading {
+      position: relative;
+      z-index: 1;
+    }
+
+    .vector {
+      z-index: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 200px;
+
+      svg {
+        path {
+          // opacity: 0.5;
+          stroke: var(--purpleLightIcon);
+        }
+      }
+    }
+  }
+
+  .costs {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(3, minmax(290px, 1fr));
+    overflow-x: auto;
+    padding: 10px;
+    margin-right: -16px;
+
+    @include s {
+      grid-template-columns: repeat(4, minmax(290px, 1fr));
+      margin-right: 0px;
+    }
+
+    .desktop {
+      display: none;
+
+      @include s {
+        display: block;
+      }
+    }
+
+    .item {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 122px auto 1fr repeat(7, 60px);
+      justify-items: center;
+      padding: 30px;
+      border-radius: 20px;
+      background-color: var(--whiteBlack);
+      transition: background-color 0.2s;
+      box-shadow: 0px -4px 8px 0px rgba(0, 0, 0, 0.04), 0px 0px 4px 0px rgba(0, 0, 0, 0.02),
+        0px 4px 8px 0px rgba(0, 0, 0, 0.04), 0px 0px 4px 0px rgba(0, 0, 0, 0.02);
+
+      .listItem {
+        transition: border-bottom 0.2s;
+        border-bottom: 1px solid var(--whiteHover);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+
+      .titleCost {
+        display: flex;
+        gap: 10px;
+        flex-direction: column;
+      }
+      .finalPrice {
+        display: flex;
+        gap: 10px;
+      }
+
+      .titleItem {
+        text-align: center;
+      }
+
+      .priceWrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 40px;
+        // gap: 10px;
+        .discount {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 10px;
+          transition: color 0.2s, border 0.2s;
+
+          .discounted {
+            text-decoration: line-through;
+          }
+          .discountText {
+            padding: 2px 16px;
+            border-radius: 8px;
+          }
+          .discountYellow {
+            color: var(--yellow);
+            border: 1px solid var(--yellowLight);
+          }
+          .discountBlue {
+            color: var(--blue);
+            border: 1px solid var(--blueLight);
+          }
+          .discountRed {
+            color: var(--red);
+            border: 1px solid var(--redLight);
+          }
+
+          .discountedYellow,
+          .discountedBlue,
+          .discountedRed {
+            transition: color 0.2s;
+          }
+          .discountedYellow {
+            color: var(--yellow);
+          }
+
+          .discountedBlue {
+            color: var(--blue);
+          }
+
+          .discountedRed {
+            color: var(--red);
+          }
+        }
+
+        .discounted {
+          text-decoration: line-through;
+        }
+      }
+    }
+  }
+}
+
+.check {
+  width: 20px;
+}

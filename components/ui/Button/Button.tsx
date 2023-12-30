@@ -3,10 +3,17 @@ import cn from 'classnames'
 import styles from './Button.module.scss'
 import Text from '@/components/ui/Text/Text'
 
-const Button = ({ placeholder, children, color = 'red', className, ...props }: ButtonProps) => {
+const Button = ({
+  size = 'button',
+  placeholder,
+  children,
+  color = 'red',
+  className,
+  ...props
+}: ButtonProps) => {
   return (
     <button className={cn(styles.button, className)} {...props}>
-      {placeholder && <Text size="button">{placeholder}</Text>}
+      {placeholder && <Text size={size}>{placeholder}</Text>}
       {children && <div className={cn('buttonIconWrapper', styles[color])}>{children}</div>}
     </button>
   )

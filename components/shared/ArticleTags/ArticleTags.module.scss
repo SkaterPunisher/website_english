@@ -54,9 +54,9 @@
     gap: 6px;
 
     border-radius: 12px;
-    border: 1px solid var(--black);
+    // border: 1px solid var(--black);
     padding: 20px 14px;
-    background-color: var(--white);
+    background-color: var(--light);
     outline: none;
     transition: border 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
@@ -86,9 +86,9 @@
   display: flex;
   flex-direction: column;
   border-radius: 12px;
-  border: 1px solid var(--black);
+  // border: 1px solid var(--black);
   padding: 6px 10px 6px 6px;
-  background-color: var(--white);
+  background-color: var(--light);
   gap: 6px;
   z-index: 99 !important;
   width: calc(100% - 40px);

@@ -8,6 +8,7 @@ import Text from '@/components/ui/Text/Text'
 import { formatDate } from '@/lib/utils/convertData'
 import BookIcon from '@/icons/book-open.svg'
 import { CustomLink } from '@/components/ui/CustomLink/CustomLink'
+import HelperScroll from '../HelperScroll/HelperScroll'
 
 async function ArticleSingleCards({ lang, tags, className, ...props }: ArticleSingleCardsProps) {
   const articles = await getArticlesByAnyTag(lang, tags)
@@ -18,6 +19,9 @@ async function ArticleSingleCards({ lang, tags, className, ...props }: ArticleSi
         <Heading tag="h3" className={styles.heading}>
           Вас может заинтересовать
         </Heading>
+
+        <HelperScroll className={styles.helper} />
+
         <ul className={styles.cards}>
           {articles.map((article, index) => (
             <li className={styles.card} key={article._id}>

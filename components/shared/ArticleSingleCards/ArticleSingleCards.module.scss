@@ -5,16 +5,24 @@
   flex-direction: column;
   gap: 24px;
 
+  .helper {
+    margin-bottom: -4px;
+  }
+
   .cards {
     display: flex;
     gap: 20px;
     overflow-x: auto;
     flex-wrap: nowrap;
-
+    margin-right: -16px;
     scrollbar-width: none; /* Для Firefox */
 
     &::-webkit-scrollbar {
       display: none; /* Для WebKit-браузеров, таких как Chrome и Safari */
+    }
+
+    @include s {
+      margin-right: 0px;
     }
 
     .card {
