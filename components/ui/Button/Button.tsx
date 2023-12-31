@@ -13,7 +13,11 @@ const Button = ({
 }: ButtonProps) => {
   return (
     <button className={cn(styles.button, className)} {...props}>
-      {placeholder && <Text size={size}>{placeholder}</Text>}
+      {placeholder && (
+        <Text className={styles.placeholder} size={size}>
+          {placeholder}
+        </Text>
+      )}
       {children && <div className={cn('buttonIconWrapper', styles[color])}>{children}</div>}
     </button>
   )

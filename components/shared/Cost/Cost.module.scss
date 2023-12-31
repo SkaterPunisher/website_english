@@ -64,6 +64,7 @@
     }
 
     .item {
+      cursor: pointer;
       display: grid;
       grid-template-columns: 1fr;
       grid-template-rows: 122px auto 1fr repeat(7, 60px);
@@ -163,4 +164,8 @@
 
 .check {
   width: 20px;
+  path {
+    transition: stroke 0.2s;
+    stroke: var(--black);
+  }
 }

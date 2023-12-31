@@ -5,7 +5,7 @@ import cn from 'classnames'
 import { CostProps } from './Cost.props'
 import Heading from '@/components/ui/Heading/Heading'
 import Vector from '@/icons/vector-purple-cost.svg'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import CostTypes from './CostTypes/CostTypes'
 import { costTable } from '@/constants/cost'
 import Text from '@/components/ui/Text/Text'
@@ -17,7 +17,8 @@ import Button from '@/components/ui/Button/Button'
 import { showToast } from '@/components/ui/CustomToast/CustomToast'
 import BasketIcon from '@/icons/shopping-bag.svg'
 import CheckIcon from '@/icons/check.svg'
-import HelperScroll from '../HelperScroll/HelperScroll'
+import HelperScroll from '@/components/ui/HelperScroll/HelperScroll'
+import useDragToScroll from '@/lib/hooks/useDragToScroll'
 
 export type CostType = 'single' | 'pair' | 'mini' | 'group'
 
@@ -30,6 +31,8 @@ const Cost = ({ courses, className, ...props }: CostProps) => {
   const [type, setType] = useState<CostType>('group')
 
   const [course, setCourse] = useState<Courses>(courses![0])
+
+  const scrollRef = useDragToScroll()
 
   return (
     <section className={cn(styles.section, 'layout', className)} {...props}>
@@ -46,7 +49,7 @@ const Cost = ({ courses, className, ...props }: CostProps) => {
 
       <CostTypes type={type} setType={setType} />
 
-      <ul className={styles.costs}>
+      <ul className={styles.costs} ref={scrollRef}>
         <li className={styles.desktop}>1</li>
         {costTable.map((cost, index) => (
           <li key={index} className={styles.item}>

@@ -1,7 +1,7 @@
 import Cost from '@/components/shared/Cost/Cost'
 import FAQ from '@/components/shared/FAQ/FAQ'
 import HeaderPage from '@/components/shared/HeaderPage/HeaderPage'
-import HelperScroll from '@/components/shared/HelperScroll/HelperScroll'
+import HelperScroll from '@/components/ui/HelperScroll/HelperScroll'
 import { Locale } from '@/i18n-config'
 import { getCourses } from '@/sanity/schemas/courses-schema/courses-schema-utils'
 import { getPriceByTitle, getPrices } from '@/sanity/schemas/price-schema/price-schema-utils'

@@ -1,13 +1,13 @@
 import styles from './ReviewsCards.module.scss'
 import cn from 'classnames'
 import { ReviewsCardsProps } from './ReviewsCards.props'
-import ReviewCard from './ReviewCard/ReviewCard'
 import Heading from '@/components/ui/Heading/Heading'
 import Button from '@/components/ui/Button/Button'
 import ArrowRightIcon from '@/icons/arrow-right.svg'
 import { CustomLink } from '@/components/ui/CustomLink/CustomLink'
 import Vector from '@/icons/vector-purple-reviews.svg'
-import HelperScroll from '../HelperScroll/HelperScroll'
+import HelperScroll from '@/components/ui/HelperScroll/HelperScroll'
+import ReviewVideoCards from './ReviewVideoCards/ReviewVideoCards'
 
 const ReviewsCards = ({ button, reviews, className, ...props }: ReviewsCardsProps) => {
   return (
@@ -32,16 +32,7 @@ const ReviewsCards = ({ button, reviews, className, ...props }: ReviewsCardsProp
 
       <HelperScroll className={styles.helper} />
 
-      <div className={styles.wrapper}>
-        {reviews[0].videos.map(url => (
-          <ReviewCard
-            key={url._key}
-            src={url.assetUrl!}
-            className={styles.video}
-            srcPoster={url.preview}
-          />
-        ))}
-      </div>
+      <ReviewVideoCards reviews={reviews} />
     </section>
   )
 }

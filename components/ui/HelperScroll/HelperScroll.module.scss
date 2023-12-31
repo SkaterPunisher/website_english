@@ -21,6 +21,7 @@
       width: 60px;
       height: 50px;
       background-color: var(--light);
+      transition: background-color 0.2s;
       position: absolute;
       top: 0;
       left: 0;
@@ -31,6 +32,7 @@
       width: 70px;
       height: 50px;
       background-color: var(--white);
+      transition: background-color 0.2s;
       position: absolute;
       top: 0;
       right: 0;
@@ -48,11 +50,13 @@
         width: 60px;
         height: 50px;
         background-color: var(--light);
+        transition: background-color 0.2s;
       }
 
       .firstRectangle {
         width: 70px;
         border-left: 10px solid var(--white) !important;
+        transition: border-left 0.2s;
       }
     }
 
@@ -95,22 +99,22 @@
 @keyframes swipe {
   0%,
   20% {
-    transform: scale(0);
+    // transform: scale(0);
     right: 0;
   }
   30% {
-    transform: scale(1);
+    // transform: scale(1);
     right: 0;
   }
   80% {
     right: 73px;
   }
-  98% {
-    right: 73px;
-    transform: scale(1);
-  }
+  // 90% {
+  //   right: 73px;
+  //   // transform: scale(1);
+  // }
   100% {
-    right: 73px;
-    transform: scale(0);
+    right: 0px;
+    // transform: scale(0);
   }
 }

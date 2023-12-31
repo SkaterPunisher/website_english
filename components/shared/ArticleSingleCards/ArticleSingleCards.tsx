@@ -3,12 +3,8 @@ import styles from './ArticleSingleCards.module.scss'
 import cn from 'classnames'
 import { getArticlesByAnyTag } from '@/sanity/schemas/article-schema/singleArticle-schema-utils'
 import Heading from '@/components/ui/Heading/Heading'
-import DefaultImages from '@/components/ui/DefaultImages/DefaultImages'
-import Text from '@/components/ui/Text/Text'
-import { formatDate } from '@/lib/utils/convertData'
-import BookIcon from '@/icons/book-open.svg'
-import { CustomLink } from '@/components/ui/CustomLink/CustomLink'
-import HelperScroll from '../HelperScroll/HelperScroll'
+import HelperScroll from '@/components/ui/HelperScroll/HelperScroll'
+import ArticleInterest from './ArticleInterest/ArticleInterest'
 
 async function ArticleSingleCards({ lang, tags, className, ...props }: ArticleSingleCardsProps) {
   const articles = await getArticlesByAnyTag(lang, tags)
@@ -28,7 +24,9 @@ async function ArticleSingleCards({ lang, tags, className, ...props }: ArticleSi
           })}
         />
 
-        <ul className={styles.cards}>
+        <ArticleInterest articles={articles} />
+
+        {/* <ul className={styles.cards}>
           {articles.map((article, index) => (
             <li className={styles.card} key={article._id}>
               <DefaultImages
@@ -57,7 +55,7 @@ async function ArticleSingleCards({ lang, tags, className, ...props }: ArticleSi
               </div>
             </li>
           ))}
-        </ul>
+        </ul> */}
       </section>
     )
   } else return null

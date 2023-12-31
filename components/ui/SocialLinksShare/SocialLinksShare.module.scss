@@ -24,13 +24,12 @@
       &:hover {
         background-color: var(--light);
       }
+    }
 
-      svg {
-        path {
-          transition: fill 0.2s;
-
-          fill: var(--black);
-        }
+    svg {
+      path {
+        transition: fill 0.2s;
+        fill: var(--black);
       }
     }
   }

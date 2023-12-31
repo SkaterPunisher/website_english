@@ -22,6 +22,15 @@
     background-color: var(--yellow);
   }
 
+  .placeholder {
+    border-bottom: 1px solid transparent;
+    transition: border-bottom 0.2s;
+  }
+
+  &:hover > .placeholder {
+    border-bottom: 1px solid var(--black);
+  }
+
   .black,
   .blue,
   .green,

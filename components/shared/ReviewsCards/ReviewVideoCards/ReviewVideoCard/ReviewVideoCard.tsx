@@ -1,11 +1,9 @@
-'use client'
-
-import { useRef } from 'react'
-import VideoPlayer from '../../VideoPlayer/VideoPlayer'
+import VideoPlayer from '@/components/shared/VideoPlayer/VideoPlayer'
 import { useVideoPlayer } from '@/lib/hooks/useVideoPlayer'
-import { ReviewCardProps } from './ReviewCard.props'
+import { useRef } from 'react'
+import { ReviewVideoCardProps } from './ReviewVideoCard.props'
 
-const ReviewCard = ({ src, srcPoster, className }: ReviewCardProps) => {
+const ReviewVideoCard = ({ srcVideo, srcPoster, className }: ReviewVideoCardProps) => {
   const videoRef = useRef<HTMLVideoElement>(null)
   const { isPlaying, togglePlayPause } = useVideoPlayer(videoRef)
 
@@ -13,7 +11,7 @@ const ReviewCard = ({ src, srcPoster, className }: ReviewCardProps) => {
     <VideoPlayer
       className={className}
       isPlaying={isPlaying}
-      srcVideo={src}
+      srcVideo={srcVideo}
       srcPoster={srcPoster}
       ref={videoRef}
       togglePlayPause={togglePlayPause}
@@ -21,4 +19,4 @@ const ReviewCard = ({ src, srcPoster, className }: ReviewCardProps) => {
   )
 }
 
-export default ReviewCard
+export default ReviewVideoCard

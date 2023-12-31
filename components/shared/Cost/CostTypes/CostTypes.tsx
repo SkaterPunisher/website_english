@@ -6,10 +6,13 @@ import MiniIcon from '@/icons/cost-mini.svg'
 import GroupIcon from '@/icons/cost-group.svg'
 import Text from '@/components/ui/Text/Text'
 import { CostTypesProps } from './CostTypes.props'
+import useDragToScroll from '@/lib/hooks/useDragToScroll'
 
 const CostTypes = ({ type, setType, className, ...props }: CostTypesProps) => {
+  const scrollRef = useDragToScroll()
+
   return (
-    <ul className={cn(styles.types, className)} {...props}>
+    <ul className={cn(styles.types, className)} {...props} ref={scrollRef}>
       <li
         className={cn(styles.type, { [styles.active]: type === 'group' })}
         onClick={() => setType('group')}
