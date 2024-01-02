@@ -53,7 +53,6 @@
   gap: 6px;
   z-index: 99 !important;
   // max-width: fit-content;
-  width: 290px;
 
   max-height: 300px !important;
   overflow-y: auto;
@@ -91,6 +90,14 @@
       color: var(--white);
     }
   }
+}
+
+.singleNo {
+  width: 290px;
+}
+
+.single {
+  width: calc(100% - 32px);
 }
 
 @keyframes popover-slide {

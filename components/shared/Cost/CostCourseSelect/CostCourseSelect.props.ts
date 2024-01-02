@@ -7,4 +7,5 @@ export type CostCourseSelectProps = DetailedHTMLProps<
 > & {
   courses?: Courses[]
   forCostPage?: boolean
+  single?: boolean
 }

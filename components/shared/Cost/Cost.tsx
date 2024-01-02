@@ -55,13 +55,17 @@ const Cost = ({ courses, className, ...props }: CostProps) => {
           </div>
         </div>
 
+        <CostCourseSelect
+          single={true}
+          courses={courses}
+          className={cn(styles.mobile, styles.select)}
+        />
+
         <HelperScroll className={styles.helper} />
 
         <CostTypes type={type} setType={setType} />
 
-        <CostCourseSelect courses={courses} className={cn(styles.mobile, styles.select)} />
-
-        <HelperScroll />
+        {/* <HelperScroll className={styles.desktop} /> */}
 
         <ul className={styles.costs} ref={scrollRef}>
           <li className={cn(styles.itemSelect, styles.desktop)}>

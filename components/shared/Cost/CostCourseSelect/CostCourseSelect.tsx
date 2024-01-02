@@ -8,7 +8,13 @@ import { Button, DialogTrigger, Popover } from 'react-aria-components'
 import ArrowDownIcon from '@/icons/chevron-down.svg'
 import { useCostCoursesStore } from '@/stores/costCourses.store'
 
-const CostCourseSelect = ({ forCostPage, courses, className, ...props }: CostCourseSelectProps) => {
+const CostCourseSelect = ({
+  single,
+  forCostPage,
+  courses,
+  className,
+  ...props
+}: CostCourseSelectProps) => {
   const { course, setCourse } = useCostCoursesStore()
 
   return (
@@ -33,19 +39,14 @@ const CostCourseSelect = ({ forCostPage, courses, className, ...props }: CostCou
               <ArrowDownIcon className={styles.icon} />
             </Button>
 
-            <Popover className={styles.popover}>
+            <Popover
+              className={cn(styles.popover, {
+                [styles.single]: single,
+                [styles.singleNo]: !single,
+              })}
+            >
               <div className={cn(styles.contentWrapper)}>
                 <ul className={styles.tags}>
-                  {/* <li className={styles.item} onClick={() => setCourse(undefined)}>
-                  <div className={styles.text}>
-                    <Text
-                      size="s"
-                      className={cn(styles.tag, { [styles.active]: course === undefined })}
-                    >
-                      Все
-                    </Text>
-                  </div>
-                </li> */}
                   {courses?.map(t => (
                     <li key={t._id} className={styles.item} onClick={() => setCourse(t)}>
                       <div className={styles.text}>

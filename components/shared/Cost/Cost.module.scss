@@ -8,12 +8,12 @@
   }
 
   .select {
-    margin-top: 40px;
-    margin-bottom: 20px;
+    margin-top: 80px;
+    margin-bottom: 10px;
   }
 
   .helper {
-    margin-top: 80px;
+    // margin-top: 80px;
 
     @include s {
       display: flex;
