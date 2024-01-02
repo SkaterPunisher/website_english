@@ -9,9 +9,9 @@ export async function generateMetadata({
   params: { lang: Locale }
 }): Promise<Metadata> {
   return {
-    title: 'Моя корзина Advenced English | Zykova Oksana',
+    title: 'Моя корзина Advenced English | Зыкова Оксана',
     description:
-      'Скидки 10% всем новым студентам студии английского языка Advenced English | Zykova Oksana',
+      'Скидки 10% всем новым студентам студии английского языка Advenced English | Зыкова Оксана',
   }
 }
 

@@ -4,7 +4,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Панель администратора',
   description:
-    'Панель администратора для добавления, редактирования контента на Advanced English || Zykova Oksana',
+    'Панель администратора для добавления, редактирования контента на Advanced English || Зыкова Оксана',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
