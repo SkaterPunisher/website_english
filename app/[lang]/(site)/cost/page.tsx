@@ -39,9 +39,7 @@ export default async function CostPage({ params: { lang } }: { params: { lang: L
       {courses && courses.length > 0 && <Cost lang={lang} courses={courses} />}
 
       <FormWithTimerDiscount />
-
       <AddOpportunity />
-
       <HowSaveMoney />
 
       <FAQ lang={lang} pageName={'Стоимость'} />

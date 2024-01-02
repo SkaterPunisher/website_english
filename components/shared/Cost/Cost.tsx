@@ -24,13 +24,12 @@ import FreeLessonForEach from './FreeLessonForEach/FreeLessonForEach'
 import useCartStore from '@/stores/cart.store'
 import { motion, AnimatePresence } from 'framer-motion'
 import InBasketRow from './InBasketRow/InBasketRow'
+import { CostType } from '@/types/CostType'
 
 const transitionSettings = {
   duration: 0.2,
   ease: 'easeInOut',
 }
-
-export type CostType = 'single' | 'pair' | 'mini' | 'group'
 
 const iconArray = {
   1: <OneMonth />,
@@ -87,19 +86,19 @@ const Cost = ({ courses, className, ...props }: CostProps) => {
             </Text>
             <FreeLessonForEach />
           </li>
-          {costTable.map((cost, index) => (
+          {costTable?.map((cost, index) => (
             <li key={index} className={styles.item}>
               <div className={styles.titleCost}>
                 <Text size="l" className={styles.titleItem}>
-                  {cost.time}
+                  {cost?.time}
                 </Text>
                 <Text size="s" className={styles.titleItem}>
-                  {cost.title}
+                  {cost?.title}
                 </Text>
               </div>
-              {/* ________ */}
+
               <div>{iconArray[cost.icon]}</div>
-              {/* ________ */}
+
               <div className={styles.priceWrapper}>
                 <div className={styles.discount}>
                   <Text
@@ -111,7 +110,7 @@ const Cost = ({ courses, className, ...props }: CostProps) => {
                     })}
                     size="s"
                   >
-                    {Math.floor((course ? course : defaultPrice).price[type] * 1.03)}
+                    {Math.floor((course ? course : defaultPrice)?.price[type] * 1.03)}
                   </Text>
                   <Text
                     size="s"
@@ -121,20 +120,20 @@ const Cost = ({ courses, className, ...props }: CostProps) => {
                       [styles.discountedRed]: cost.icon === 6,
                     })}
                   >
-                    {cost.discount !== 0 && '-'}
-                    {cost.discount}%
+                    {cost?.discount !== 0 && '-'}
+                    {cost?.discount}%
                   </Text>
                 </div>
 
                 <Heading tag="h2-s">
                   {course ? '' : 'от'}{' '}
-                  {Math.floor((course ? course : defaultPrice).price[type] * cost.price)}₽
+                  {Math.floor((course ? course : defaultPrice)?.price[type] * cost.price)}₽
                 </Heading>
                 <Text size="s">за урок</Text>
               </div>
-              {/* ________ */}
+
               <div className={styles.listItem}>
-                {!cost.singleForPass ? <div>&mdash;</div> : <CheckIcon className={styles.check} />}
+                {!cost?.singleForPass ? <div>&mdash;</div> : <CheckIcon className={styles.check} />}
               </div>
 
               <Text className={styles.listItem}>{cost.timeLesson} минут</Text>
@@ -142,7 +141,7 @@ const Cost = ({ courses, className, ...props }: CostProps) => {
               <Text className={styles.listItem}>{cost.format}</Text>
 
               <div className={styles.listItem}>
-                {cost.cancelLesson === 0 ? (
+                {cost?.cancelLesson === 0 ? (
                   <div>&mdash;</div>
                 ) : (
                   <Text>До {cost.cancelLesson} отмен</Text>
@@ -157,14 +156,14 @@ const Cost = ({ courses, className, ...props }: CostProps) => {
                 <Text>
                   от{' '}
                   {(
-                    Math.floor((course ? course : defaultPrice).price[type] * cost.price) * 8
+                    Math.floor((course ? course : defaultPrice)?.price[type] * cost.price) * 8
                   ).toLocaleString('ru-RU')}
                   ₽
                 </Text>
                 {cost.discount !== 0 && (
                   <Text size="s" className={styles.discounted}>
                     {(
-                      Math.floor((course ? course : defaultPrice).price[type] * 1.03) * 8
+                      Math.floor((course ? course : defaultPrice)?.price[type] * 1.03) * 8
                     ).toLocaleString('ru-RU')}
                     ₽
                   </Text>

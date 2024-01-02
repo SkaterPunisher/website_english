@@ -1,5 +1,5 @@
+import { CostType } from '@/types/CostType'
 import { DetailedHTMLProps, Dispatch, HTMLAttributes, SetStateAction } from 'react'
-import { CostType } from '../Cost'
 
 export type CostTypesProps = {
   type: CostType

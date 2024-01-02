@@ -1,5 +1,5 @@
-import { CostType } from '@/components/shared/Cost/Cost'
 import { Courses } from '@/sanity/schemas/courses-schema/coursesTypes'
+import { CostType } from '@/types/CostType'
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
 
