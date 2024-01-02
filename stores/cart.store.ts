@@ -1,7 +1,7 @@
 import { Courses } from '@/sanity/schemas/courses-schema/coursesTypes'
 import { CostType } from '@/types/CostType'
 import { create } from 'zustand'
-import { persist } from 'zustand/middleware'
+import { StorageValue, persist } from 'zustand/middleware'
 
 type Item = {
   type: {
@@ -49,9 +49,21 @@ const useCartStore = create(
     }),
     {
       name: 'cart', // localStorage key
-      getStorage: () => localStorage, // specify to use localStorage
-      serialize: state => JSON.stringify(state), // state serialization function
-      deserialize: str => JSON.parse(str), // state deserialization function
+      storage: {
+        getItem: async name => {
+          const item = localStorage.getItem(name)
+          // Deserialize the string into the correct type
+          return item ? (JSON.parse(item) as StorageValue<CartState>) : null
+        },
+        setItem: async (name, value) => {
+          // Serialize the state to a string and store it
+          localStorage.setItem(name, JSON.stringify(value))
+        },
+        removeItem: async name => {
+          localStorage.removeItem(name)
+        },
+        // Async is optional since localStorage is synchronous, but it's here to match the expected return type
+      },
     },
   ),
 )
