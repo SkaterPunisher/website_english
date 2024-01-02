@@ -66,29 +66,29 @@
       margin-right: 0px;
     }
 
-    // .desktop {
-    //   display: none;
+    .desktop {
+      display: none;
 
-    //   .listItem {
-    //     transition: border-bottom 0.2s;
-    //     border-bottom: 1px solid var(--whiteHover);
-    //     display: flex;
-    //     align-items: center;
-    //     width: 100%;
+      .listItem {
+        transition: border-bottom 0.2s;
+        border-bottom: 1px solid var(--whiteHover);
+        display: flex;
+        align-items: center;
+        width: 100%;
 
-    //     &:last-child {
-    //       border-bottom: none;
-    //     }
-    //   }
+        &:last-child {
+          border-bottom: none;
+        }
+      }
 
-    //   .lastItem {
-    //     border-bottom: none;
-    //   }
+      .lastItem {
+        border-bottom: none;
+      }
 
-    //   @include s {
-    //     display: block;
-    //   }
-    // }
+      @include s {
+        display: block;
+      }
+    }
 
     .itemSelect {
       display: none;
