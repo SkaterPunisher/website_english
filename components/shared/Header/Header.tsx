@@ -81,7 +81,7 @@ const Header = ({ className, lang, ...props }: HeaderProps) => {
         </Button>
 
         <CustomLink href="/cart">
-          <BasketButton count={3} />
+          <BasketButton />
         </CustomLink>
 
         <ThemeSwitcher />

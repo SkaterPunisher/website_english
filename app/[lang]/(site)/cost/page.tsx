@@ -1,6 +1,9 @@
+import AddOpportunity from '@/components/shared/AddOpportunity/AddOpportunity'
 import Cost from '@/components/shared/Cost/Cost'
 import FAQ from '@/components/shared/FAQ/FAQ'
+import FormWithTimerDiscount from '@/components/shared/FormWithTimerDiscount/FormWithTimerDiscount'
 import HeaderPage from '@/components/shared/HeaderPage/HeaderPage'
+import HowSaveMoney from '@/components/shared/HowSaveMoney/HowSaveMoney'
 import HelperScroll from '@/components/ui/HelperScroll/HelperScroll'
 import { Locale } from '@/i18n-config'
 import { getCourses } from '@/sanity/schemas/courses-schema/courses-schema-utils'
@@ -34,6 +37,12 @@ export default async function CostPage({ params: { lang } }: { params: { lang: L
       />
 
       {courses && courses.length > 0 && <Cost lang={lang} courses={courses} />}
+
+      <FormWithTimerDiscount />
+
+      <AddOpportunity />
+
+      <HowSaveMoney />
 
       <FAQ lang={lang} pageName={'Стоимость'} />
     </main>

@@ -2,12 +2,15 @@ import styles from './BasketButton.module.scss'
 import BagIcon from '@/icons/shopping-bag.svg'
 import { BasketButtonProps } from './BasketButton.props'
 import cn from 'classnames'
+import useCartStore from '@/stores/cart.store'
 
-const BasketButton = ({ count = 0, className, ...props }: BasketButtonProps) => {
+const BasketButton = ({ className, ...props }: BasketButtonProps) => {
+  const { items } = useCartStore()
+
   return (
     <div className={cn(styles.wrapper, 'buttonIconWrapper', className)} {...props}>
       <BagIcon />
-      {count > 0 && <div className={styles.count}>{count}</div>}
+      {items.length > 0 && <div className={styles.count}>{items.length}</div>}
     </div>
   )
 }

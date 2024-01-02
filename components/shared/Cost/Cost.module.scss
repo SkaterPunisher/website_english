@@ -46,7 +46,7 @@
 
       svg {
         path {
-          // opacity: 0.5;
+          transition: stroke 0.2s;
           stroke: var(--purpleLightIcon);
         }
       }

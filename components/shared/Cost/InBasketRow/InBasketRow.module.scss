@@ -1,0 +1,62 @@
+@import '@/styles/app.scss';
+
+.wrapper {
+  transition: background-color 0.2s;
+  background-color: var(--purpleLightSubscription);
+  margin-top: -30px;
+  margin-bottom: 40px;
+
+  .contentWrapper {
+    width: 100%;
+    padding: 40px 16px;
+    display: grid;
+    gap: 20px;
+    align-items: center;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    position: relative;
+    overflow: hidden;
+
+    @include s {
+      padding: 40px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    @include l {
+      margin: auto;
+      width: 1280px;
+    }
+
+    .title {
+      font-weight: 600;
+      text-align: center;
+      z-index: 1;
+      position: relative;
+
+      @include s {
+        text-align: left;
+      }
+    }
+
+    .subtitle {
+      text-align: center;
+      z-index: 1;
+      position: relative;
+
+      @include s {
+        text-align: left;
+      }
+    }
+
+    .button {
+      z-index: 1;
+      width: 100%;
+
+      @include s {
+        width: fit-content;
+      }
+    }
+  }
+}

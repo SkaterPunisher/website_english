@@ -1,0 +1,59 @@
+@import '@/styles/app.scss';
+
+.wrapper {
+  .heading {
+    margin-bottom: 32px;
+  }
+
+  .list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+
+    @include m {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .item {
+      display: grid;
+      align-items: center;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      padding: 24px;
+      border-radius: 8px;
+      box-shadow: 0px -4px 8px 0px rgba(0, 0, 0, 0.04), 0px 0px 4px 0px rgba(0, 0, 0, 0.02),
+        0px 4px 8px 0px rgba(0, 0, 0, 0.04), 0px 0px 4px 0px rgba(0, 0, 0, 0.02);
+      background-color: var(--whiteBlack);
+      transition: background-color 0.2s;
+
+      @include s {
+        grid-template-columns: 3fr 1fr;
+      }
+
+      @include m {
+        grid-template-columns: 2fr 1fr;
+      }
+
+      .content {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
+
+      .iconSmall,
+      .iconBig {
+        @include s {
+          width: 100%;
+        }
+      }
+
+      .iconSmall {
+        width: 150px;
+      }
+
+      .iconBig {
+        width: 200px;
+      }
+    }
+  }
+}

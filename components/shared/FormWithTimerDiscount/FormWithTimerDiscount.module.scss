@@ -1,0 +1,158 @@
+@import '@/styles/app.scss';
+
+.wrapper {
+  transition: background-color 0.2s;
+  background-color: var(--blueLightSubscription);
+
+  .contentWrapper {
+    width: 100%;
+    padding: 40px 16px;
+    gap: 20px;
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    @include m {
+      padding: 40px 20px;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    @include l {
+      margin: auto;
+      width: 1280px;
+    }
+
+    .title {
+      font-weight: 600;
+      text-align: center;
+      z-index: 1;
+      position: relative;
+
+      @include m {
+        text-align: left;
+      }
+    }
+
+    .subtitle {
+      text-align: center;
+      z-index: 1;
+      position: relative;
+
+      @include m {
+        text-align: left;
+      }
+    }
+
+    .buttonWrapper {
+      width: 100%;
+
+      @include s {
+        width: fit-content;
+      }
+
+      .button {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+
+        @include s {
+          width: fit-content;
+        }
+      }
+    }
+
+    .iconWrapper {
+      position: relative;
+
+      .timer {
+        position: relative;
+        z-index: 1;
+
+        display: flex;
+        align-items: center;
+        gap: 5px;
+
+        transform: rotate(-5deg);
+
+        .digit {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-family: Montserrat;
+          font-size: 47.063px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 110%; /* 78.534px */
+          width: 40px;
+          border-radius: 7px;
+          background-color: var(--white);
+
+          @include xs {
+            font-size: 71.394px;
+            width: 60px;
+          }
+        }
+      }
+
+      .icon_1,
+      .icon_2 {
+        width: 380px;
+        position: absolute;
+        z-index: 0;
+
+        display: none;
+
+        @include m {
+          display: block;
+        }
+
+        svg {
+          path {
+            transition: stroke 0.2s;
+            stroke: var(--purpleLightIcon);
+          }
+        }
+      }
+
+      .icon_1 {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .icon_2 {
+        top: -50px;
+        right: 0;
+      }
+    }
+  }
+
+  .icon_3 {
+    width: 380px;
+    position: absolute;
+    z-index: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: block;
+
+    @include m {
+      display: none;
+    }
+
+    svg {
+      path {
+        transition: stroke 0.2s;
+        stroke: var(--purpleLightIcon);
+      }
+    }
+  }
+}

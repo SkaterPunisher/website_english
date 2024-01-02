@@ -1,6 +1,6 @@
 import { DetailedHTMLProps, HTMLAttributes } from 'react'
 
-export type BasketButtonProps = DetailedHTMLProps<
+export type AddOpportunityProps = DetailedHTMLProps<
   HTMLAttributes<HTMLDivElement>,
   HTMLDivElement
 > & {}
