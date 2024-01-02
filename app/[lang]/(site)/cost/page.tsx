@@ -14,18 +14,15 @@ export async function generateMetadata({
   params: { lang: Locale }
 }): Promise<Metadata> {
   return {
-    title: 'Стоимость Advenced English | Zykova Oksana',
-    description: 'Описание страницы стоимости Advenced English | Zykova Oksana',
+    title:
+      'Стоимость уроков английского языка онлайн/оффлайн от 350 рублей ‹ Advenced English | Zykova Oksana',
+    description:
+      'Стоимость занятий английским языком онлайн ⠀➤ Сильные преподаватели ⠀➤ Скидки до 30% ☑️Попробуйте бесплатно! Advenced English | Zykova Oksana',
   }
 }
 
 export default async function CostPage({ params: { lang } }: { params: { lang: Locale } }) {
-  // const prices = await getPrices(lang)
-  // const defaultPrice = await getPriceByTitle('Дошкольники 4-7 лет', lang)
-  // console.log('prices', prices)
-  // console.log('Дошкольники 4-7 лет', defaultPrice)
   const courses = await getCourses(lang)
-  console.log('courses', courses)
 
   return (
     <main>
