@@ -5,9 +5,9 @@ import cn from 'classnames'
 import { CostProps } from './Cost.props'
 import Heading from '@/components/ui/Heading/Heading'
 import Vector from '@/icons/vector-purple-cost.svg'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import CostTypes from './CostTypes/CostTypes'
-import { costTable } from '@/constants/cost'
+import { costTable, defaultPrice } from '@/constants/cost'
 import Text from '@/components/ui/Text/Text'
 import OneMonth from '@/icons/cost-1-month.svg'
 import ThreeMonth from '@/icons/cost-3-month.svg'
@@ -19,6 +19,9 @@ import BasketIcon from '@/icons/shopping-bag.svg'
 import CheckIcon from '@/icons/check.svg'
 import HelperScroll from '@/components/ui/HelperScroll/HelperScroll'
 import useDragToScroll from '@/lib/hooks/useDragToScroll'
+import CostCourseSelect from './CostCourseSelect/CostCourseSelect'
+import { useCostCoursesStore } from '@/stores/costCourses.store'
+import FreeLessonForEach from './FreeLessonForEach/FreeLessonForEach'
 
 export type CostType = 'single' | 'pair' | 'mini' | 'group'
 
@@ -30,7 +33,13 @@ const iconArray = {
 const Cost = ({ courses, className, ...props }: CostProps) => {
   const [type, setType] = useState<CostType>('group')
 
-  const [course, setCourse] = useState<Courses>(courses![0])
+  const { course, setCourse } = useCostCoursesStore()
+
+  // useEffect(() => {
+  //   if (courses) {
+  //     setCourse(courses[0])
+  //   }
+  // }, [courses])
 
   const scrollRef = useDragToScroll()
 
@@ -49,8 +58,33 @@ const Cost = ({ courses, className, ...props }: CostProps) => {
 
       <CostTypes type={type} setType={setType} />
 
+      <CostCourseSelect courses={courses} className={cn(styles.mobile, styles.select)} />
+
+      <HelperScroll />
+
       <ul className={styles.costs} ref={scrollRef}>
-        <li className={styles.desktop}>1</li>
+        <li className={cn(styles.itemSelect, styles.desktop)}>
+          <CostCourseSelect courses={courses} />
+          <Text size="s" className={styles.listItem}>
+            ИНД за пропуски
+          </Text>
+          <Text size="s" className={styles.listItem}>
+            Длительность урока
+          </Text>
+          <Text size="s" className={styles.listItem}>
+            Формат обучения
+          </Text>
+          <Text size="s" className={styles.listItem}>
+            Отмена занятий
+          </Text>
+          <Text size="s" className={styles.listItem}>
+            Разговорный клуб
+          </Text>
+          <Text size="s" className={cn(styles.listItem, styles.lastItem)}>
+            Стоимость пакета
+          </Text>
+          <FreeLessonForEach />
+        </li>
         {costTable.map((cost, index) => (
           <li key={index} className={styles.item}>
             <div className={styles.titleCost}>
@@ -75,7 +109,7 @@ const Cost = ({ courses, className, ...props }: CostProps) => {
                   })}
                   size="s"
                 >
-                  {Math.floor(course.price[type] * 1.03)}
+                  {Math.floor((course ? course : defaultPrice).price[type] * 1.03)}
                 </Text>
                 <Text
                   size="s"
@@ -90,7 +124,10 @@ const Cost = ({ courses, className, ...props }: CostProps) => {
                 </Text>
               </div>
 
-              <Heading tag="h2-s">от {Math.floor(course.price[type] * cost.price)}₽</Heading>
+              <Heading tag="h2-s">
+                {course ? '' : 'от'}{' '}
+                {Math.floor((course ? course : defaultPrice).price[type] * cost.price)}₽
+              </Heading>
               <Text size="s">за урок</Text>
             </div>
             {/* ________ */}
@@ -116,11 +153,18 @@ const Cost = ({ courses, className, ...props }: CostProps) => {
 
             <div className={cn(styles.finalPrice, styles.listItem)}>
               <Text>
-                от {(Math.floor(course.price[type] * cost.price) * 8).toLocaleString('ru-RU')}₽
+                от{' '}
+                {(
+                  Math.floor((course ? course : defaultPrice).price[type] * cost.price) * 8
+                ).toLocaleString('ru-RU')}
+                ₽
               </Text>
               {cost.discount !== 0 && (
                 <Text size="s" className={styles.discounted}>
-                  {(Math.floor(course.price[type] * 1.03) * 8).toLocaleString('ru-RU')}
+                  {(
+                    Math.floor((course ? course : defaultPrice).price[type] * 1.03) * 8
+                  ).toLocaleString('ru-RU')}
+                  ₽
                 </Text>
               )}
             </div>
@@ -131,7 +175,11 @@ const Cost = ({ courses, className, ...props }: CostProps) => {
               size="xxs"
               color={cost.icon === 1 ? 'yellow' : cost.icon === 3 ? 'blue' : 'red'}
               onClick={() => {
-                showToast('success', `${course.title} на ${cost.time} добавлен в корзину`)
+                if (course) {
+                  showToast('success', `${course.title} на ${cost.time} добавлен в корзину`)
+                } else {
+                  showToast('error', `Сначала нужно выбрать курс`)
+                }
               }}
             >
               <BasketIcon style={{ width: 24 }} />
@@ -139,6 +187,8 @@ const Cost = ({ courses, className, ...props }: CostProps) => {
           </li>
         ))}
       </ul>
+
+      <FreeLessonForEach className={styles.mobile} />
     </section>
   )
 }

@@ -1,6 +1,17 @@
 @import '@/styles/app.scss';
 
 .section {
+  .mobile {
+    @include s {
+      display: none;
+    }
+  }
+
+  .select {
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+
   .helper {
     margin-top: 80px;
 
@@ -55,11 +66,42 @@
       margin-right: 0px;
     }
 
-    .desktop {
+    // .desktop {
+    //   display: none;
+
+    //   .listItem {
+    //     transition: border-bottom 0.2s;
+    //     border-bottom: 1px solid var(--whiteHover);
+    //     display: flex;
+    //     align-items: center;
+    //     width: 100%;
+
+    //     &:last-child {
+    //       border-bottom: none;
+    //     }
+    //   }
+
+    //   .lastItem {
+    //     border-bottom: none;
+    //   }
+
+    //   @include s {
+    //     display: block;
+    //   }
+    // }
+
+    .itemSelect {
       display: none;
 
       @include s {
-        display: block;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr repeat(7, 60px);
+        justify-items: center;
+        padding: 30px 0px;
+        border-radius: 20px;
+        background-color: var(--white);
+        transition: background-color 0.2s;
       }
     }
 
@@ -97,6 +139,11 @@
       .finalPrice {
         display: flex;
         gap: 10px;
+
+        .discounted {
+          color: var(--gray);
+          text-decoration: line-through;
+        }
       }
 
       .titleItem {

@@ -1,0 +1,106 @@
+@import '@/styles/app.scss';
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  .button {
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 100%;
+    text-align: left;
+    gap: 6px;
+
+    border-radius: 12px;
+    // border: 1px solid var(--black);
+    padding: 20px 14px;
+    background-color: var(--light);
+    outline: none;
+    transition: border 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+
+    @include s {
+      padding: 20px 24px;
+    }
+
+    svg {
+      width: 20px;
+      height: 20px;
+      transition: transform 0.2s ease-in-out;
+      flex-shrink: 0;
+
+      path {
+        stroke: var(--black);
+      }
+    }
+
+    &[aria-expanded='true'] svg {
+      transform: rotate(-180deg);
+    }
+  }
+}
+
+.popover {
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  // border: 1px solid var(--black);
+  padding: 6px 10px 6px 6px;
+  background-color: var(--light);
+  gap: 6px;
+  z-index: 99 !important;
+  // max-width: fit-content;
+  width: 290px;
+
+  max-height: 300px !important;
+  overflow-y: auto;
+
+  scrollbar-width: none; /* Для Firefox */
+
+  &::-webkit-scrollbar {
+    display: none; /* Для WebKit-браузеров, таких как Chrome и Safari */
+  }
+
+  &[data-entering] {
+    animation: popover-slide 300ms;
+  }
+
+  &[data-exiting] {
+    animation: popover-slide 300ms reverse ease-in;
+  }
+
+  .tags {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    .tag {
+      cursor: pointer;
+      padding: 8px 16px;
+      border-radius: 10px;
+      // background-color: var(--whiteHover);
+      transition: background-color 0.2s, color 0.2s;
+      width: 100%;
+    }
+
+    .active {
+      background-color: var(--black);
+      color: var(--white);
+    }
+  }
+}
+
+@keyframes popover-slide {
+  from {
+    transform: var(--origin);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

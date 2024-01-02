@@ -10,6 +10,7 @@ export const getCourses = async (lang: Locale): Promise<Courses[]> =>
       _createdAt,
       title,
       description,
+      "slug": slug.current,
       "price": price->{
         _id,
         _createdAt,

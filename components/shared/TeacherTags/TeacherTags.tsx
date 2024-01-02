@@ -6,7 +6,7 @@ import cn from 'classnames'
 import Text from '@/components/ui/Text/Text'
 import { Button, DialogTrigger, Popover } from 'react-aria-components'
 import ArrowDownIcon from '@/icons/chevron-down.svg'
-import { useTeacherTagsStore } from '@/stores/teacherTags'
+import { useTeacherTagsStore } from '@/stores/teacherTags.store'
 
 const TeacherTags = ({ tags, className, ...props }: TeacherTagsProps) => {
   const { tag, setTags } = useTeacherTagsStore()

@@ -14,6 +14,12 @@ export const courses = {
       type: 'string',
     },
     {
+      name: 'slug',
+      title: 'Уникальный ключ',
+      type: 'slug',
+      options: { source: 'title' },
+    },
+    {
       name: 'price',
       title: 'Стоимость',
       type: 'reference',

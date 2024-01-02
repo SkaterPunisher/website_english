@@ -1,7 +1,7 @@
 'use client'
 
 import { TeacherSmallCardsProps } from './TeacherSmallCards.props'
-import { useTeacherTagsStore } from '@/stores/teacherTags'
+import { useTeacherTagsStore } from '@/stores/teacherTags.store'
 import { Teacher } from '@/sanity/schemas/teacher-schema/teacherTypes'
 import TeacherSmallCard from './TeacherSmallCard/TeacherSmallCard'
 import { motion } from 'framer-motion'

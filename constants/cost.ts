@@ -17,7 +17,7 @@ export const costTable: CostTable[] = [
     title: 'Тариф, чтобы попробовать занятия в студии',
     icon: 1,
     discount: 0,
-    price: 1.03,
+    price: 1.05,
     singleForPass: false,
     timeLesson: 50,
     format: 'Оффлайн / Онлайн',
@@ -28,7 +28,7 @@ export const costTable: CostTable[] = [
     time: '3 месяца',
     title: 'Средний уровень продолжительности для увлеченных',
     icon: 3,
-    discount: 3,
+    discount: 5,
     price: 1,
     singleForPass: false,
     timeLesson: 50,
@@ -40,8 +40,8 @@ export const costTable: CostTable[] = [
     time: '6 месяцев',
     title: 'Для тех кто нацелен на результат',
     icon: 6,
-    discount: 5,
-    price: 0.98,
+    discount: 10,
+    price: 0.95,
     singleForPass: true,
     timeLesson: 50,
     format: 'Оффлайн / Онлайн',
@@ -49,3 +49,12 @@ export const costTable: CostTable[] = [
     speaking: true,
   },
 ]
+
+export const defaultPrice = {
+  price: {
+    group: 350,
+    single: 800,
+    pair: 650,
+    mini: 500,
+  },
+}
