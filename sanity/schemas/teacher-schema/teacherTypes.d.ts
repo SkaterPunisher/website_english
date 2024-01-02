@@ -26,4 +26,9 @@ export type Teacher = {
   level: LevelEnglish[]
   interests: string[]
   teaches: TeacherTags[]
+  videoForCenter?: {
+    url: string
+  }
+  imagePreviewForVideoForCenter?: Images
+  imageAbout?: Images
 }

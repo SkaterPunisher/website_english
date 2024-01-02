@@ -3,9 +3,9 @@ import { Locale } from '@/i18n-config'
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'Zykova Oksana § Advanced English',
+    title: 'Зыкова Оксана § Advanced English',
     description:
-      'Онлайн-школа английского языка «Zykova Oksana § Advanced English»⠀➤ Профессиональные преподаватели английского языка⠀➤ Доступные цены и скидки на курсы до 40% ☑️Бесплатный первый урок!',
+      'Онлайн-школа английского языка «Зыкова Оксана § Advanced English»⠀➤ Профессиональные преподаватели английского языка⠀➤ Доступные цены и скидки на курсы до 40% ☑️Бесплатный первый урок!',
   }
 }
 

@@ -8,8 +8,8 @@ export async function generateMetadata({
   params: { lang: Locale }
 }): Promise<Metadata> {
   return {
-    title: 'База знаний Advenced English | Зыкова Оксана',
-    description: 'Описание страницы базы знаний Advenced English | Зыкова Оксана',
+    title: 'База знаний Зыкова Оксана § Advanced English',
+    description: 'Описание страницы базы знаний Зыкова Оксана § Advanced English',
   }
 }
 

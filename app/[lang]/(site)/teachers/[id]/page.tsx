@@ -14,8 +14,8 @@ export async function generateMetadata({
   const teacher = await getTeacher(id, lang)
 
   return {
-    title: `${teacher.firstname} ${teacher.lastname} Zykova Oksana § Advanced English`,
-    description: `Лучший преподаватель по английскому языку только в онлайн студии Zykova Oksana § Advanced English это ${teacher.firstname} ${teacher.lastname}`,
+    title: `${teacher.firstname} ${teacher.lastname} Зыкова Оксана § Advanced English`,
+    description: `Лучший преподаватель по английскому языку только в онлайн студии Зыкова Оксана § Advanced English это ${teacher.firstname} ${teacher.lastname}`,
   }
 }
 

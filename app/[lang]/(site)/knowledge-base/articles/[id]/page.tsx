@@ -12,8 +12,8 @@ export async function generateMetadata({
   const article = await getArticle(id, lang)
 
   return {
-    title: `${article.name} < Zykova Oksana § Advanced English`,
-    description: `${article.description} | Блог Zykova Oksana § Advanced English`,
+    title: `${article.name} < Зыкова Оксана § Advanced English`,
+    description: `${article.description} | Блог Зыкова Оксана § Advanced English`,
   }
 }
 

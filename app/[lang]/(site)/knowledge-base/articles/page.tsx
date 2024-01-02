@@ -14,7 +14,7 @@ export async function generateMetadata({
   params: { lang: Locale }
 }): Promise<Metadata> {
   return {
-    title: 'Статьи и советы для изучающих английский язык с Zykova Oksana § Advanced English',
+    title: 'Статьи и советы для изучающих английский язык с Зыкова Оксана § Advanced English',
     description:
       'Тут Вы можете найти статьи на интересующие Вас темы. Подтянуть свои знания. Просто расслабиться и почитать интересные материалы.',
   }

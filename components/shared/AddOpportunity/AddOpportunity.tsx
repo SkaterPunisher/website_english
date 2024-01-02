@@ -31,7 +31,7 @@ const AddOpportunity = ({ className, ...props }: AddOpportunityProps) => {
             Заменим преподавателя при необходимости
           </Text>
           <Text size="s" className={styles.description}>
-            Подберем нового учителя, если захотите попробоватьс кем-то другим
+            Подберем нового учителя, если захотите попробовать с кем-то другим
           </Text>
           <div className={styles.vector2}>
             <Vector2 />

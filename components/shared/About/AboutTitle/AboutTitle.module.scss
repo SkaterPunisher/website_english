@@ -1,0 +1,43 @@
+@import '@/styles/app.scss';
+
+.section {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+
+  .list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+
+    @include m {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include s {
+      gap: 20px;
+    }
+
+    .item {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      border-radius: 16px;
+      background-color: var(--whiteBlack);
+      transition: background-color 0.2s;
+      box-shadow: 0px -4px 8px 0px rgba(0, 0, 0, 0.04), 0px 0px 4px 0px rgba(0, 0, 0, 0.02),
+        0px 4px 8px 0px rgba(0, 0, 0, 0.04), 0px 0px 4px 0px rgba(0, 0, 0, 0.02);
+      padding: 16px;
+
+      @include s {
+        border-radius: 20px;
+        padding: 24px;
+      }
+
+      .icon {
+        width: 64px;
+      }
+    }
+  }
+}

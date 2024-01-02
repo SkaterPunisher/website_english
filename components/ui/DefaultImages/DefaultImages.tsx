@@ -21,7 +21,7 @@ const DefaultImages = ({
   return (
     <Image
       className={className}
-      src={src ? src : Default}
+      src={src && src !== '' ? src : Default}
       alt={alt ? alt : ''}
       width={width}
       height={height}

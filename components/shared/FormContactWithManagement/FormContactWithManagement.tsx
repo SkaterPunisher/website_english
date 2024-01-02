@@ -3,22 +3,32 @@ import Text from '@/components/ui/Text/Text'
 import Btn from '@/components/ui/Btn/Btn'
 import VectorIcon_1 from '@/icons/vector-yellow-form-1.svg'
 import VectorIcon_2 from '@/icons/vector-yellow-form-2.svg'
+import { FormContactWithManagementProps } from './FormContactWithManagement.props'
+import cn from 'classnames'
 
-const FormContactWithManagement = () => {
+const FormContactWithManagement = ({
+  title,
+  subtitle,
+  btn,
+  className,
+  ...props
+}: FormContactWithManagementProps) => {
   return (
-    <section className={styles.wrapper}>
+    <section className={cn(styles.wrapper, className)} {...props}>
       <div className={styles.contentWrapper}>
         <div>
           <Text size="l" className={styles.title}>
-            Связь с руководством
+            {title}
           </Text>
           <Text size="ll" className={styles.subtitle}>
-            Любые интересующие вопросы и предложения
+            {subtitle}
           </Text>
         </div>
 
         <a href="mailto:englishinbg@gmail.com" className={styles.button}>
-          <Btn color="black">Написать директору</Btn>
+          <Btn size="m" color="black">
+            {btn}
+          </Btn>
         </a>
 
         <div className={styles.icon_1}>

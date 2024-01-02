@@ -12,7 +12,7 @@ export async function generateMetadata({
   params: { lang: Locale }
 }): Promise<Metadata> {
   return {
-    title: 'Контакты онлайн студии английского языка Zykova Oksana § Advanced English',
+    title: 'Контакты онлайн студии английского языка Зыкова Оксана § Advanced English',
     description: 'Телефон: +7 (950) 625-34-46.⠀ 🕘⠀С 10:00 до 19:00 по будням',
   }
 }
@@ -30,7 +30,11 @@ export default async function ContactsPage({ params: { lang } }: { params: { lan
         <Contacts />
       </section>
 
-      <FormContactWithManagement />
+      <FormContactWithManagement
+        title={'Связь с руководством'}
+        subtitle={'Любые интересующие вопросы и предложения'}
+        btn={'Написать директору'}
+      />
 
       <TelegramSupport />
     </main>

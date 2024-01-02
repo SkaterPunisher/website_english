@@ -124,6 +124,37 @@ export const teacher = {
       type: 'array',
       of: [{ type: 'reference', to: [{ type: 'teacherTags' }] }],
     },
+
+    {
+      name: 'videoForCenter',
+      title: 'Видео про центр (только для Оксаны)',
+      type: 'file',
+      options: {
+        accept: 'video/*',
+      },
+      fields: [
+        {
+          name: 'url',
+          title: 'URL',
+          type: 'url',
+        },
+        // Дополнительные поля, такие как описание, alt текст и т.д.
+      ],
+    },
+    {
+      name: 'imagePreviewForVideoForCenter',
+      title: 'Превью для видео про центр (только для Оксаны) (2592px|1120px max 0.3MB)',
+      type: 'image',
+      options: { hotspot: true },
+      fields: [{ name: 'alt', title: 'Alt', type: 'string' }],
+    },
+    {
+      name: 'imageAbout',
+      title: 'Изображение про центр (только для Оксаны) (1276px|1432px max 0.3MB)',
+      type: 'image',
+      options: { hotspot: true },
+      fields: [{ name: 'alt', title: 'Alt', type: 'string' }],
+    },
   ],
 }
 

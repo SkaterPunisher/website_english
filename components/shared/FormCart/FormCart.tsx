@@ -162,7 +162,7 @@ const FormCart = () => {
               )}
             />
             <Btn onClick={handleSubmit(onSubmit)} className={styles.button} color="black">
-              Оставить заяку
+              Отправить заявку
             </Btn>
           </form>
         </div>

@@ -41,6 +41,30 @@ export const getTeachers = async (lang: Locale): Promise<Teacher[]> =>
     { next: { revalidate: 60 * 10 } },
   )
 
+export const getAbout = async (slug: string, lang: Locale): Promise<Teacher> =>
+  createClient(clientConfig).fetch(
+    groq`*[_type == "teacher" && slug.current == $slug][0] {
+      _id,
+      _createdAt,
+      "firstname": firstname[$lang],
+      "lastname": lastname[$lang],
+      patronymic,
+      "imagePreviewForVideoForCenter": {
+        "url": imagePreviewForVideoForCenter.asset->url,
+        "alt": imagePreviewForVideoForCenter.alt
+      },
+      "imageAbout": {
+        "url": imageAbout.asset->url,
+        "alt": imageAbout.alt
+      },
+      startEducation,
+      "videoForCenter": {
+        "url": videoForCenter.asset->url,
+      },
+    }`,
+    { slug, lang },
+  )
+
 export const getTeacher = async (slug: string, lang: Locale): Promise<Teacher> =>
   createClient(clientConfig).fetch(
     groq`*[_type == "teacher" && slug.current == $slug][0] {
