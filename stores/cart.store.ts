@@ -15,6 +15,7 @@ interface CartState {
   items: Item[]
   addItem: (item: Item) => void
   removeItem: (itemId: string) => void
+  clear: () => void
 }
 
 // Use the persist middleware with the correct type signature
@@ -44,6 +45,7 @@ const useCartStore = create(
           // Remove course by id
           items: state.items.filter(item => item.course._id !== itemId),
         })),
+      clear: () => set({ items: [] }),
     }),
     {
       name: 'cart', // localStorage key

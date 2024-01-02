@@ -1,0 +1,59 @@
+@import '@/styles/app.scss';
+
+.section {
+  .wrapper {
+    border-radius: 20px;
+    background: var(--blueLightWrapper);
+    transition: background 0.2s;
+    position: relative;
+    padding: 40px 16px;
+    margin: 0 -16px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    @include s {
+      padding: 70px;
+      margin: 0 0px;
+    }
+
+    .titleWrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .flag {
+      position: absolute;
+      top: -40px;
+      right: -150px;
+      width: 200px;
+
+      @include xs {
+        right: -100px;
+      }
+
+      @include s {
+        right: -20px;
+      }
+    }
+
+    .content {
+      display: grid;
+      align-items: center;
+      grid-template-columns: 1fr;
+      gap: 40px;
+
+      .form {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        .button {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

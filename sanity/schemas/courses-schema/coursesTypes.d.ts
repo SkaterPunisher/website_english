@@ -8,4 +8,5 @@ export type Courses = {
   title: string
   description: string
   price: Price
+  slug: string
 }
