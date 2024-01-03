@@ -43,7 +43,7 @@ const formSchema = z.object({
 })
 
 const FormModal = () => {
-  const { isVisible, toggleApplicationForm } = useApplicationStore()
+  const { isVisible, toggleApplicationForm, page } = useApplicationStore()
 
   const {
     handleSubmit,
@@ -57,6 +57,7 @@ const FormModal = () => {
 
   const onSubmit = async (data: Form) => {
     let message = `<b>Заявка с Advanced English</b> \n`
+    message += `<b>Отправлено со страницы :</b> ${page} \n`
     message += `<b>Имя :</b> ${data.firstName} \n`
     message += `<b>Телефон :</b> ${data.phone} \n`
 
@@ -73,12 +74,12 @@ const FormModal = () => {
         showToast('error', `Произошла ошибка. Попробуйте позже. ${err.message}`)
       })
 
-    toggleApplicationForm()
+    toggleApplicationForm('')
     reset()
   }
 
   const onClose = () => {
-    toggleApplicationForm()
+    toggleApplicationForm('')
     reset()
   }
 

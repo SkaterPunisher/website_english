@@ -34,7 +34,10 @@ export default async function TeacherPage({
         <TeacherSmallCard teacher={singleTeacher} forSingleTeacher={true} />
       </section>
 
-      <Form forTeachersPage={true} />
+      <Form
+        forTeachersPage={true}
+        page={`Преподаватель ${singleTeacher.firstname}${singleTeacher.lastname}`}
+      />
       <FAQ lang={lang} pageName={'Преподаватель'} />
     </main>
   )

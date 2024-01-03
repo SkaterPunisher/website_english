@@ -10,6 +10,7 @@ import Heading from '@/components/ui/Heading/Heading'
 import Text from '@/components/ui/Text/Text'
 import Btn from '@/components/ui/Btn/Btn'
 import { useApplicationStore } from '@/stores/application.store'
+import { usePathname } from 'next/navigation'
 
 const HeaderPage = ({
   color = 'blue',
@@ -20,6 +21,7 @@ const HeaderPage = ({
   ...props
 }: HeaderPageProps) => {
   const { toggleApplicationForm } = useApplicationStore()
+  const pathName = usePathname()
 
   return (
     <section className={cn(styles.wrapper, styles[color], className)} {...props}>
@@ -30,7 +32,7 @@ const HeaderPage = ({
             {description}
           </Text>
           {btnText && (
-            <Btn color="black" onClick={toggleApplicationForm}>
+            <Btn color="black" onClick={() => toggleApplicationForm(pathName)}>
               {btnText}
             </Btn>
           )}

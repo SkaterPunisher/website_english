@@ -26,7 +26,7 @@ export default async function FAQPage({ params: { lang } }: { params: { lang: Lo
       />
 
       <FAQ lang={lang} pageName={'Тест'} allFAQ={true} />
-      <Form />
+      <Form page={'FAQ'} />
     </main>
   )
 }

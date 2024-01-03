@@ -2,10 +2,12 @@ import { create } from 'zustand'
 
 export type ApplicationState = {
   isVisible: boolean
-  toggleApplicationForm: () => void
+  toggleApplicationForm: (page: string) => void
+  page: string
 }
 
 export const useApplicationStore = create<ApplicationState>(set => ({
   isVisible: false,
-  toggleApplicationForm: () => set(state => ({ isVisible: !state.isVisible })),
+  toggleApplicationForm: page => set(state => ({ isVisible: !state.isVisible, page })),
+  page: '',
 }))

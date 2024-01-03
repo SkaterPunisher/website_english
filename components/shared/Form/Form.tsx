@@ -34,7 +34,7 @@ const formSchema = z.object({
     .min(18, { message: 'Введите полный номер' }),
 })
 
-const Form = ({ forTeachersPage }: { forTeachersPage?: boolean }) => {
+const Form = ({ forTeachersPage, page }: { forTeachersPage?: boolean; page: string }) => {
   const {
     handleSubmit,
     formState: { errors, isDirty, isValid },
@@ -47,6 +47,7 @@ const Form = ({ forTeachersPage }: { forTeachersPage?: boolean }) => {
 
   const onSubmit = async (data: Form) => {
     let message = `<b>Заявка с Advanced English</b> \n`
+    message += `<b>Отправлено со страницы :</b> ${page} \n`
     message += `<b>Имя :</b> ${data.firstName} \n`
     message += `<b>Телефон :</b> ${data.phone} \n`
 

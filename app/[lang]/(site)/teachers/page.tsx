@@ -41,7 +41,7 @@ export default async function TeachersPage({ params: { lang } }: { params: { lan
         <TeacherSmallCards teachers={teachers} />
       </section>
 
-      <Form forTeachersPage={true} />
+      <Form forTeachersPage={true} page="Преподаватели" />
       <FAQ lang={lang} pageName={'Преподаватель'} />
     </main>
   )

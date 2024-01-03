@@ -74,7 +74,7 @@ const Header = ({ className, lang, ...props }: HeaderProps) => {
           placeholder={isRight ? 'Оставить заявку' : undefined}
           color="purple"
           onClick={() => {
-            toggleApplicationForm()
+            toggleApplicationForm(pathName)
           }}
         >
           <ArrowRightIcon style={{ width: 24 }} />

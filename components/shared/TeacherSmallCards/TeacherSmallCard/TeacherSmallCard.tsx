@@ -21,6 +21,7 @@ import AnimatedCounter from '@/components/ui/AnimatedCounter/AnimatedCounter'
 import dayjs from 'dayjs'
 import AudioPlayer from '@/components/ui/AudioPlayer/AudioPlayer'
 import { levelEnglish } from '@/constants/levelEnglish'
+import { usePathname } from 'next/navigation'
 
 const TeacherSmallCard = ({
   teacher,
@@ -28,6 +29,7 @@ const TeacherSmallCard = ({
   className,
   ...props
 }: TeacherSmallCardProps) => {
+  const pathName = usePathname()
   const videoRef = useRef<HTMLVideoElement>(null)
   const { isPlaying, togglePlayPause } = useVideoPlayer(videoRef)
 
@@ -145,7 +147,7 @@ const TeacherSmallCard = ({
           <div className={styles.buttons}>
             <Btn
               onClick={() => {
-                toggleApplicationForm()
+                toggleApplicationForm(pathName)
               }}
               className={styles.btn}
             >

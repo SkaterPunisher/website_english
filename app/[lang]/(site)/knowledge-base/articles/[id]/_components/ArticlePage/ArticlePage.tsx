@@ -14,7 +14,7 @@ const ArticlePage = ({ lang, article, className, ...props }: ArticlePageProps) =
       <ArticleSingleTitle article={article} />
       <FormSubscriptionForNewsBig />
       <ArticleSingleContent article={article} />
-      <Form />
+      <Form page={`Статья ${article.name}`} />
       <ArticleSingleCards lang={lang} tags={article.tags.map(tag => tag.tag)} />
       <FAQ lang={lang} pageName={'Статья'} />
     </div>

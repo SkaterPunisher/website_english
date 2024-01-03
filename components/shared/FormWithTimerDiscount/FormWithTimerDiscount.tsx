@@ -9,9 +9,11 @@ import { useApplicationStore } from '@/stores/application.store'
 import { useEffect, useState } from 'react'
 import dayjs from 'dayjs'
 import cn from 'classnames'
+import { usePathname } from 'next/navigation'
 
 const FormWithTimerDiscount = () => {
   const { toggleApplicationForm } = useApplicationStore()
+  const pathName = usePathname()
 
   const [timeLeft, setTimeLeft] = useState('')
 
@@ -72,7 +74,7 @@ const FormWithTimerDiscount = () => {
         <div className={cn(styles.iconWrapper, styles.buttonWrapper)}>
           <Btn
             onClick={() => {
-              toggleApplicationForm()
+              toggleApplicationForm(pathName)
             }}
             className={styles.button}
             color="black"
