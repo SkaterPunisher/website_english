@@ -63,6 +63,10 @@
             rect {
               fill: transparent;
             }
+            path {
+              fill: var(--black);
+              transition: fill 0.2s;
+            }
           }
         }
 

@@ -155,6 +155,18 @@ export const teacher = {
       options: { hotspot: true },
       fields: [{ name: 'alt', title: 'Alt', type: 'string' }],
     },
+    {
+      name: 'imagesForAboutPages',
+      title: 'Изображение про центр (только для Оксаны) (1276px|1702px max 0.3MB)',
+      type: 'array',
+      of: [
+        {
+          type: 'image',
+          options: { hotspot: true },
+          fields: [{ name: 'alt', title: 'Alt', type: 'string' }],
+        },
+      ],
+    },
   ],
 }
 

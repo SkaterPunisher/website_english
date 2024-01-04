@@ -31,4 +31,5 @@ export type Teacher = {
   }
   imagePreviewForVideoForCenter?: Images
   imageAbout?: Images
+  imagesForAboutPages?: Images[]
 }

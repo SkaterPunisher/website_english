@@ -57,6 +57,10 @@ export const getAbout = async (slug: string, lang: Locale): Promise<Teacher> =>
         "url": imageAbout.asset->url,
         "alt": imageAbout.alt
       },
+      "imagesForAboutPages": imagesForAboutPages[]{
+        "url": asset->url,
+        "alt": alt
+      },
       startEducation,
       "videoForCenter": {
         "url": videoForCenter.asset->url,

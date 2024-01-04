@@ -1,0 +1,39 @@
+@import '@/styles/app.scss';
+
+.swiper {
+  width: 100dvw;
+  height: 510px;
+  border-radius: 16px;
+  margin-left: -16px;
+
+  @include s {
+    width: 512px;
+    height: 680px;
+    margin-left: 0;
+  }
+
+  @include l {
+    width: 640px;
+    height: 850px;
+  }
+
+  .image {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+  }
+
+  :global {
+    .swiper-pagination-bullet {
+      background-color: black;
+      border-radius: 18px;
+      width: 45px;
+      height: 8px;
+    }
+
+    .swiper-pagination-bullet-active {
+      background-color: white;
+    }
+  }
+}

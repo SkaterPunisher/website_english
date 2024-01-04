@@ -1,3 +1,4 @@
+import AboutContent from '@/components/shared/About/AboutContent/AboutContent'
 import AboutTitle from '@/components/shared/About/AboutTitle/AboutTitle'
 import FormContactWithManagement from '@/components/shared/FormContactWithManagement/FormContactWithManagement'
 import HeaderPageAbout from '@/components/shared/HeaderPageAbout/HeaderPageAbout'
@@ -21,8 +22,6 @@ export async function generateMetadata({
 export default async function AboutPage({ params: { lang } }: { params: { lang: Locale } }) {
   const oksana = await getAbout('zykova', lang)
 
-  console.log(oksana)
-
   return (
     <main>
       <HeaderPageAbout teacher={oksana} />
@@ -34,6 +33,8 @@ export default async function AboutPage({ params: { lang } }: { params: { lang: 
         subtitle={'Электронный адрес для преложений'}
         btn={'Написать'}
       />
+
+      <AboutContent teacher={oksana} />
     </main>
   )
 }
